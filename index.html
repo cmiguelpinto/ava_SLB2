@@ -7628,8 +7628,7 @@ function printReportStable(){
 
 
 
-<style>
-  /* Mandatory notice popup after teacher login */
+<style id="mandatoryNoticeFirstLoginCss">
   .mandatory-notice-modal{
     position:fixed;
     inset:0;
@@ -7637,76 +7636,80 @@ function printReportStable(){
     display:none;
     align-items:center;
     justify-content:center;
-    padding:24px;
-    background:rgba(15,23,42,.54);
+    padding:22px;
+    background:rgba(15,23,42,.50);
     backdrop-filter:blur(5px);
   }
   .mandatory-notice-modal.show{display:flex!important;}
   .mandatory-notice-dialog{
     width:min(620px,100%);
-    max-height:min(78vh,760px);
-    overflow:auto;
+    max-height:min(760px,88vh);
+    overflow:hidden;
     background:#fff;
-    border:1px solid rgba(255,255,255,.65);
-    border-radius:18px;
-    box-shadow:0 28px 90px rgba(15,23,42,.32);
+    border:1px solid #e5e7eb;
+    box-shadow:0 28px 80px rgba(15,23,42,.28);
+    display:flex;
+    flex-direction:column;
+    border-radius:14px;
   }
   .mandatory-notice-head{
-    position:sticky;
-    top:0;
-    z-index:1;
     display:flex;
-    align-items:flex-start;
     justify-content:space-between;
+    align-items:flex-start;
     gap:14px;
-    padding:18px 18px 14px;
-    background:linear-gradient(135deg,#d0001b,#8f0013);
+    padding:18px 20px;
     color:#fff;
+    background:linear-gradient(135deg,#d0001b,#8f0013);
   }
   .mandatory-notice-kicker{
     font-size:11px;
     font-weight:950;
-    letter-spacing:.06em;
     text-transform:uppercase;
+    letter-spacing:.08em;
     opacity:.86;
+    margin-bottom:5px;
   }
   .mandatory-notice-title{
-    margin-top:4px;
     font-size:22px;
     font-weight:950;
     letter-spacing:-.04em;
-    line-height:1.05;
+    line-height:1.1;
   }
   .mandatory-notice-close{
-    width:36px;
-    height:36px;
-    border:1px solid rgba(255,255,255,.25);
-    background:rgba(255,255,255,.14);
+    border:1px solid rgba(255,255,255,.32);
+    background:rgba(255,255,255,.13);
     color:#fff;
-    border-radius:10px;
-    cursor:pointer;
-    font-size:22px;
-    font-weight:950;
+    width:38px;
+    height:38px;
+    font-size:24px;
     line-height:1;
+    font-weight:800;
+    cursor:pointer;
+    border-radius:10px;
   }
-  .mandatory-notice-body{padding:16px 18px 18px;display:grid;gap:12px;}
+  .mandatory-notice-body{
+    padding:18px 20px;
+    overflow:auto;
+    display:grid;
+    gap:12px;
+  }
   .mandatory-notice-info{
-    border:1px solid #fecaca;
-    background:#fff7f8;
-    color:#7f0011;
-    border-radius:14px;
-    padding:11px 12px;
+    border:1px solid #fde68a;
+    background:#fffbeb;
+    color:#92400e;
+    padding:10px 12px;
     font-size:12px;
     font-weight:850;
     line-height:1.4;
+    border-radius:10px;
   }
   .mandatory-notice-list{display:grid;gap:10px;}
   .mandatory-notice-item{
     border:1px solid #edf0f3;
     background:#fff;
-    border-radius:15px;
     padding:12px;
     box-shadow:0 8px 18px rgba(15,23,42,.05);
+    border-radius:10px;
   }
   .mandatory-notice-item-top{
     display:flex;
@@ -7722,25 +7725,23 @@ function printReportStable(){
     border:1px solid #edf0f3;
     background:#f9fafb;
     color:#374151;
-    border-radius:999px;
     padding:6px 8px;
     font-size:10px;
     font-weight:950;
     text-transform:uppercase;
     letter-spacing:.04em;
+    border-radius:8px;
   }
   .mandatory-notice-priority.urgent{border-color:#fecaca;background:#fee2e2;color:#991b1b;}
   .mandatory-notice-priority.important{border-color:#fde68a;background:#fef3c7;color:#92400e;}
   .mandatory-notice-message{font-size:12px;font-weight:750;line-height:1.45;color:#374151;white-space:pre-wrap;}
   .mandatory-notice-actions{
-    position:sticky;
-    bottom:0;
     display:flex;
     justify-content:flex-end;
     gap:8px;
-    padding:14px 18px 18px;
-    background:linear-gradient(180deg,rgba(255,255,255,.84),#fff 38%);
+    padding:14px 20px 18px;
     border-top:1px solid #edf0f3;
+    background:#fff;
   }
 </style>
 
@@ -7763,128 +7764,183 @@ function printReportStable(){
   </div>
 </div>
 
-<script>
+<script id="mandatoryNoticeFirstLoginScript">
 (function(){
   'use strict';
+  var popupIsOpen=false;
 
-  function getUser(){
+  function user(){
     try{ if(typeof currentLoggedUser === 'function') return currentLoggedUser(); }catch(e){}
     try{return JSON.parse(localStorage.getItem('avaliacoes_slb_current_user') || 'null');}catch(e){return null;}
   }
 
-  function isAdmin(){
+  function isAdminAccount(){
+    var u=user();
     try{ if(typeof isAdminUser === 'function') return !!isAdminUser(); }catch(e){}
-    var u=getUser();
     return !!u && (u.role === 'admin' || u.username === 'Admin');
   }
 
-  function escapeHtml(value){
+  function html(value){
     try{ if(typeof safe === 'function') return safe(value); }catch(e){}
     return String(value == null ? '' : value).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});
   }
 
-  function formatDateTime(iso){
-    if(!iso) return '';
-    try{return new Date(iso).toLocaleString('pt-PT');}catch(e){return String(iso);}
-  }
-
-  function getNoticeStorageKey(){
+  function noticeStorageKey(){
     try{ if(typeof teacherNoticesKey !== 'undefined') return teacherNoticesKey; }catch(e){}
     try{ if(typeof storeKey !== 'undefined') return storeKey + '_teacher_notices_v1'; }catch(e){}
     return 'avaliacoes_slb_teacher_notices_v1';
   }
 
+  function readStorageKey(id, username){
+    try{ if(typeof noticeReadKey === 'function') return noticeReadKey(id); }catch(e){}
+    try{ if(typeof storeKey !== 'undefined') return storeKey + '_notice_read_' + (username || 'guest') + '_' + id; }catch(e){}
+    return 'avaliacoes_slb_notice_read_' + (username || 'guest') + '_' + id;
+  }
+
   function loadNotices(){
     try{
-      var data=JSON.parse(localStorage.getItem(getNoticeStorageKey()) || '[]');
+      var data=JSON.parse(localStorage.getItem(noticeStorageKey()) || '[]');
       return Array.isArray(data) ? data : [];
     }catch(e){return [];}
   }
 
-  function getReadBy(notice){
+  function saveNotices(list){
+    try{localStorage.setItem(noticeStorageKey(), JSON.stringify(Array.isArray(list) ? list : []));}catch(e){}
+  }
+
+  function readBy(notice){
     if(!notice.readBy || typeof notice.readBy !== 'object') notice.readBy={};
     return notice.readBy;
   }
 
-  function legacyReadKey(noticeId, username){
-    try{ if(typeof noticeReadKey === 'function') return noticeReadKey(noticeId); }catch(e){}
-    try{ if(typeof storeKey !== 'undefined') return storeKey + '_notice_read_' + (username || 'guest') + '_' + noticeId; }catch(e){}
-    return 'avaliacoes_slb_notice_read_' + (username || 'guest') + '_' + noticeId;
-  }
-
-  function isRead(notice, user){
-    if(!notice || !user) return false;
-    if(getReadBy(notice)[user.username]) return true;
+  function alreadyRead(notice, u){
+    if(!notice || !u) return true;
+    if(readBy(notice)[u.username]) return true;
     try{ if(typeof isNoticeRead === 'function') return !!isNoticeRead(notice.id); }catch(e){}
-    try{return localStorage.getItem(legacyReadKey(notice.id,user.username)) === 'true';}catch(e){return false;}
+    try{return localStorage.getItem(readStorageKey(notice.id,u.username)) === 'true';}catch(e){return false;}
   }
 
-  function unreadNotices(){
-    var user=getUser();
-    if(!user || isAdmin()) return [];
-    return loadNotices()
-      .filter(function(n){return n && n.id && !isRead(n,user);})
-      .sort(function(a,b){return String(b.createdAt||'').localeCompare(String(a.createdAt||''));});
+  function unread(){
+    var u=user();
+    if(!u || isAdminAccount()) return [];
+    return loadNotices().filter(function(n){return n && n.id && !alreadyRead(n,u);}).sort(function(a,b){return String(b.createdAt||'').localeCompare(String(a.createdAt||''));});
   }
 
-  function openMandatoryNoticePopup(){
-    if(isAdmin()) return;
-    var unread=unreadNotices();
-    if(!unread.length) return;
+  function formatDate(iso){
+    if(!iso) return '';
+    try{return new Date(iso).toLocaleString('pt-PT');}catch(e){return String(iso);}
+  }
+
+  function forcePainelForTeacher(){
+    var u=user();
+    if(!u || isAdminAccount()) return;
+    try{
+      if(typeof switchView === 'function') switchView('mainCalendarView');
+    }catch(e){}
+  }
+
+  function showMandatoryNoticePopup(){
+    if(popupIsOpen || isAdminAccount()) return false;
+    var items=unread();
+    if(!items.length) return false;
+
+    forcePainelForTeacher();
+
     var modal=document.getElementById('mandatoryNoticeModal');
     var list=document.getElementById('mandatoryNoticeList');
     var title=document.getElementById('mandatoryNoticeTitle');
-    if(!modal || !list) return;
-    if(title) title.textContent=unread.length === 1 ? 'Novo aviso do Admin' : unread.length + ' avisos do Admin por ler';
-    list.innerHTML=unread.map(function(n){
+    if(!modal || !list) return false;
+
+    if(title) title.textContent=items.length === 1 ? 'Novo aviso do Admin' : items.length + ' avisos do Admin por ler';
+    list.innerHTML=items.map(function(n){
       var priority=n.priority === 'urgent' ? 'Urgente' : (n.priority === 'important' ? 'Importante' : 'Normal');
       var dateText=n.date ? ' · Data/evento: ' + new Date(n.date+'T00:00:00').toLocaleDateString('pt-PT') : '';
-      return '<article class="mandatory-notice-item">'+
-        '<div class="mandatory-notice-item-top"><div><div class="mandatory-notice-item-title">'+escapeHtml(n.title || 'Aviso')+'</div><div class="mandatory-notice-item-meta">'+escapeHtml(n.category || 'Geral')+' · '+escapeHtml(formatDateTime(n.createdAt))+escapeHtml(dateText)+'</div></div><span class="mandatory-notice-priority '+escapeHtml(n.priority || 'normal')+'">'+escapeHtml(priority)+'</span></div>'+
-        '<div class="mandatory-notice-message">'+escapeHtml(n.message || '')+'</div>'+ 
-      '</article>';
+      return '<article class="mandatory-notice-item"><div class="mandatory-notice-item-top"><div><div class="mandatory-notice-item-title">'+html(n.title || 'Aviso')+'</div><div class="mandatory-notice-item-meta">'+html(n.category || 'Geral')+' · '+html(formatDate(n.createdAt))+html(dateText)+'</div></div><span class="mandatory-notice-priority '+html(n.priority || 'normal')+'">'+html(priority)+'</span></div><div class="mandatory-notice-message">'+html(n.message || '')+'</div></article>';
     }).join('');
+
+    popupIsOpen=true;
     modal.classList.add('show');
     modal.setAttribute('aria-hidden','false');
+    return true;
   }
 
-  function closeAndMarkMandatoryNotices(){
-    var unread=unreadNotices();
-    unread.forEach(function(n){
-      try{
-        if(typeof markTeacherNoticeRead === 'function'){
-          markTeacherNoticeRead(n.id);
-        }else{
-          var user=getUser();
-          if(user){
-            var list=loadNotices();
-            var found=list.find(function(x){return x.id===n.id;});
-            if(found){
-              getReadBy(found)[user.username]={username:user.username,name:user.name || user.username,at:new Date().toISOString()};
-              localStorage.setItem(getNoticeStorageKey(), JSON.stringify(list));
-              localStorage.setItem(legacyReadKey(n.id,user.username),'true');
-            }
-          }
-        }
-      }catch(e){}
+  function markShownNoticesAsRead(){
+    var u=user();
+    if(!u || isAdminAccount()) return;
+    var notices=loadNotices();
+    var changed=false;
+    var now=new Date().toISOString();
+    notices.forEach(function(n){
+      if(n && n.id && !alreadyRead(n,u)){
+        try{
+          if(typeof markTeacherNoticeRead === 'function') markTeacherNoticeRead(n.id);
+        }catch(e){}
+        readBy(n)[u.username]={username:u.username,name:u.name || u.username,at:now};
+        try{localStorage.setItem(readStorageKey(n.id,u.username),'true');}catch(e){}
+        changed=true;
+      }
     });
+    if(changed) saveNotices(notices);
+    try{ if(typeof updateTeacherNoticeBadge === 'function') updateTeacherNoticeBadge(); }catch(e){}
+    try{ if(typeof renderTeacherNotices === 'function') renderTeacherNotices(); }catch(e){}
+    try{ if(typeof renderAdminCentral === 'function') renderAdminCentral(); }catch(e){}
+  }
+
+  function closeMandatoryNoticePopup(){
+    markShownNoticesAsRead();
     var modal=document.getElementById('mandatoryNoticeModal');
     if(modal){
       modal.classList.remove('show');
       modal.setAttribute('aria-hidden','true');
     }
-    try{ if(typeof updateTeacherNoticeBadge === 'function') updateTeacherNoticeBadge(); }catch(e){}
-    try{ if(typeof renderTeacherNotices === 'function') renderTeacherNotices(); }catch(e){}
+    popupIsOpen=false;
   }
 
-  window.openMandatoryNoticePopup = openMandatoryNoticePopup;
-  window.closeAndMarkMandatoryNotices = closeAndMarkMandatoryNotices;
+  function scheduleFirstLoginPopup(){
+    forcePainelForTeacher();
+    [120,350,700,1200,2200,3800].forEach(function(ms){
+      setTimeout(function(){showMandatoryNoticePopup();},ms);
+    });
+  }
+
+  window.showMandatoryNoticePopup=showMandatoryNoticePopup;
+  window.openMandatoryNoticePopup=showMandatoryNoticePopup;
+  window.closeMandatoryNoticePopup=closeMandatoryNoticePopup;
+  window.closeAndMarkMandatoryNotices=closeMandatoryNoticePopup;
+  window.scheduleFirstLoginNoticePopup=scheduleFirstLoginPopup;
+
+  var oldAttempt=window.attemptLogin;
+  if(typeof oldAttempt === 'function'){
+    window.attemptLogin=function(){
+      var result=oldAttempt.apply(this,arguments);
+      setTimeout(scheduleFirstLoginPopup,60);
+      return result;
+    };
+  }
+
+  var oldSetLoginVisible=window.setLoginVisible;
+  if(typeof oldSetLoginVisible === 'function'){
+    window.setLoginVisible=function(isVisible){
+      var result=oldSetLoginVisible.apply(this,arguments);
+      if(!isVisible) setTimeout(scheduleFirstLoginPopup,80);
+      return result;
+    };
+  }
+
+  var oldSwitchView=window.switchView;
+  if(typeof oldSwitchView === 'function'){
+    window.switchView=function(){
+      var result=oldSwitchView.apply(this,arguments);
+      setTimeout(function(){showMandatoryNoticePopup();},180);
+      return result;
+    };
+  }
 
   document.addEventListener('click',function(e){
     if(e.target.closest('#mandatoryNoticeCloseBtn') || e.target.closest('#mandatoryNoticeOkBtn')){
       e.preventDefault();
       e.stopPropagation();
-      closeAndMarkMandatoryNotices();
+      closeMandatoryNoticePopup();
     }
   },true);
 
@@ -7893,34 +7949,18 @@ function printReportStable(){
       var modal=document.getElementById('mandatoryNoticeModal');
       if(modal && modal.classList.contains('show')){
         e.preventDefault();
-        closeAndMarkMandatoryNotices();
+        closeMandatoryNoticePopup();
       }
     }
+  },true);
+
+  document.addEventListener('DOMContentLoaded',function(){
+    setTimeout(scheduleFirstLoginPopup,400);
   });
 
-  function schedulePopupChecks(){
-    [350,900,1800,3200].forEach(function(delay){
-      setTimeout(openMandatoryNoticePopup,delay);
-    });
-  }
-
-  document.addEventListener('DOMContentLoaded',schedulePopupChecks);
-
-  var previousSwitchView=window.switchView;
-  if(typeof previousSwitchView === 'function'){
-    window.switchView=function(){
-      var result=previousSwitchView.apply(this,arguments);
-      setTimeout(openMandatoryNoticePopup,250);
-      return result;
-    };
-  }
-
-  setInterval(function(){
-    var modal=document.getElementById('mandatoryNoticeModal');
-    if(modal && !modal.classList.contains('show')) openMandatoryNoticePopup();
-  },8000);
+  setTimeout(scheduleFirstLoginPopup,900);
 })();
-<\/script>
+</script>
 
 </body>
 </html>`;
@@ -13343,7 +13383,7 @@ renderSchedule();
     const badge=document.getElementById('currentUserBadge');
     if(badge) badge.textContent=user.role==='admin' ? 'Admin' : 'Professor: '+user.name;
 
-    const targetView=user.role==='admin' ? 'teacherDashboardView' : 'mainCalendarView';
+    const targetView=user.role==='admin' ? 'teacherDashboardView' : 'scheduleView';
 
     try{
       if(typeof window.setCurrentUser==='function') window.setCurrentUser(user);
@@ -13354,14 +13394,6 @@ renderSchedule();
       else activateView(targetView);
     }catch(e){
       activateView(targetView);
-    }
-
-    // Teacher accounts must land on the shared Painel and immediately acknowledge unread Admin notices.
-    if(user.role!=='admin'){
-      setTimeout(function(){
-        try{ if(typeof window.switchView==='function') window.switchView('mainCalendarView'); else activateView('mainCalendarView'); }catch(e){}
-        try{ if(typeof window.openMandatoryNoticePopup==='function') window.openMandatoryNoticePopup(); }catch(e){}
-      },180);
     }
 
     setTimeout(function(){
