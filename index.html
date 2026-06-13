@@ -5356,6 +5356,24 @@ body.sidebar-collapsed .tabs .tab[data-view="mainCalendarView"]::before{content:
       box-shadow:inset 4px 0 0 #111827;
     }
 
+
+    .app-user-title h1{
+      margin:0;
+      font-size:28px;
+      line-height:1.1;
+      letter-spacing:-.04em;
+      color:#111827;
+    }
+
+
+    /* Área do Professor: remove unused lower boxes, keep hidden containers for JS compatibility */
+    .teacher-hidden-legacy-panels{
+      display:none!important;
+      visibility:hidden!important;
+      height:0!important;
+      overflow:hidden!important;
+    }
+
 </style>
 <script>
 document.documentElement.classList.remove('admin-user');
@@ -5686,6 +5704,233 @@ document.documentElement.classList.add('teacher-user');
   @page{size:A4 portrait!important;margin:8mm!important;}
 }
 </style>
+
+
+<style id="documento-interno-original-style-real-fix">
+/* === Documento Interno: restore original rudimentary internal-processing look === */
+#internalDocumentView .internal-doc-preview{
+  display:grid!important;
+  gap:18px!important;
+  justify-items:center!important;
+}
+#internalDocumentView .internal-doc-page{
+  background:#fff!important;
+  border:1px solid #111827!important;
+  border-radius:4px!important;
+  padding:14px!important;
+  color:#111827!important;
+  box-shadow:0 12px 28px rgba(15,23,42,.08)!important;
+  font-family:Arial, Helvetica, sans-serif!important;
+  width:210mm!important;
+  min-height:297mm!important;
+  max-width:100%!important;
+  box-sizing:border-box!important;
+  margin:0 auto!important;
+  overflow:visible!important;
+}
+#internalDocumentView .internal-doc-title{
+  text-align:center!important;
+  font-size:16px!important;
+  font-weight:900!important;
+  text-transform:uppercase!important;
+  border:2px solid #111827!important;
+  background:#fff!important;
+  color:#111827!important;
+  padding:6px 8px!important;
+  margin:0 0 8px 0!important;
+  letter-spacing:.02em!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+#internalDocumentView .internal-doc-title::after{display:none!important;content:none!important;}
+#internalDocumentView .internal-info-grid{
+  display:grid!important;
+  grid-template-columns:1fr 1fr 1fr 1fr!important;
+  gap:0!important;
+  border:1px solid #111827!important;
+  margin-bottom:10px!important;
+  background:#fff!important;
+  border-radius:0!important;
+  overflow:visible!important;
+  box-shadow:none!important;
+}
+#internalDocumentView .internal-info-cell{
+  border:0!important;
+  border-right:1px solid #111827!important;
+  border-left:0!important;
+  border-top:0!important;
+  border-bottom:0!important;
+  padding:6px 8px!important;
+  min-height:42px!important;
+  background:#fff!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+}
+#internalDocumentView .internal-info-cell:last-child{border-right:0!important;}
+#internalDocumentView .internal-info-cell::before,
+#internalDocumentView .internal-info-cell::after{display:none!important;content:none!important;}
+#internalDocumentView .internal-info-label{
+  font-size:10px!important;
+  font-weight:900!important;
+  text-transform:uppercase!important;
+  color:#374151!important;
+  margin:0 0 4px 0!important;
+  letter-spacing:0!important;
+}
+#internalDocumentView .internal-info-value{
+  font-size:13px!important;
+  font-weight:800!important;
+  color:#111827!important;
+  line-height:1.2!important;
+}
+#internalDocumentView .internal-two-col{
+  display:grid!important;
+  grid-template-columns:1fr 1fr!important;
+  gap:8px!important;
+  margin-bottom:10px!important;
+}
+#internalDocumentView .internal-box{
+  border:1px solid #111827!important;
+  min-height:58px!important;
+  background:#fff!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  overflow:visible!important;
+}
+#internalDocumentView .internal-box-title{
+  background:#f3f4f6!important;
+  color:#111827!important;
+  border-bottom:1px solid #111827!important;
+  text-align:center!important;
+  font-size:11px!important;
+  font-weight:900!important;
+  padding:4px!important;
+  text-transform:uppercase!important;
+  letter-spacing:0!important;
+}
+#internalDocumentView .internal-box-content{
+  padding:6px 8px!important;
+  font-size:11px!important;
+  line-height:1.35!important;
+  min-height:38px!important;
+  color:#111827!important;
+  white-space:normal!important;
+  word-break:normal!important;
+  overflow-wrap:anywhere!important;
+}
+#internalDocumentView .internal-stage{
+  margin-top:10px!important;
+  border:2px solid #111827!important;
+  background:#fff!important;
+  border-radius:0!important;
+  box-shadow:none!important;
+  page-break-inside:avoid!important;
+  break-inside:avoid!important;
+  overflow:visible!important;
+}
+#internalDocumentView .internal-stage-header{
+  text-align:center!important;
+  font-weight:900!important;
+  font-size:13px!important;
+  border-bottom:1px solid #111827!important;
+  padding:4px!important;
+  background:#f9fafb!important;
+  color:#111827!important;
+  text-transform:none!important;
+  letter-spacing:0!important;
+}
+#internalDocumentView .internal-objectives-title{
+  text-align:center!important;
+  font-weight:900!important;
+  font-size:12px!important;
+  border-bottom:1px solid #111827!important;
+  padding:3px!important;
+  background:#fff!important;
+  color:#111827!important;
+  text-transform:none!important;
+  letter-spacing:0!important;
+}
+#internalDocumentView .internal-objectives-table,
+#internalDocumentView .internal-eval-table{
+  width:100%!important;
+  border-collapse:collapse!important;
+  table-layout:fixed!important;
+  background:#fff!important;
+  border-radius:0!important;
+  overflow:visible!important;
+}
+#internalDocumentView .internal-objectives-table td{
+  border:0!important;
+  border-bottom:1px solid #111827!important;
+  padding:4px 6px!important;
+  font-size:10.5px!important;
+  line-height:1.25!important;
+  vertical-align:top!important;
+  color:#111827!important;
+  background:#fff!important;
+}
+#internalDocumentView .internal-objectives-table tr:last-child td{border-bottom:0!important;}
+#internalDocumentView .internal-num{
+  width:32px!important;
+  text-align:right!important;
+  font-weight:800!important;
+  border-right:1px solid #111827!important;
+  white-space:nowrap!important;
+  color:#111827!important;
+}
+#internalDocumentView .internal-eval-table th,
+#internalDocumentView .internal-eval-table td{
+  border:1px solid #111827!important;
+  padding:3px 4px!important;
+  font-size:10px!important;
+  line-height:1.15!important;
+  vertical-align:middle!important;
+  background:#fff!important;
+  color:#111827!important;
+}
+#internalDocumentView .internal-eval-table th{
+  background:#fff!important;
+  color:#111827!important;
+  text-align:center!important;
+  font-weight:900!important;
+}
+#internalDocumentView .internal-eval-table tbody tr:nth-child(even) td{background:#fff!important;}
+#internalDocumentView .internal-student-name{
+  width:150px!important;
+  font-weight:800!important;
+  white-space:nowrap!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+}
+@media print{
+  body.print-internal #internalDocumentPreview{width:194mm!important;margin:0 auto!important;}
+  body.print-internal .internal-doc-page{
+    width:194mm!important;
+    min-height:281mm!important;
+    max-width:194mm!important;
+    box-shadow:none!important;
+    border:0!important;
+    border-radius:0!important;
+    padding:0!important;
+    background:#fff!important;
+  }
+  body.print-internal .internal-info-grid{gap:0!important;border:1px solid #000!important;background:#fff!important;}
+  body.print-internal .internal-info-cell{
+    border:0!important;
+    border-right:1px solid #000!important;
+    background:#fff!important;
+  }
+  body.print-internal .internal-info-cell:last-child{border-right:0!important;}
+  body.print-internal .internal-stage-header,
+  body.print-internal .internal-objectives-title,
+  body.print-internal .internal-eval-table th{
+    background:#fff!important;
+    color:#000!important;
+    -webkit-print-color-adjust:exact!important;
+    print-color-adjust:exact!important;
+  }
+}
+</style>
 </head>
 <body class="login-locked">
 
@@ -5722,8 +5967,8 @@ document.documentElement.classList.add('teacher-user');
 
   <main class="page">
     <header class="header">
-      <div><h1>Avaliações SLB</h1><p>Horário, turmas, alunos, avaliação e documento final</p></div>
-      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><button class="logout-btn teacher-profile-btn" id="currentUserBadge" type="button" data-view-btn="teacherDashboardView">Professor</button><button class="logout-btn" id="cloudLoadBtn" type="button">Carregar cloud</button><button class="logout-btn" id="logoutBtn" type="button" onclick="robustLogout()">Sair</button></div>
+      <div class="app-user-title"><h1 id="appHeaderTeacherName">Utilizador</h1></div>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><button class="logout-btn teacher-profile-btn" id="currentUserBadge" type="button" data-view-btn="teacherDashboardView">Utilizador</button><button class="logout-btn" id="cloudLoadBtn" type="button">Carregar cloud</button><button class="logout-btn" id="logoutBtn" type="button" onclick="robustLogout()">Sair</button></div>
     </header>
 
     <nav class="tabs">
@@ -5747,7 +5992,6 @@ document.documentElement.classList.add('teacher-user');
               <button class="btn ghost" type="button" onclick="mainCalendarMove(1)">›</button>
             </div>
             <div class="main-calendar-grid" id="mainCalendarGrid"></div>
-            <div class="main-calendar-consult-note">Modo consulta: os professores podem ver todas as atividades, avaliações e eventos partilhados. Só a conta Admin pode criar, editar ou remover eventos.</div>
           </div>
 
           <div class="main-calendar-card main-calendar-admin-only">
@@ -5989,7 +6233,6 @@ document.documentElement.classList.add('teacher-user');
           <div class="teacher-news-head">
             <div>
               <div class="section-label">Avisos / Informações do Admin</div>
-              <div class="hint">Notícias, semanas especiais, reuniões e eventos para os professores.</div>
             </div>
             <button class="btn small ghost" type="button" id="refreshTeacherNewsBtn">Atualizar avisos</button>
           </div>
@@ -6009,37 +6252,11 @@ document.documentElement.classList.add('teacher-user');
           <div id="teacherAlertsList" class="teacher-alerts-list"></div>
         </section>
 
-        <div class="teacher-dashboard-grid">
-          <section class="teacher-panel">
-            <div class="teacher-panel-head">
-              <div>
-                <div class="section-label">Resultados da pesquisa</div>
-                <div class="hint">Mostra o estado de avaliação do aluno nas turmas onde aparece.</div>
-              </div>
-            </div>
-            <div id="teacherSearchResults" class="teacher-search-results"></div>
-          </section>
-
-          <section class="teacher-panel">
-            <div class="teacher-panel-head">
-              <div>
-                <div class="section-label">Turmas do professor</div>
-                <div class="hint">No Admin, escolhe primeiro o professor e depois o dia. Isto evita listas enormes.</div>
-              </div>
-            </div>
-            <div id="teacherClassList" class="teacher-class-list"></div>
-          </section>
-        </div>
-
-        <section class="teacher-panel">
-          <div class="teacher-panel-head">
-            <div>
-              <div class="section-label">Métricas por objetivo</div>
-              <div class="hint">Objetivos com mais alunos em “A melhorar”.</div>
-            </div>
-          </div>
+        <div class="teacher-hidden-legacy-panels" style="display:none!important" aria-hidden="true">
+          <div id="teacherSearchResults" class="teacher-search-results"></div>
+          <div id="teacherClassList" class="teacher-class-list"></div>
           <div id="teacherObjectiveInsights" class="teacher-objective-insights"></div>
-        </section>
+        </div>
       </section>
     </section>
 
@@ -6302,7 +6519,11 @@ function updateRoleVisibility(){
 
 function updateCurrentUserBadge(){
   const badge=document.getElementById('currentUserBadge');
-  if(badge){ const u=currentLoggedUser?.(); badge.textContent=(u?.role==='admin') ? 'Admin' : `Professor: ${professorName}`; }
+  const headerName=document.getElementById('appHeaderTeacherName');
+  const u=currentLoggedUser?.();
+  const label=(u?.role==='admin') ? (u?.name || 'Admin') : (u?.name || professorName || '');
+  if(badge){ badge.textContent=label; }
+  if(headerName){ headerName.textContent=label; }
 }
 
 
@@ -7950,6 +8171,19 @@ function printReportStable(){
 })();
 <\/script>
 
+
+<!-- Admin aviso read receipts collapsed by default -->
+<style id="slbCollapsedReadReceiptsCss">
+  .notice-read-receipts{margin-top:10px;border:1px solid #edf0f3;background:#f9fafb;border-radius:10px;padding:0;overflow:hidden}
+  .notice-read-receipts summary{list-style:none;cursor:pointer;padding:10px 12px;font-size:12px;font-weight:950;color:#111827;display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .notice-read-receipts summary::-webkit-details-marker{display:none}
+  .notice-read-receipts summary:after{content:'+';width:22px;height:22px;border:1px solid #e5e7eb;background:#fff;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-weight:950;color:#9f0015}
+  .notice-read-receipts[open] summary:after{content:'–'}
+  .notice-read-receipts-list{display:grid;gap:6px;padding:0 12px 12px}
+  .notice-read-receipt-row{display:flex;justify-content:space-between;gap:8px;align-items:center;border-bottom:1px dashed #e5e7eb;padding:7px 0;font-size:12px;font-weight:850;color:#374151}
+  .notice-read-receipt-row:last-child{border-bottom:0}
+</style>
+
 </body>
 </html>`;
 
@@ -8237,6 +8471,19 @@ body{
       <button class="btn primary small" type="button" onclick="openTeacherNoticesFromToast()">Ver avisos</button>
     </div>
   </div>
+
+
+<!-- Admin aviso read receipts collapsed by default -->
+<style id="slbCollapsedReadReceiptsCss">
+  .notice-read-receipts{margin-top:10px;border:1px solid #edf0f3;background:#f9fafb;border-radius:10px;padding:0;overflow:hidden}
+  .notice-read-receipts summary{list-style:none;cursor:pointer;padding:10px 12px;font-size:12px;font-weight:950;color:#111827;display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .notice-read-receipts summary::-webkit-details-marker{display:none}
+  .notice-read-receipts summary:after{content:'+';width:22px;height:22px;border:1px solid #e5e7eb;background:#fff;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-weight:950;color:#9f0015}
+  .notice-read-receipts[open] summary:after{content:'–'}
+  .notice-read-receipts-list{display:grid;gap:6px;padding:0 12px 12px}
+  .notice-read-receipt-row{display:flex;justify-content:space-between;gap:8px;align-items:center;border-bottom:1px dashed #e5e7eb;padding:7px 0;font-size:12px;font-weight:850;color:#374151}
+  .notice-read-receipt-row:last-child{border-bottom:0}
+</style>
 
 </body>
 </html>`;
@@ -8829,7 +9076,7 @@ function removeClassFromSlot(key, className){
 function populateCopyMenus(){
   ['copyFrom','copyTo'].forEach(id=>{
     const sel=document.getElementById(id); sel.innerHTML='';
-    days.filter(d=>d!=='Domingo').forEach(d=>sel.insertAdjacentHTML('beforeend',`<option value="${d}">${d}-feira</option>`));
+    days.filter(d=>d!=='Domingo').forEach(d=>sel.insertAdjacentHTML('beforeend',`<option value="${d}">${formatDayLabel(d)}</option>`));
   });
   document.getElementById('copyFrom').value='Segunda'; document.getElementById('copyTo').value='Quarta';
 }
@@ -9307,6 +9554,19 @@ function adminClassDetailsDocumentHtml(details){
       <button class="btn primary small" type="button" onclick="openTeacherNoticesFromToast()">Ver avisos</button>
     </div>
   </div>
+
+
+<!-- Admin aviso read receipts collapsed by default -->
+<style id="slbCollapsedReadReceiptsCss">
+  .notice-read-receipts{margin-top:10px;border:1px solid #edf0f3;background:#f9fafb;border-radius:10px;padding:0;overflow:hidden}
+  .notice-read-receipts summary{list-style:none;cursor:pointer;padding:10px 12px;font-size:12px;font-weight:950;color:#111827;display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .notice-read-receipts summary::-webkit-details-marker{display:none}
+  .notice-read-receipts summary:after{content:'+';width:22px;height:22px;border:1px solid #e5e7eb;background:#fff;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-weight:950;color:#9f0015}
+  .notice-read-receipts[open] summary:after{content:'–'}
+  .notice-read-receipts-list{display:grid;gap:6px;padding:0 12px 12px}
+  .notice-read-receipt-row{display:flex;justify-content:space-between;gap:8px;align-items:center;border-bottom:1px dashed #e5e7eb;padding:7px 0;font-size:12px;font-weight:850;color:#374151}
+  .notice-read-receipt-row:last-child{border-bottom:0}
+</style>
 
 </body>
 </html>`;
@@ -9932,7 +10192,7 @@ function classFromSavedClassRecordId(id){
   return {
     id:raw,
     className,
-    displayName:`${className} — ${day}-feira — ${time}`,
+    displayName:`${className} — ${formatDayLabel(day)} — ${time}`,
     isSaturday:day==='Sábado',
     blocks:[{day,time}]
   };
@@ -9972,7 +10232,7 @@ function selectedClasses(){
       classes.push({
         id,
         className:classNameValue,
-        displayName:`${classNameValue} — ${day}-feira — ${time}`,
+        displayName:`${classNameValue} — ${formatDayLabel(day)} — ${time}`,
         isSaturday:day==='Sábado',
         blocks:[{day,time}]
       });
@@ -11036,7 +11296,7 @@ function renderActiveEvaluation(){
   const data=state.classes[c.id]||{students:[]}; const ev=evalData(c.id); const objectives=flattenObjectives(c.className);
   const totalPossible=data.students.length*objectives.length; const ok=data.students.reduce((sum,s,i)=>sum+okCount(c.id,i,c.className),0); const pct=totalPossible?Math.round(ok/totalPossible*100):0;
   const isAma=usesAma1Evaluation(c.className);
-  main.innerHTML=`<div class="eval-hero"><h2>Avaliação — ${safe(c.displayName||c.className)}</h2><p>${isAma?'Objetivos específicos AMA 1A / AMA 1B / AMA 2A / AMA 2B / AMA 3 / Nível 1 / Nível 2 / Nível 3, divididos em 3 etapas.':'Checklist por aluno. Marca o que cada aluno já realiza.'}</p><div class="block-chips">${c.blocks.map(b=>`<span class="block-chip">${safe(b.day)} · ${safe(b.time)}</span>`).join('')}</div></div><div class="stats-grid"><div class="stat-card"><div class="stat-label">Alunos</div><div class="stat-value">${data.students.length}</div></div><div class="stat-card"><div class="stat-label">Objetivos</div><div class="stat-value">${objectives.length}</div></div><div class="stat-card"><div class="stat-label">OK total</div><div class="stat-value">${pct}%</div></div><div class="stat-card"><div class="stat-label">Último save</div><div class="stat-value" style="font-size:16px">${safe(ev.updatedAt||'—')}</div></div></div><div class="toolbar" style="margin-bottom:12px">
+  main.innerHTML=`<div class="eval-hero"><h2>${safe(c.displayName||c.className)}</h2><p>${isAma?'Objetivos específicos AMA 1A / AMA 1B / AMA 2A / AMA 2B / AMA 3 / Nível 1 / Nível 2 / Nível 3, divididos em 3 etapas.':'Checklist por aluno. Marca o que cada aluno já realiza.'}</p><div class="block-chips">${c.blocks.map(b=>`<span class="block-chip">${safe(b.day)} · ${safe(b.time)}</span>`).join('')}</div></div><div class="stats-grid"><div class="stat-card"><div class="stat-label">Alunos</div><div class="stat-value">${data.students.length}</div></div><div class="stat-card"><div class="stat-label">Objetivos</div><div class="stat-value">${objectives.length}</div></div><div class="stat-card"><div class="stat-label">OK total</div><div class="stat-value">${pct}%</div></div><div class="stat-card"><div class="stat-label">Último save</div><div class="stat-value" style="font-size:16px">${safe(ev.updatedAt||'—')}</div></div></div><div class="toolbar" style="margin-bottom:12px">
     <div class="toolbar-actions">
       <button class="btn small secondary" id="allOkBtn">Todos OK da turma</button>
       <button class="btn small ghost" id="clearChecksBtn">Limpar checks</button>
@@ -11455,7 +11715,7 @@ function selectedClassesForState(appState){
       classes.push({
         id,
         className:classNameValue,
-        displayName:`${classNameValue} — ${day}-feira — ${time}`,
+        displayName:`${classNameValue} — ${formatDayLabel(day)} — ${time}`,
         isSaturday:day==='Sábado',
         blocks:[{day,time}]
       });
@@ -12228,7 +12488,7 @@ function renderTeacherSearchResults(){
   });
 
   const emptyMessage = !query
-    ? '<div class="teacher-empty">Escreve o nome de um aluno para pesquisar.</div>'
+    ? ''
     : '<div class="teacher-empty">Nenhum aluno encontrado.</div>';
 
   if(!query || !matches.length){
@@ -13048,6 +13308,64 @@ body{
   }
 }
 </style>
+
+<style>
+/* === Documento Interno: remove red side bars and black section bars === */
+.internal-info-cell{
+  border-left:1px solid #111827!important;
+  border-top:1px solid #111827!important;
+  border-bottom:1px solid #111827!important;
+  border-right:1px solid #111827!important;
+  background:#fff!important;
+}
+.internal-info-grid{
+  border:1px solid #111827!important;
+  gap:0!important;
+  background:#fff!important;
+}
+.internal-info-cell + .internal-info-cell{
+  border-left:0!important;
+}
+.internal-stage-header,
+.internal-objectives-title,
+.internal-eval-table th{
+  background:#fff!important;
+  color:#111827!important;
+  -webkit-print-color-adjust:exact!important;
+  print-color-adjust:exact!important;
+}
+.internal-stage-header{
+  border-bottom:1px solid #111827!important;
+}
+.internal-eval-table th{
+  color:#000!important;
+}
+@media print{
+  body.print-internal .internal-info-cell{
+    border-left:1px solid #000!important;
+    border-top:1px solid #000!important;
+    border-bottom:1px solid #000!important;
+    border-right:1px solid #000!important;
+    background:#fff!important;
+  }
+  body.print-internal .internal-info-grid{
+    border:1px solid #000!important;
+    gap:0!important;
+    background:#fff!important;
+  }
+  body.print-internal .internal-info-cell + .internal-info-cell{
+    border-left:0!important;
+  }
+  body.print-internal .internal-stage-header,
+  body.print-internal .internal-objectives-title,
+  body.print-internal .internal-eval-table th{
+    background:#fff!important;
+    color:#000!important;
+    -webkit-print-color-adjust:exact!important;
+    print-color-adjust:exact!important;
+  }
+}
+</style>
 </head>
 <body class="${safe(bodyClass)}">
   <div class="teacher-print-actions">
@@ -13077,6 +13395,19 @@ function printTeacherDocumentStable(){
       <button class="btn primary small" type="button" onclick="openTeacherNoticesFromToast()">Ver avisos</button>
     </div>
   </div>
+
+
+<!-- Admin aviso read receipts collapsed by default -->
+<style id="slbCollapsedReadReceiptsCss">
+  .notice-read-receipts{margin-top:10px;border:1px solid #edf0f3;background:#f9fafb;border-radius:10px;padding:0;overflow:hidden}
+  .notice-read-receipts summary{list-style:none;cursor:pointer;padding:10px 12px;font-size:12px;font-weight:950;color:#111827;display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .notice-read-receipts summary::-webkit-details-marker{display:none}
+  .notice-read-receipts summary:after{content:'+';width:22px;height:22px;border:1px solid #e5e7eb;background:#fff;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-weight:950;color:#9f0015}
+  .notice-read-receipts[open] summary:after{content:'–'}
+  .notice-read-receipts-list{display:grid;gap:6px;padding:0 12px 12px}
+  .notice-read-receipt-row{display:flex;justify-content:space-between;gap:8px;align-items:center;border-bottom:1px dashed #e5e7eb;padding:7px 0;font-size:12px;font-weight:850;color:#374151}
+  .notice-read-receipt-row:last-child{border-bottom:0}
+</style>
 
 </body>
 </html>`;
@@ -13369,7 +13700,9 @@ renderSchedule();
     document.documentElement.classList.toggle('teacher-user', user.role!=='admin');
 
     const badge=document.getElementById('currentUserBadge');
-    if(badge) badge.textContent=user.role==='admin' ? 'Admin' : 'Professor: '+user.name;
+    if(badge) badge.textContent=user.role==='admin' ? (user.name || 'Admin') : (user.name || '');
+    const headerName=document.getElementById('appHeaderTeacherName');
+    if(headerName) headerName.textContent=user.role==='admin' ? (user.name || 'Admin') : (user.name || '');
 
     const targetView='mainCalendarView';
 
@@ -14211,7 +14544,7 @@ setInterval(()=>{
         '<div class="teacher-news-form-actions"><button class="btn primary" type="button" data-publish-notice="true">'+(NOTICE_EDIT_ID?'Guardar alterações':'Publicar aviso')+'</button>'+(NOTICE_EDIT_ID?'<button class="btn ghost" type="button" data-cancel-notice-edit="true">Cancelar</button>':'')+'</div>'+
         '<div id="teacherNewsStatus" class="teacher-news-status"></div></div>';
     }else{
-      composer.innerHTML='<div class="hint">Consulta os avisos publicados pelo Admin. Marca como lido para confirmar receção.</div><div id="teacherNewsStatus" class="teacher-news-status"></div>';
+      composer.innerHTML='<div id="teacherNewsStatus" class="teacher-news-status"></div>';
     }
 
     if(!notices.length){ list.innerHTML='<div class="teacher-empty">Ainda não existem avisos publicados pelo Admin.</div>'; updateBadge(); return; }
@@ -14224,7 +14557,7 @@ setInterval(()=>{
       var receipts='';
       if(admin()){
         var rb=readBy(n);
-        receipts='<div class="teacher-news-message" style="background:#f9fafb;border:1px solid #edf0f3;padding:10px;margin-top:8px"><strong>Leituras dos professores</strong><div style="display:grid;gap:6px;margin-top:8px">'+teacherList.map(function(t){var r=rb[t.username]; return '<div style="display:flex;justify-content:space-between;gap:8px;align-items:center;border-bottom:1px dashed #e5e7eb;padding-bottom:5px"><span>'+esc(t.name)+'</span><span class="teacher-news-chip '+(r?'normal':'important')+'">'+(r?'Lido · '+esc(fmt(r.at)):'Por ler')+'</span></div>';}).join('')+'</div></div>';
+        receipts='<details class="notice-read-receipts"><summary>Ver leituras dos professores</summary><div class="notice-read-receipts-list">'+teacherList.map(function(t){var r=rb[t.username]; return '<div class="notice-read-receipt-row"><span>'+esc(t.name)+'</span><span class="teacher-news-chip '+(r?'normal':'important')+'">'+(r?'Lido · '+esc(fmt(r.at)):'Por ler')+'</span></div>';}).join('')+'</div></details>';
       }
       return '<article class="teacher-news-card '+(read?'':'unread')+'"><div class="teacher-news-top"><div><div class="teacher-news-title">'+esc(n.title)+'</div><div class="teacher-news-meta">'+esc(n.category||'Geral')+' · Publicado por '+esc(n.author||'Admin')+' · '+esc(created)+esc(updated)+esc(dateText)+'</div></div><span class="teacher-news-chip '+esc(n.priority||'normal')+'">'+esc(priorityLabel)+'</span></div><div class="teacher-news-message">'+esc(n.message)+'</div>'+receipts+'<div class="teacher-news-actions"><span class="teacher-news-chip '+(read?'normal':'important')+'">'+(read?'Lido':'Por ler')+'</span><div style="display:flex;gap:7px;flex-wrap:wrap">'+(!read && !admin()?'<button class="btn small ghost" type="button" data-mark-notice-read="'+esc(n.id)+'">Marcar como lido</button>':'')+(admin()?'<button class="btn small ghost" type="button" data-edit-notice="'+esc(n.id)+'">Editar</button><button class="btn small danger" type="button" data-delete-notice="'+esc(n.id)+'">Apagar</button>':'')+'</div></div></article>';
     }).join('');
@@ -14356,5 +14689,596 @@ setInterval(()=>{
 })();
 </script>
 
+
+
+<!-- Avisos comments section: real app patch, outside report/print templates -->
+<style id="slbNoticeCommentsCss">
+  .notice-comments-block{margin-top:12px;border:1px solid #edf0f3;background:#fbfbfc;padding:12px;display:grid;gap:10px;border-radius:10px}
+  .notice-comments-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}
+  .notice-comments-title{font-size:12px;font-weight:950;text-transform:uppercase;letter-spacing:.05em;color:#111827}
+  .notice-comments-count{font-size:10px;font-weight:950;color:#6b7280;border:1px solid #e5e7eb;background:#fff;padding:5px 8px;border-radius:8px}
+  .notice-comments-list{display:grid;gap:8px}
+  .notice-comment-empty{font-size:12px;font-weight:750;color:#6b7280;border:1px dashed #d1d5db;background:#fff;padding:10px;border-radius:8px}
+  .notice-comment-item{border:1px solid #e5e7eb;background:#fff;padding:10px;border-radius:8px;display:grid;gap:6px}
+  .notice-comment-top{display:flex;justify-content:space-between;gap:10px;align-items:flex-start;flex-wrap:wrap}
+  .notice-comment-author{font-size:12px;font-weight:950;color:#111827}
+  .notice-comment-meta{font-size:10px;font-weight:850;color:#6b7280;margin-top:2px}
+  .notice-comment-message{font-size:12px;font-weight:750;color:#374151;line-height:1.45;white-space:pre-wrap}
+  .notice-comment-form{display:grid;gap:8px;margin-top:2px}
+  .notice-comment-form textarea{width:100%;min-height:58px;border:1px solid #d1d5db;border-radius:8px;padding:9px 10px;font-family:inherit;font-size:12px;font-weight:750;resize:vertical;background:#fff;color:#111827}
+  .notice-comment-form-actions{display:flex;justify-content:flex-end;gap:8px;flex-wrap:wrap}
+  .notice-comment-delete{border:1px solid #fecaca;background:#fff;color:#991b1b;padding:5px 7px;font-size:10px;font-weight:950;cursor:pointer;border-radius:6px}
+  .notice-comment-delete:hover{background:#fee2e2}
+</style>
+<script id="slbNoticeCommentsScript">
+(function(){
+  'use strict';
+  var COMMENTS_KEY_SUFFIX='_teacher_notice_comments_v1';
+  function esc(v){
+    try{ if(typeof safe==='function') return safe(v); }catch(e){}
+    return String(v==null?'':v).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});
+  }
+  function fmt(v){ if(!v) return ''; try{return new Date(v).toLocaleString('pt-PT');}catch(e){return String(v||'');} }
+  function currentUser(){
+    try{ if(typeof currentLoggedUser==='function') return currentLoggedUser(); }catch(e){}
+    try{ if(typeof currentUserKey!=='undefined') return JSON.parse(localStorage.getItem(currentUserKey)||'null'); }catch(e){}
+    return null;
+  }
+  function isAdmin(){
+    var u=currentUser();
+    try{ if(typeof isAdminUser==='function') return !!isAdminUser(); }catch(e){}
+    return !!u && (u.role==='admin' || u.username==='Admin');
+  }
+  function baseStoreKey(){ try{ if(typeof storeKey!=='undefined') return storeKey; }catch(e){} return 'avaliacoes_slb'; }
+  function noticeStorageKey(){
+    try{ if(typeof teacherNoticesKey!=='undefined') return teacherNoticesKey; }catch(e){}
+    return baseStoreKey()+'_teacher_notices_v1';
+  }
+  function commentsStorageKey(){ return baseStoreKey()+COMMENTS_KEY_SUFFIX; }
+  function loadNotices(){
+    try{ var data=JSON.parse(localStorage.getItem(noticeStorageKey())||'[]'); return Array.isArray(data)?data:[]; }catch(e){ return []; }
+  }
+  function loadCommentsMap(){
+    try{ var data=JSON.parse(localStorage.getItem(commentsStorageKey())||'{}'); return data && typeof data==='object' && !Array.isArray(data) ? data : {}; }catch(e){ return {}; }
+  }
+  function saveCommentsMap(map){ try{ localStorage.setItem(commentsStorageKey(), JSON.stringify(map||{})); }catch(e){} }
+  function getRoot(){
+    var adminView=document.getElementById('adminCentralView');
+    var teacherView=document.getElementById('teacherDashboardView');
+    if(adminView && adminView.classList.contains('active') && adminView.querySelector('#teacherNewsList')) return adminView;
+    if(teacherView && teacherView.classList.contains('active') && teacherView.querySelector('#teacherNewsList')) return teacherView;
+    return document;
+  }
+  function sortedNotices(){ return loadNotices().sort(function(a,b){return String(b.createdAt||'').localeCompare(String(a.createdAt||''));}); }
+  function commentHtml(noticeId, comments){
+    comments=Array.isArray(comments)?comments:[];
+    var rows=comments.length ? comments.map(function(c){
+      return '<div class="notice-comment-item" data-comment-id="'+esc(c.id)+'"><div class="notice-comment-top"><div><div class="notice-comment-author">'+esc(c.authorName||c.authorUsername||'Utilizador')+'</div><div class="notice-comment-meta">'+esc(fmt(c.createdAt))+'</div></div>'+(isAdmin()?'<button class="notice-comment-delete" type="button" data-delete-notice-comment="'+esc(noticeId)+'" data-comment-id="'+esc(c.id)+'">Apagar</button>':'')+'</div><div class="notice-comment-message">'+esc(c.message||'')+'</div></div>';
+    }).join('') : '<div class="notice-comment-empty">Sem comentários ou dúvidas neste aviso.</div>';
+    return '<section class="notice-comments-block" data-notice-comments="'+esc(noticeId)+'"><div class="notice-comments-head"><div class="notice-comments-title">Comentários</div><span class="notice-comments-count">'+comments.length+' comentário(s)</span></div><div class="notice-comments-list">'+rows+'</div><div class="notice-comment-form"><textarea data-comment-text="'+esc(noticeId)+'" placeholder="Escrever comentário ou dúvida sobre este aviso..."></textarea><div class="notice-comment-form-actions"><button class="btn small primary" type="button" data-add-notice-comment="'+esc(noticeId)+'">Comentar</button></div></div></section>';
+  }
+  window.renderNoticeComments = function(){
+    var root=getRoot();
+    var list=root.querySelector('#teacherNewsList');
+    if(!list) return;
+    var notices=sortedNotices();
+    var cards=list.querySelectorAll('.teacher-news-card');
+    if(!cards.length || !notices.length) return;
+    var map=loadCommentsMap();
+    cards.forEach(function(card,idx){
+      var notice=notices[idx];
+      if(!notice || !notice.id) return;
+      var old=card.querySelector('.notice-comments-block');
+      if(old) old.remove();
+      var actions=card.querySelector('.teacher-news-actions');
+      var wrap=document.createElement('div');
+      wrap.innerHTML=commentHtml(notice.id, map[notice.id]||[]);
+      var block=wrap.firstElementChild;
+      if(actions) card.insertBefore(block, actions); else card.appendChild(block);
+    });
+  };
+  window.addNoticeComment = function(noticeId){
+    var root=getRoot();
+    var field=root.querySelector('[data-comment-text="'+CSS.escape(noticeId)+'"]');
+    if(!field) return;
+    var text=(field.value||'').trim();
+    if(!text){ field.focus(); return; }
+    var u=currentUser() || {username:'guest', name:'Utilizador', role:'teacher'};
+    var map=loadCommentsMap();
+    if(!Array.isArray(map[noticeId])) map[noticeId]=[];
+    map[noticeId].push({id:'comment_'+Date.now()+'_'+Math.random().toString(16).slice(2),noticeId:noticeId,authorUsername:u.username||'guest',authorName:u.name||u.username||'Utilizador',role:u.role||'teacher',message:text,createdAt:new Date().toISOString()});
+    saveCommentsMap(map);
+    field.value='';
+    if(typeof renderTeacherNotices==='function') renderTeacherNotices(); else renderNoticeComments();
+  };
+  window.deleteNoticeComment = function(noticeId, commentId){
+    if(!isAdmin()) return;
+    if(!confirm('Apagar este comentário?')) return;
+    var map=loadCommentsMap();
+    map[noticeId]=(map[noticeId]||[]).filter(function(c){return c.id!==commentId;});
+    saveCommentsMap(map);
+    if(typeof renderTeacherNotices==='function') renderTeacherNotices(); else renderNoticeComments();
+  };
+  var originalRender=window.renderTeacherNotices;
+  if(typeof originalRender==='function'){
+    window.renderTeacherNotices=function(){
+      var ret=originalRender.apply(this,arguments);
+      setTimeout(function(){try{renderNoticeComments();}catch(e){console.error(e);}},0);
+      return ret;
+    };
+  }
+  var originalDelete=window.deleteTeacherNotice;
+  if(typeof originalDelete==='function'){
+    window.deleteTeacherNotice=function(id){
+      var existed=loadNotices().some(function(n){return n.id===id;});
+      var ret=originalDelete.apply(this,arguments);
+      var stillExists=loadNotices().some(function(n){return n.id===id;});
+      if(existed && !stillExists){ var map=loadCommentsMap(); delete map[id]; saveCommentsMap(map); }
+      setTimeout(function(){try{renderNoticeComments();}catch(e){}},0);
+      return ret;
+    };
+  }
+  document.addEventListener('click',function(e){
+    var add=e.target.closest('[data-add-notice-comment]');
+    if(add){ e.preventDefault(); e.stopPropagation(); addNoticeComment(add.getAttribute('data-add-notice-comment')); return; }
+    var del=e.target.closest('[data-delete-notice-comment]');
+    if(del){ e.preventDefault(); e.stopPropagation(); deleteNoticeComment(del.getAttribute('data-delete-notice-comment'), del.getAttribute('data-comment-id')); return; }
+  },true);
+  document.addEventListener('DOMContentLoaded',function(){setTimeout(function(){try{renderNoticeComments();}catch(e){}},800);});
+  setTimeout(function(){try{renderNoticeComments();}catch(e){}},1400);
+})();
+</script>
+
+
+
+<!-- Avisos comments @mention patch: label cleaned + visual @mentions -->
+<style id="slbNoticeMentionsCss">
+  .notice-mention{display:inline-flex;align-items:center;gap:2px;background:#fff1f2;border:1px solid rgba(208,0,27,.22);color:#9f0015;border-radius:6px;padding:1px 5px;font-weight:950;white-space:nowrap}
+  .notice-mention.unknown{background:#f9fafb;border-color:#e5e7eb;color:#374151}
+  .notice-mention-helper{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:10px;font-weight:900;color:#6b7280;margin-top:-2px}
+  .notice-mention-chip{border:1px solid #e5e7eb;background:#fff;color:#374151;border-radius:6px;padding:5px 7px;font-size:10px;font-weight:950;cursor:pointer;font-family:inherit}
+  .notice-mention-chip:hover{border-color:rgba(208,0,27,.28);background:#fff5f6;color:#9f0015}
+</style>
+<script id="slbNoticeMentionsScript">
+(function(){
+  'use strict';
+  function esc(v){
+    try{ if(typeof safe==='function') return safe(v); }catch(e){}
+    return String(v==null?'':v).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});
+  }
+  function fmt(v){ if(!v) return ''; try{return new Date(v).toLocaleString('pt-PT');}catch(e){return String(v||'');} }
+  function baseStoreKey(){ try{ if(typeof storeKey!=='undefined') return storeKey; }catch(e){} return 'avaliacoes_slb'; }
+  function noticeStorageKey(){ try{ if(typeof teacherNoticesKey!=='undefined') return teacherNoticesKey; }catch(e){} return baseStoreKey()+'_teacher_notices_v1'; }
+  function commentsStorageKey(){ return baseStoreKey()+'_teacher_notice_comments_v1'; }
+  function currentUser(){
+    try{ if(typeof currentLoggedUser==='function') return currentLoggedUser(); }catch(e){}
+    try{ if(typeof currentUserKey!=='undefined') return JSON.parse(localStorage.getItem(currentUserKey)||'null'); }catch(e){}
+    return null;
+  }
+  function isAdmin(){
+    var u=currentUser();
+    try{ if(typeof isAdminUser==='function') return !!isAdminUser(); }catch(e){}
+    return !!u && (u.role==='admin' || u.username==='Admin');
+  }
+  function users(){
+    try{ if(Array.isArray(LOGIN_USERS)) return LOGIN_USERS; }catch(e){}
+    return [
+      {username:'CarlaP',name:'Carla Parracho'},{username:'CarlosP',name:'Carlos Pinto'},
+      {username:'BrigidaP',name:'Brigida Pedro'},{username:'EdgarS',name:'Edgar Silva'},
+      {username:'RodrigoC',name:'Rodrigo Carrajola'},{username:'MarioS',name:'Mário Santos'},
+      {username:'PedroL',name:'Pedro Ludovice'},{username:'RicardoA',name:'Ricardo Agostinho'},
+      {username:'SofiaP',name:'Sofia Pinto'},{username:'MargaridaO',name:'Margarida Oliveira'},
+      {username:'RaulS',name:'Raúl Simões'},{username:'SusanaS',name:'Susana Santos'},
+      {username:'TatianaC',name:'Tatiana Cardoso'},{username:'AlexandraM',name:'Alexandra Martinho'},
+      {username:'Admin',name:'Admin'}
+    ];
+  }
+  function userMap(){ var m={}; users().forEach(function(u){m[String(u.username).toLowerCase()]=u;}); return m; }
+  function renderMentions(text){
+    var map=userMap();
+    return esc(text||'').replace(/(^|\s)@([A-Za-z0-9_]+)/g,function(full,pre,name){
+      var found=map[String(name).toLowerCase()];
+      return pre+'<span class="notice-mention '+(found?'':'unknown')+'" title="'+esc(found?found.name:'Utilizador não encontrado')+'">@'+esc(name)+'</span>';
+    });
+  }
+  function getRoot(){
+    var adminView=document.getElementById('adminCentralView');
+    var teacherView=document.getElementById('teacherDashboardView');
+    if(adminView && adminView.classList.contains('active') && adminView.querySelector('#teacherNewsList')) return adminView;
+    if(teacherView && teacherView.classList.contains('active') && teacherView.querySelector('#teacherNewsList')) return teacherView;
+    return document;
+  }
+  function loadNotices(){ try{ var data=JSON.parse(localStorage.getItem(noticeStorageKey())||'[]'); return Array.isArray(data)?data:[]; }catch(e){ return []; } }
+  function loadCommentsMap(){ try{ var data=JSON.parse(localStorage.getItem(commentsStorageKey())||'{}'); return data && typeof data==='object' && !Array.isArray(data) ? data : {}; }catch(e){ return {}; } }
+  function saveCommentsMap(map){ try{ localStorage.setItem(commentsStorageKey(), JSON.stringify(map||{})); }catch(e){} }
+  function sortedNotices(){ return loadNotices().sort(function(a,b){return String(b.createdAt||'').localeCompare(String(a.createdAt||''));}); }
+  function mentionHelper(noticeId){
+    var names=users().filter(function(u){return u.username;}).map(function(u){return '<button class="notice-mention-chip" type="button" data-insert-mention="'+esc(noticeId)+'" data-mention-user="'+esc(u.username)+'">@'+esc(u.username)+'</button>';}).join('');
+    return '<div class="notice-mention-helper"><span>Menções rápidas:</span>'+names+'</div>';
+  }
+  function commentHtml(noticeId, comments){
+    comments=Array.isArray(comments)?comments:[];
+    var rows=comments.length ? comments.map(function(c){
+      var mentions=(c.mentions||[]).length ? '<div class="notice-comment-meta">Menções: '+(c.mentions||[]).map(function(m){return '<span class="notice-mention">@'+esc(m)+'</span>';}).join(' ')+'</div>' : '';
+      return '<div class="notice-comment-item" data-comment-id="'+esc(c.id)+'"><div class="notice-comment-top"><div><div class="notice-comment-author">'+esc(c.authorName||c.authorUsername||'Utilizador')+'</div><div class="notice-comment-meta">'+esc(fmt(c.createdAt))+'</div>'+mentions+'</div>'+(isAdmin()?'<button class="notice-comment-delete" type="button" data-delete-notice-comment="'+esc(noticeId)+'" data-comment-id="'+esc(c.id)+'">Apagar</button>':'')+'</div><div class="notice-comment-message">'+renderMentions(c.message||'')+'</div></div>';
+    }).join('') : '<div class="notice-comment-empty">Sem comentários neste aviso.</div>';
+    return '<section class="notice-comments-block" data-notice-comments="'+esc(noticeId)+'"><div class="notice-comments-head"><div class="notice-comments-title">Comentários</div><span class="notice-comments-count">'+comments.length+' comentário(s)</span></div><div class="notice-comments-list">'+rows+'</div><div class="notice-comment-form"><textarea data-comment-text="'+esc(noticeId)+'" placeholder="Escrever comentário sobre este aviso... Usa @NomeUtilizador para mencionar alguém."></textarea>'+mentionHelper(noticeId)+'<div class="notice-comment-form-actions"><button class="btn small primary" type="button" data-add-notice-comment="'+esc(noticeId)+'">Comentar</button></div></div></section>';
+  }
+  window.renderNoticeComments=function(){
+    var root=getRoot();
+    var list=root.querySelector('#teacherNewsList');
+    if(!list) return;
+    var notices=sortedNotices();
+    var cards=list.querySelectorAll('.teacher-news-card');
+    if(!cards.length || !notices.length) return;
+    var map=loadCommentsMap();
+    cards.forEach(function(card,idx){
+      var notice=notices[idx];
+      if(!notice || !notice.id) return;
+      var old=card.querySelector('.notice-comments-block');
+      if(old) old.remove();
+      var actions=card.querySelector('.teacher-news-actions');
+      var wrap=document.createElement('div');
+      wrap.innerHTML=commentHtml(notice.id, map[notice.id]||[]);
+      var block=wrap.firstElementChild;
+      if(actions) card.insertBefore(block, actions); else card.appendChild(block);
+    });
+  };
+  window.addNoticeComment=function(noticeId){
+    var root=getRoot();
+    var field=root.querySelector('[data-comment-text="'+(window.CSS&&CSS.escape?CSS.escape(noticeId):String(noticeId).replace(/"/g,'\\"'))+'"]');
+    if(!field) return;
+    var text=(field.value||'').trim();
+    if(!text){ field.focus(); return; }
+    var mentionMap=userMap();
+    var mentions=[];
+    text.replace(/(^|\s)@([A-Za-z0-9_]+)/g,function(_,pre,name){ if(mentionMap[String(name).toLowerCase()] && mentions.indexOf(mentionMap[String(name).toLowerCase()].username)===-1) mentions.push(mentionMap[String(name).toLowerCase()].username); return _; });
+    var u=currentUser() || {username:'guest',name:'Utilizador',role:'teacher'};
+    var map=loadCommentsMap();
+    if(!Array.isArray(map[noticeId])) map[noticeId]=[];
+    map[noticeId].push({id:'comment_'+Date.now()+'_'+Math.random().toString(16).slice(2),noticeId:noticeId,authorUsername:u.username||'guest',authorName:u.name||u.username||'Utilizador',role:u.role||'teacher',message:text,mentions:mentions,createdAt:new Date().toISOString()});
+    saveCommentsMap(map);
+    field.value='';
+    if(typeof renderTeacherNotices==='function') renderTeacherNotices(); else renderNoticeComments();
+  };
+  document.addEventListener('click',function(e){
+    var chip=e.target.closest('[data-insert-mention]');
+    if(chip){
+      e.preventDefault(); e.stopPropagation();
+      var noticeId=chip.getAttribute('data-insert-mention');
+      var username=chip.getAttribute('data-mention-user');
+      var root=getRoot();
+      var field=root.querySelector('[data-comment-text="'+(window.CSS&&CSS.escape?CSS.escape(noticeId):String(noticeId).replace(/"/g,'\\"'))+'"]');
+      if(field){
+        var insert='@'+username+' ';
+        var before=field.value && !/\s$/.test(field.value) ? ' ' : '';
+        field.value=field.value+before+insert;
+        field.focus();
+      }
+      return;
+    }
+  },true);
+  setTimeout(function(){try{renderNoticeComments();}catch(e){}},500);
+  setTimeout(function(){try{renderNoticeComments();}catch(e){}},1400);
+})();
+</script>
+
+
+<!-- Admin aviso read receipts collapsed by default -->
+<style id="slbCollapsedReadReceiptsCss">
+  .notice-read-receipts{margin-top:10px;border:1px solid #edf0f3;background:#f9fafb;border-radius:10px;padding:0;overflow:hidden}
+  .notice-read-receipts summary{list-style:none;cursor:pointer;padding:10px 12px;font-size:12px;font-weight:950;color:#111827;display:flex;align-items:center;justify-content:space-between;gap:10px}
+  .notice-read-receipts summary::-webkit-details-marker{display:none}
+  .notice-read-receipts summary:after{content:'+';width:22px;height:22px;border:1px solid #e5e7eb;background:#fff;border-radius:6px;display:inline-flex;align-items:center;justify-content:center;font-weight:950;color:#9f0015}
+  .notice-read-receipts[open] summary:after{content:'–'}
+  .notice-read-receipts-list{display:grid;gap:6px;padding:0 12px 12px}
+  .notice-read-receipt-row{display:flex;justify-content:space-between;gap:8px;align-items:center;border-bottom:1px dashed #e5e7eb;padding:7px 0;font-size:12px;font-weight:850;color:#374151}
+  .notice-read-receipt-row:last-child{border-bottom:0}
+</style>
+
+
+
+<!-- Avisos comments reactions patch: quick acknowledgements for comments -->
+<style id="slbNoticeCommentReactionsCss">
+  .notice-comment-reactions{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin-top:2px}
+  .notice-reaction-btn{border:1px solid #e5e7eb;background:#fff;color:#374151;border-radius:8px;padding:5px 8px;font-size:12px;font-weight:950;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:5px;line-height:1;transition:.15s ease}
+  .notice-reaction-btn:hover{border-color:rgba(208,0,27,.28);background:#fff5f6;color:#9f0015;transform:translateY(-1px)}
+  .notice-reaction-btn.active{border-color:rgba(208,0,27,.38);background:#fff1f2;color:#9f0015;box-shadow:0 6px 14px rgba(208,0,27,.08)}
+  .notice-reaction-count{font-size:10px;font-weight:950;color:inherit;min-width:8px;text-align:center}
+  .notice-reaction-label{font-size:10px;font-weight:950;color:#6b7280;margin-right:2px}
+</style>
+<script id="slbNoticeCommentReactionsScript">
+(function(){
+  'use strict';
+  var REACTIONS=[
+    {key:'ok',icon:'✅',label:'OK'},
+    {key:'seen',icon:'👀',label:'Visto'},
+    {key:'like',icon:'👍',label:'Gosto'},
+    {key:'thanks',icon:'🙏',label:'Obrigado'}
+  ];
+  function esc(v){
+    try{ if(typeof safe==='function') return safe(v); }catch(e){}
+    return String(v==null?'':v).replace(/[&<>"']/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});
+  }
+  function baseStoreKey(){ try{ if(typeof storeKey!=='undefined') return storeKey; }catch(e){} return 'avaliacoes_slb'; }
+  function reactionsStorageKey(){ return baseStoreKey()+'_teacher_notice_comment_reactions_v1'; }
+  function currentUser(){
+    try{ if(typeof currentLoggedUser==='function') return currentLoggedUser(); }catch(e){}
+    try{ if(typeof currentUserKey!=='undefined') return JSON.parse(localStorage.getItem(currentUserKey)||'null'); }catch(e){}
+    return null;
+  }
+  function users(){
+    try{ if(Array.isArray(LOGIN_USERS)) return LOGIN_USERS; }catch(e){}
+    return [];
+  }
+  function displayName(username){
+    var u=(users()||[]).find(function(x){return String(x.username||'').toLowerCase()===String(username||'').toLowerCase();});
+    return u ? (u.name||u.username) : username;
+  }
+  function loadReactions(){
+    try{ var data=JSON.parse(localStorage.getItem(reactionsStorageKey())||'{}'); return data && typeof data==='object' && !Array.isArray(data) ? data : {}; }catch(e){ return {}; }
+  }
+  function saveReactions(map){ try{ localStorage.setItem(reactionsStorageKey(), JSON.stringify(map||{})); }catch(e){} }
+  function getCommentReaction(map, commentId){
+    if(!map[commentId] || typeof map[commentId] !== 'object' || Array.isArray(map[commentId])) map[commentId]={};
+    return map[commentId];
+  }
+  function renderReactionBar(commentId){
+    var u=currentUser() || {};
+    var username=u.username || 'guest';
+    var map=loadReactions();
+    var rmap=getCommentReaction(map, commentId);
+    var buttons=REACTIONS.map(function(r){
+      var arr=Array.isArray(rmap[r.key]) ? rmap[r.key] : [];
+      var active=arr.indexOf(username)!==-1;
+      var names=arr.map(displayName).join(', ');
+      return '<button class="notice-reaction-btn '+(active?'active':'')+'" type="button" data-comment-reaction="'+esc(commentId)+'" data-reaction-key="'+esc(r.key)+'" title="'+esc(names || r.label)+'"><span>'+esc(r.icon)+'</span><span>'+esc(r.label)+'</span><span class="notice-reaction-count">'+arr.length+'</span></button>';
+    }).join('');
+    return '<div class="notice-comment-reactions" data-comment-reactions-for="'+esc(commentId)+'"><span class="notice-reaction-label">Reações:</span>'+buttons+'</div>';
+  }
+  function applyReactions(){
+    document.querySelectorAll('.notice-comment-item[data-comment-id]').forEach(function(item){
+      var commentId=item.getAttribute('data-comment-id');
+      if(!commentId) return;
+      var old=item.querySelector('.notice-comment-reactions');
+      if(old) old.remove();
+      item.insertAdjacentHTML('beforeend', renderReactionBar(commentId));
+    });
+  }
+  var previousRender=window.renderNoticeComments;
+  window.renderNoticeComments=function(){
+    if(typeof previousRender==='function') previousRender.apply(this, arguments);
+    setTimeout(applyReactions, 0);
+  };
+  document.addEventListener('click',function(e){
+    var btn=e.target.closest('[data-comment-reaction]');
+    if(!btn) return;
+    e.preventDefault();
+    e.stopPropagation();
+    var commentId=btn.getAttribute('data-comment-reaction');
+    var reactionKey=btn.getAttribute('data-reaction-key');
+    var u=currentUser() || {};
+    var username=u.username || 'guest';
+    if(!commentId || !reactionKey) return;
+    var map=loadReactions();
+    var rmap=getCommentReaction(map, commentId);
+    if(!Array.isArray(rmap[reactionKey])) rmap[reactionKey]=[];
+    var idx=rmap[reactionKey].indexOf(username);
+    if(idx>=0){
+      rmap[reactionKey].splice(idx,1);
+    }else{
+      rmap[reactionKey].push(username);
+    }
+    map[commentId]=rmap;
+    saveReactions(map);
+    applyReactions();
+    try{ if(typeof trackUserActivity==='function') trackUserActivity('Reação em comentário', 'Avisos / Comentários'); }catch(err){}
+  }, true);
+  setTimeout(applyReactions, 500);
+  setTimeout(applyReactions, 1400);
+  setTimeout(applyReactions, 2600);
+})();
+</script>
+
+
+
+<style id="slb-sidebar-pin-bottom-patch">
+/* Sidebar hide control — pin button at bottom of menu */
+body:not(.login-locked) .tabs{
+  padding-bottom:82px!important;
+}
+.sidebar-toggle-clean{
+  top:auto!important;
+  bottom:22px!important;
+  left:calc(var(--app-shell-left) - 60px)!important;
+  width:46px!important;
+  height:46px!important;
+  border-radius:12px!important;
+  background:rgba(255,255,255,.16)!important;
+  border:1px solid rgba(255,255,255,.30)!important;
+  color:#fff!important;
+  font-size:0!important;
+  box-shadow:0 12px 26px rgba(72,0,12,.20)!important;
+}
+.sidebar-toggle-clean::before{
+  content:'📌';
+  font-size:20px!important;
+  line-height:1!important;
+  display:block!important;
+  transform:rotate(-25deg);
+  transition:transform .2s ease, opacity .2s ease!important;
+}
+.sidebar-toggle-clean::after{
+  content:'Ocultar menu';
+  position:absolute;
+  right:54px;
+  bottom:50%;
+  transform:translateY(50%);
+  background:rgba(17,24,39,.92);
+  color:#fff;
+  border-radius:8px;
+  padding:7px 9px;
+  font-size:11px;
+  font-weight:900;
+  line-height:1;
+  white-space:nowrap;
+  opacity:0;
+  pointer-events:none;
+  transition:opacity .15s ease!important;
+}
+.sidebar-toggle-clean:hover::after{opacity:1;}
+.sidebar-toggle-clean:hover{
+  background:rgba(255,255,255,.24)!important;
+  transform:translateY(-2px)!important;
+}
+body.sidebar-collapsed .sidebar-toggle-clean{
+  left:20px!important;
+}
+body.sidebar-collapsed .sidebar-toggle-clean::before{
+  transform:rotate(0deg);
+  opacity:.96;
+}
+body.sidebar-collapsed .sidebar-toggle-clean::after{
+  content:'Mostrar menu';
+  left:56px;
+  right:auto;
+}
+body.sidebar-collapsed:not(.login-locked) .tabs{
+  padding-bottom:82px!important;
+}
+@media(max-width:900px){
+  .sidebar-toggle-clean{display:flex!important;left:20px!important;bottom:18px!important;}
+}
+@media print{
+  .sidebar-toggle-clean{display:none!important;}
+}
+</style>
+<script id="slb-sidebar-pin-bottom-script">
+(function(){
+  function applyPinSidebarButton(){
+    var btn=document.getElementById('sidebarToggleClean');
+    if(!btn) return;
+    btn.textContent='';
+    btn.setAttribute('aria-label', document.body.classList.contains('sidebar-collapsed') ? 'Mostrar menu' : 'Ocultar menu');
+    btn.setAttribute('title', document.body.classList.contains('sidebar-collapsed') ? 'Mostrar menu' : 'Ocultar menu');
+  }
+  document.addEventListener('click',function(e){
+    if(e.target && e.target.closest && e.target.closest('#sidebarToggleClean')){
+      setTimeout(applyPinSidebarButton,0);
+    }
+  },true);
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',function(){
+      applyPinSidebarButton();
+      setTimeout(applyPinSidebarButton,300);
+      setTimeout(applyPinSidebarButton,1000);
+    });
+  }else{
+    applyPinSidebarButton();
+    setTimeout(applyPinSidebarButton,300);
+    setTimeout(applyPinSidebarButton,1000);
+  }
+})();
+</script>
+
+
+<!-- SLB FIX: always-visible bottom sidebar pin button -->
+<style id="slb-sidebar-pin-visible-final-css">
+  #slbFixedSidebarPinBtn{
+    position:fixed!important;
+    left:226px!important;
+    bottom:22px!important;
+    width:48px!important;
+    height:48px!important;
+    border-radius:12px!important;
+    border:1px solid rgba(255,255,255,.34)!important;
+    background:rgba(255,255,255,.18)!important;
+    color:#fff!important;
+    display:flex!important;
+    align-items:center!important;
+    justify-content:center!important;
+    font-size:21px!important;
+    line-height:1!important;
+    cursor:pointer!important;
+    z-index:2147483000!important;
+    box-shadow:0 16px 34px rgba(70,0,12,.26)!important;
+    backdrop-filter:blur(8px)!important;
+    transition:left .2s ease, transform .15s ease, background .15s ease!important;
+  }
+  #slbFixedSidebarPinBtn:hover{
+    transform:translateY(-2px)!important;
+    background:rgba(255,255,255,.28)!important;
+  }
+  #slbFixedSidebarPinBtn::before{
+    content:'📌';
+    display:block!important;
+    transform:rotate(-25deg);
+    transition:transform .2s ease!important;
+  }
+  #slbFixedSidebarPinBtn::after{
+    content:attr(data-label);
+    position:absolute!important;
+    right:58px!important;
+    bottom:50%!important;
+    transform:translateY(50%)!important;
+    background:rgba(17,24,39,.94)!important;
+    color:#fff!important;
+    border-radius:8px!important;
+    padding:8px 10px!important;
+    font-size:11px!important;
+    font-weight:900!important;
+    white-space:nowrap!important;
+    opacity:0!important;
+    pointer-events:none!important;
+    transition:opacity .15s ease!important;
+  }
+  #slbFixedSidebarPinBtn:hover::after{opacity:1!important;}
+  body.sidebar-collapsed #slbFixedSidebarPinBtn{left:19px!important;}
+  body.sidebar-collapsed #slbFixedSidebarPinBtn::before{transform:rotate(0deg)!important;}
+  body.sidebar-collapsed #slbFixedSidebarPinBtn::after{right:auto!important;left:58px!important;}
+  body.login-locked #slbFixedSidebarPinBtn{display:none!important;}
+  @media(max-width:900px){#slbFixedSidebarPinBtn{left:19px!important;bottom:18px!important;}}
+  @media print{#slbFixedSidebarPinBtn{display:none!important;}}
+</style>
+<script id="slb-sidebar-pin-visible-final-js">
+(function(){
+  function ensureSidebarPinButton(){
+    try{
+      if(document.getElementById('slbFixedSidebarPinBtn')) return;
+      var btn=document.createElement('button');
+      btn.id='slbFixedSidebarPinBtn';
+      btn.type='button';
+      btn.setAttribute('aria-label','Ocultar menu');
+      btn.setAttribute('title','Ocultar menu');
+      btn.setAttribute('data-label','Ocultar menu');
+      function sync(){
+        var collapsed=document.body.classList.contains('sidebar-collapsed');
+        btn.setAttribute('aria-label', collapsed ? 'Mostrar menu' : 'Ocultar menu');
+        btn.setAttribute('title', collapsed ? 'Mostrar menu' : 'Ocultar menu');
+        btn.setAttribute('data-label', collapsed ? 'Mostrar menu' : 'Ocultar menu');
+      }
+      btn.addEventListener('click',function(){
+        document.body.classList.toggle('sidebar-collapsed');
+        try{localStorage.setItem('slbSidebarCollapsed', document.body.classList.contains('sidebar-collapsed') ? '1' : '0');}catch(e){}
+        sync();
+      });
+      var saved='0';
+      try{saved=localStorage.getItem('slbSidebarCollapsed') || '0';}catch(e){}
+      if(saved==='1') document.body.classList.add('sidebar-collapsed');
+      document.body.appendChild(btn);
+      sync();
+    }catch(err){
+      console.warn('Sidebar pin button setup failed:', err);
+    }
+  }
+  if(document.readyState==='loading'){
+    document.addEventListener('DOMContentLoaded',ensureSidebarPinButton);
+  }else{
+    ensureSidebarPinButton();
+  }
+  setTimeout(ensureSidebarPinButton,300);
+  setTimeout(ensureSidebarPinButton,1000);
+})();
+</script>
 </body>
 </html>
