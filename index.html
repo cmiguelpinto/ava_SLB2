@@ -6013,6 +6013,348 @@ document.documentElement.classList.add('teacher-user');
   }
 </style>
 
+<style>
+
+/* =========================================================
+   2. Horário — modern simplified layout
+   ========================================================= */
+#scheduleView .panel:first-child{
+  background:linear-gradient(180deg,#fff,#fffafb)!important;
+  border:1px solid rgba(17,24,39,.08)!important;
+  border-radius:20px!important;
+  box-shadow:0 14px 34px rgba(15,23,42,.07)!important;
+  padding:18px!important;
+}
+#scheduleView .panel:first-child .toolbar{
+  display:grid!important;
+  grid-template-columns:minmax(0,1fr) auto!important;
+  gap:16px!important;
+  align-items:start!important;
+}
+#scheduleView .panel:first-child .section-label{
+  font-size:18px!important;
+  letter-spacing:-.03em!important;
+  text-transform:none!important;
+  color:#111827!important;
+}
+#scheduleView .panel:first-child .hint{
+  max-width:760px!important;
+  margin-top:4px!important;
+  line-height:1.4!important;
+}
+#scheduleView .toolbar-actions{
+  display:flex!important;
+  justify-content:flex-end!important;
+  align-items:center!important;
+  gap:8px!important;
+}
+#scheduleView .copy-grid{
+  margin-top:16px!important;
+  padding:12px!important;
+  background:#f9fafb!important;
+  border:1px solid #edf0f3!important;
+  border-radius:16px!important;
+  grid-template-columns:minmax(0,1fr) 28px minmax(0,1fr) auto!important;
+}
+#scheduleView .copy-grid .field label{
+  font-size:10px!important;
+  color:#6b7280!important;
+}
+#scheduleView .copy-grid select{
+  min-height:46px!important;
+  border-radius:12px!important;
+  font-weight:850!important;
+}
+#scheduleView .arrow{
+  width:28px!important;
+  height:46px!important;
+  justify-content:center!important;
+  color:#9ca3af!important;
+}
+#scheduleView #scheduleMessage{
+  margin-top:12px!important;
+  padding:10px 12px!important;
+  background:#fff!important;
+  border:1px solid #edf0f3!important;
+  border-radius:12px!important;
+}
+#scheduleView .calendar-card{
+  margin-top:16px!important;
+  border-radius:20px!important;
+  border:1px solid rgba(17,24,39,.10)!important;
+  box-shadow:0 18px 42px rgba(15,23,42,.07)!important;
+  background:#fff!important;
+}
+#scheduleView .calendar-card table{
+  border-collapse:separate!important;
+  border-spacing:0!important;
+}
+#scheduleView .calendar-card thead th{
+  background:#111827!important;
+  color:#fff!important;
+  height:46px!important;
+  font-size:12px!important;
+  letter-spacing:.04em!important;
+  border-right:1px solid rgba(255,255,255,.12)!important;
+}
+#scheduleView .calendar-card thead th:first-child{
+  width:112px!important;
+}
+#scheduleView .time-cell{
+  background:#f9fafb!important;
+  color:#111827!important;
+  font-size:12px!important;
+  font-weight:950!important;
+  border-right:1px solid #edf0f3!important;
+}
+#scheduleView tbody td{
+  background:#fff!important;
+  border-color:#edf0f3!important;
+}
+#scheduleView .slot{
+  min-height:108px!important;
+  padding:8px!important;
+  align-items:stretch!important;
+}
+#scheduleView .lesson-box{
+  min-height:94px!important;
+  border:1px solid #e5e7eb!important;
+  border-radius:16px!important;
+  background:#fff!important;
+  box-shadow:none!important;
+  padding:10px!important;
+  justify-content:flex-start!important;
+}
+#scheduleView .lesson-box:hover{
+  border-color:rgba(208,0,27,.32)!important;
+  box-shadow:0 10px 24px rgba(15,23,42,.06)!important;
+}
+#scheduleView .lesson-box.active{
+  background:linear-gradient(180deg,#fff5f6,#fff)!important;
+  border:1px solid rgba(208,0,27,.36)!important;
+  box-shadow:0 10px 22px rgba(208,0,27,.08)!important;
+}
+#scheduleView .check-row{
+  min-height:34px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:8px!important;
+  border-radius:11px!important;
+  padding:7px 8px!important;
+  background:#f9fafb!important;
+  color:#374151!important;
+  font-size:12px!important;
+  font-weight:950!important;
+  cursor:pointer!important;
+}
+#scheduleView .lesson-box.active .check-row{
+  background:#b40018!important;
+  color:#fff!important;
+}
+#scheduleView .check-row input[type="checkbox"]{
+  width:18px!important;
+  height:18px!important;
+  flex:0 0 auto!important;
+}
+#scheduleView .slot-class-selector{
+  gap:8px!important;
+  margin-top:8px!important;
+}
+#scheduleView .slot-class-selector select{
+  min-height:40px!important;
+  border-radius:11px!important;
+  font-size:12px!important;
+  font-weight:850!important;
+  padding:7px 9px!important;
+}
+#scheduleView .second-class-row{
+  justify-content:flex-start!important;
+  background:#fff!important;
+  border:1px dashed #e5e7eb!important;
+  border-radius:11px!important;
+  padding:8px!important;
+  margin:0!important;
+}
+#scheduleView .second-class-row span{
+  font-size:11px!important;
+  color:#374151!important;
+}
+#scheduleView .empty-day{
+  min-height:108px!important;
+  border-radius:14px!important;
+  background:#f9fafb!important;
+  color:#c4c8cf!important;
+  font-size:11px!important;
+}
+.schedule-slot-summary{
+  display:flex;
+  flex-wrap:wrap;
+  gap:5px;
+  margin-top:8px;
+}
+.schedule-class-chip{
+  display:inline-flex;
+  align-items:center;
+  min-height:24px;
+  border-radius:999px;
+  background:#111827;
+  color:#fff;
+  padding:4px 8px;
+  font-size:10px;
+  font-weight:950;
+  line-height:1.05;
+}
+.schedule-empty-hint{
+  color:#9ca3af;
+  font-size:11px;
+  font-weight:850;
+  margin-top:8px;
+  line-height:1.25;
+}
+.schedule-mobile-help{
+  display:none;
+  margin:10px 0 0;
+  padding:10px 12px;
+  border:1px solid #edf0f3;
+  border-radius:12px;
+  background:#fff;
+  color:#6b7280;
+  font-size:12px;
+  font-weight:800;
+  line-height:1.35;
+}
+@media(max-width:900px){
+  #scheduleView .panel:first-child .toolbar{grid-template-columns:1fr!important;}
+  #scheduleView .toolbar-actions{justify-content:stretch!important;display:grid!important;grid-template-columns:1fr 1fr!important;}
+  #scheduleView .toolbar-actions .btn{width:100%!important;}
+  #scheduleView .copy-grid{grid-template-columns:1fr!important;}
+  #scheduleView .arrow{display:none!important;}
+  #scheduleView .calendar-card{overflow:auto!important;-webkit-overflow-scrolling:touch!important;}
+  #scheduleView .calendar-card table{min-width:980px!important;}
+  .schedule-mobile-help{display:block;}
+}
+@media(max-width:560px){
+  #scheduleView .toolbar-actions{grid-template-columns:1fr!important;}
+  #scheduleView .panel:first-child{padding:14px!important;}
+  #scheduleView .panel:first-child .section-label{font-size:17px!important;}
+  #scheduleView .calendar-card table{min-width:900px!important;}
+  #scheduleView .slot{min-height:104px!important;padding:6px!important;}
+  #scheduleView .lesson-box{min-height:90px!important;padding:8px!important;}
+}
+</style>
+
+
+<style>
+/* =========================================================
+   2. Horário — compact active cards update
+   Reduces oversized schedule blocks while keeping functionality
+   ========================================================= */
+#scheduleView .slot{
+  min-height:82px!important;
+  padding:5px!important;
+}
+#scheduleView .lesson-box{
+  min-height:70px!important;
+  padding:6px!important;
+  gap:5px!important;
+  border-radius:12px!important;
+  border-color:#e5e7eb!important;
+}
+#scheduleView .lesson-box.active{
+  background:linear-gradient(180deg,#fff7f8,#fff)!important;
+  border-color:rgba(208,0,27,.32)!important;
+  box-shadow:0 6px 14px rgba(208,0,27,.06)!important;
+}
+#scheduleView .check-row{
+  min-height:26px!important;
+  padding:4px 6px!important;
+  gap:6px!important;
+  border-radius:9px!important;
+  font-size:10.5px!important;
+  line-height:1.05!important;
+  letter-spacing:-.01em!important;
+}
+#scheduleView .check-row input[type="checkbox"]{
+  width:15px!important;
+  height:15px!important;
+}
+#scheduleView .lesson-box.active .check-row{
+  background:#b40018!important;
+  color:#fff!important;
+}
+#scheduleView .slot-class-selector{
+  gap:5px!important;
+  margin-top:5px!important;
+}
+#scheduleView .slot-class-selector select,
+#scheduleView .lesson-box .slot-class-selector select{
+  height:32px!important;
+  min-height:32px!important;
+  border-radius:9px!important;
+  padding:4px 7px!important;
+  font-size:11px!important;
+  line-height:1.1!important;
+}
+#scheduleView .second-class-row{
+  min-height:28px!important;
+  padding:4px 6px!important;
+  gap:5px!important;
+  border-radius:9px!important;
+  align-items:center!important;
+}
+#scheduleView .second-class-row input{
+  width:15px!important;
+  height:15px!important;
+}
+#scheduleView .second-class-row span{
+  font-size:10px!important;
+  line-height:1.05!important;
+  white-space:nowrap!important;
+}
+#scheduleView .schedule-slot-summary{
+  margin-top:5px!important;
+  gap:4px!important;
+}
+#scheduleView .schedule-class-chip{
+  min-height:18px!important;
+  padding:2px 6px!important;
+  border-radius:999px!important;
+  font-size:9px!important;
+  line-height:1!important;
+  letter-spacing:.01em!important;
+}
+#scheduleView .schedule-empty-hint{
+  margin-top:5px!important;
+  font-size:10px!important;
+  line-height:1.1!important;
+}
+#scheduleView .empty-day{
+  min-height:82px!important;
+}
+#scheduleView .calendar-card thead th{
+  height:40px!important;
+}
+#scheduleView .time-cell{
+  padding:8px 6px!important;
+  font-size:11px!important;
+}
+@media(max-width:900px){
+  #scheduleView .calendar-card table{min-width:860px!important;}
+  #scheduleView .slot{min-height:78px!important;padding:4px!important;}
+  #scheduleView .lesson-box{min-height:68px!important;padding:5px!important;}
+  #scheduleView .check-row{font-size:10px!important;}
+}
+@media(max-width:560px){
+  #scheduleView .calendar-card table{min-width:820px!important;}
+  #scheduleView .slot{min-height:74px!important;}
+  #scheduleView .lesson-box{min-height:64px!important;}
+  #scheduleView .slot-class-selector select,
+  #scheduleView .lesson-box .slot-class-selector select{height:30px!important;min-height:30px!important;font-size:10px!important;}
+  #scheduleView .second-class-row span{font-size:9.5px!important;}
+}
+</style>
+
 </head>
 <body class="login-locked">
 
@@ -6050,7 +6392,7 @@ document.documentElement.classList.add('teacher-user');
   <main class="page">
     <header class="header">
       <div class="app-user-title"><h1 id="appHeaderTeacherName">Utilizador</h1></div>
-      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><button class="logout-btn teacher-profile-btn" id="currentUserBadge" type="button" data-view-btn="teacherDashboardView">Utilizador</button><button class="logout-btn" id="cloudLoadBtn" type="button">Carregar cloud</button><button class="logout-btn" id="logoutBtn" type="button" onclick="robustLogout()">Sair</button></div>
+      <div style="display:flex;gap:8px;align-items:center;flex-wrap:wrap"><button class="logout-btn teacher-profile-btn" id="currentUserBadge" type="button" data-view-btn="teacherDashboardView">Utilizador</button><button class="logout-btn" id="cloudLoadBtn" type="button">Atualizar cloud</button><button class="logout-btn" id="logoutBtn" type="button" onclick="robustLogout()">Sair</button></div>
     </header>
 
     <nav class="tabs">
@@ -6500,6 +6842,9 @@ let studentDayFilters = new Set(['Segunda','Terça','Quarta','Quinta','Sexta','S
 let evaluationDayFilters = new Set(['Segunda','Terça','Quarta','Quinta','Sexta','Sábado']);
 let evaluationCloudAutoLoadTried=false;
 let pendingStudentCopy = null;
+let adminCloudAutoSyncTimer = null;
+let adminCloudAutoSyncInProgress = false;
+const ADMIN_CLOUD_AUTO_SYNC_MS = 5 * 60 * 1000;
 
 
 
@@ -6642,6 +6987,13 @@ function checkLoginSession(){
     localStorage.setItem('avaliacoes_slb_current_professor', user.name);
     state=loadState();
     setLoginVisible(false);
+    if(user.role === 'admin'){
+      setTimeout(()=>{
+        try{
+          if(typeof startAdminCloudAutoSync === 'function') startAdminCloudAutoSync('session');
+        }catch(e){}
+      }, 350);
+    }
   }else{
     setLoginVisible(true);
   }
@@ -6649,6 +7001,7 @@ function checkLoginSession(){
 
 
 function robustLogout(){
+  try{ if(typeof stopAdminCloudAutoSync === 'function') stopAdminCloudAutoSync(); }catch(e){}
   try{
     localStorage.removeItem(loginSessionKey);
     localStorage.removeItem(currentUserKey);
@@ -6785,7 +7138,7 @@ setInterval(()=>{
 setupCloudButtons();
         if(found.role==='admin'){
           switchView('mainCalendarView');
-          loadFromCloud(false).catch(err=>console.error('Admin cloud load failed', err));
+          startAdminCloudAutoSync('login');
         }else{
           switchView('mainCalendarView');
           loadFromCloud(true).catch(err=>console.error('Cloud load failed', err));
@@ -6907,6 +7260,7 @@ async function loadAllTeachersFromCloud(silent=false){
 
     renderTeacherDashboard();
     if(document.getElementById('scheduleView')?.classList.contains('active')) renderAdminSchedule();
+    if(document.getElementById('adminCentralView')?.classList.contains('active')) renderAdminCentral();
 
     if(!silent) showCloudStatus(`Admin: ${loaded.length} professor(es) carregados.`, 'ok');
   }catch(err){
@@ -7136,6 +7490,72 @@ function setupCloudButtons(){
     });
   }
 }
+
+function renderAdminViewsAfterCloudSync(){
+  try{ renderTeacherDashboard(); }catch(e){}
+  try{
+    if(document.getElementById('adminCentralView')?.classList.contains('active')){
+      renderAdminCentral();
+    }
+  }catch(e){}
+  try{
+    if(document.getElementById('scheduleView')?.classList.contains('active')){
+      renderAdminSchedule();
+    }
+  }catch(e){}
+}
+
+async function refreshAdminCloudAutomatic(reason='auto'){
+  const user=currentLoggedUser?.();
+  if(user?.role !== 'admin') return;
+  if(adminCloudAutoSyncInProgress) return;
+
+  adminCloudAutoSyncInProgress = true;
+  try{
+    const silent = reason === 'interval';
+    if(!silent) showCloudStatus('Admin: a pedir dados à cloud...', 'ok');
+
+    await loadAllTeachersFromCloud(silent);
+    renderAdminViewsAfterCloudSync();
+
+    if(!silent){
+      showCloudStatus(`Admin: cloud carregada. Atualização automática a cada ${Math.round(ADMIN_CLOUD_AUTO_SYNC_MS/60000)} minutos.`, 'ok');
+    }
+  }catch(err){
+    console.error('Admin automatic cloud sync failed', err);
+    if(reason !== 'interval'){
+      showCloudStatus(`Erro Admin cloud: ${err.message || err}`, 'err');
+    }
+  }finally{
+    adminCloudAutoSyncInProgress = false;
+  }
+}
+
+function startAdminCloudAutoSync(reason='login'){
+  const user=currentLoggedUser?.();
+  if(user?.role !== 'admin') return;
+
+  if(adminCloudAutoSyncTimer){
+    clearInterval(adminCloudAutoSyncTimer);
+    adminCloudAutoSyncTimer = null;
+  }
+
+  refreshAdminCloudAutomatic(reason);
+  adminCloudAutoSyncTimer = setInterval(()=>{
+    refreshAdminCloudAutomatic('interval');
+  }, ADMIN_CLOUD_AUTO_SYNC_MS);
+}
+
+function stopAdminCloudAutoSync(){
+  if(adminCloudAutoSyncTimer){
+    clearInterval(adminCloudAutoSyncTimer);
+    adminCloudAutoSyncTimer = null;
+  }
+  adminCloudAutoSyncInProgress = false;
+}
+
+window.startAdminCloudAutoSync = startAdminCloudAutoSync;
+window.stopAdminCloudAutoSync = stopAdminCloudAutoSync;
 
 function defaultState(){return {schedule:{},classes:{},evaluations:{},attendance:{}}}
 function loadState(){try{return JSON.parse(localStorage.getItem(getActiveStorageKey())) || defaultState()}catch(e){return defaultState()}}
@@ -8267,6 +8687,26 @@ function printReportStable(){
   .notice-read-receipt-row:last-child{border-bottom:0}
 </style>
 
+
+<style>
+/* =========================================================
+   2. Horário — Center selected class capsules in schedule cells
+   ========================================================= */
+#scheduleView .lesson-box.has-selected-classes .schedule-slot-summary,
+#scheduleView .lesson-box.has-selected-classes:not(.schedule-selector-open) .schedule-slot-summary{
+  justify-content:center!important;
+  align-items:center!important;
+}
+#scheduleView .lesson-box.has-selected-classes:not(.schedule-selector-open){
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+#scheduleView .lesson-box.has-selected-classes:not(.schedule-selector-open) .schedule-slot-summary{
+  width:100%!important;
+  justify-content:center!important;
+}
+</style>
 </body>
 </html>`;
 
@@ -8937,10 +9377,7 @@ function renderAdminCentral(){
     const days=adminCentralDaysString(r.classInfo);
     const time=adminCentralTime(r.classInfo);
 
-    let mainAction='Ficha da turma';
-    if(adminCentralMode==='attendance') mainAction='Ver presenças';
-    if(adminCentralMode==='reports') mainAction='Relatórios evolução';
-    if(adminCentralMode==='internal') mainAction='Documento interno';
+    const mainAction='Resumo da turma';
 
     return `<article class="admin-central-card">
       <div class="admin-central-card-top">
@@ -8952,7 +9389,6 @@ function renderAdminCentral(){
       </div>
       <div class="admin-central-actions">
         <button class="btn small primary" type="button" onclick="openAdminClassWindow('${safe(r.username)}','${safe(r.className)}','${safe(days)}','${safe(time)}')">${safe(mainAction)}</button>
-        <button class="btn small secondary" type="button" onclick="openAdminClassWindow('${safe(r.username)}','${safe(r.className)}','${safe(days)}','${safe(time)}')">Ficha completa</button>
         <button class="btn small ghost" type="button" onclick="openAdminTeacherEvolutionReport('${safe(r.username)}','${safe(r.classInfo.id)}')">Relatório Evolução</button>
         <button class="btn small ghost" type="button" onclick="openAdminTeacherInternalDocument('${safe(r.username)}','${safe(r.classInfo.id)}')">Documento Interno</button>
       </div>
@@ -9413,6 +9849,15 @@ function adminClassDetailsDocumentHtml(details){
   }).join('');
 
   const capacityClass=details.totalStudents>CLASS_CAPACITY_REFERENCE?'danger':'';
+  const transitaCount=rows.filter(s=>s.status==='transita').length;
+  const continuaCount=rows.filter(s=>s.status==='fica').length;
+  const semDecisaoCount=rows.filter(s=>!['transita','fica'].includes(s.status)).length;
+  const avgEvaluationPercent=rows.length ? Math.round(rows.reduce((acc,s)=>acc+(Number(s.percent)||0),0)/rows.length) : 0;
+  const stageOkTotal=rows.reduce((acc,s)=>acc+(s.stages||[]).reduce((sum,st)=>sum+(Number(st.ok)||0),0),0);
+  const stageObjectiveTotal=rows.reduce((acc,s)=>acc+(s.stages||[]).reduce((sum,st)=>sum+(Number(st.total)||0),0),0);
+  const objectivesPercent=stageObjectiveTotal ? Math.round((stageOkTotal/stageObjectiveTotal)*100) : 0;
+  const attendanceRiskCount=rows.filter(s=>s.attendanceTotal>0 && s.attendancePercent<75).length;
+  const capacityFree=Math.max(0, CLASS_CAPACITY_REFERENCE-details.totalStudents);
   const html=`<!doctype html>
 <html lang="pt">
 <head>
@@ -9435,10 +9880,11 @@ function adminClassDetailsDocumentHtml(details){
   button{border:0;border-radius:999px;padding:10px 14px;font-weight:900;cursor:pointer}
   .primary{background:var(--red);color:#fff}
   .secondary{background:#111827;color:#fff}
-  .meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:18px}
-  .card{border:1px solid var(--line);border-radius:16px;background:#fff;padding:13px 14px}
-  .label{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
-  .value{margin-top:5px;font-size:22px;font-weight:950;color:var(--dark)}
+  .meta{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;margin-bottom:14px}
+  .card{border:1px solid var(--line);border-radius:12px;background:#fff;padding:9px 10px;min-width:0}
+  .label{font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+  .value{margin-top:3px;font-size:19px;font-weight:950;color:var(--dark);line-height:1.05}
+  .card .muted{font-size:9px;line-height:1.15;margin-top:4px}
   .value.danger{color:#991b1b}
   .note{margin:12px 0;color:var(--muted);font-size:12px;font-weight:750;line-height:1.45}
   table{width:100%;border-collapse:collapse;border:1px solid var(--line)}
@@ -9453,7 +9899,8 @@ function adminClassDetailsDocumentHtml(details){
   .bar{height:8px;background:#edf0f3;border-radius:999px;margin-top:7px;overflow:hidden}
   .bar span{display:block;height:100%;background:linear-gradient(90deg,#d0001b,#f43f5e);border-radius:999px}
   .stage-pill{display:inline-flex;margin:2px;border-radius:999px;padding:5px 7px;background:#f9fafb;border:1px solid #edf0f3;font-size:10px;font-weight:900;color:#374151}
-  @media(max-width:900px){body{padding:12px}.banner{display:block}.logo{justify-content:flex-start;margin-top:15px}.meta{grid-template-columns:1fr 1fr}.page{border-radius:16px;overflow:auto}table{min-width:900px}}
+  #teacherNoticeToast{display:none!important}
+  @media(max-width:1200px){.meta{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(max-width:900px){body{padding:12px}.banner{display:block}.logo{justify-content:flex-start;margin-top:15px}.meta{grid-template-columns:1fr 1fr}.page{border-radius:16px;overflow:auto}table{min-width:900px}}
   @media print{@page{size:A4 landscape;margin:10mm}*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}.actions{display:none!important}body{background:#fff;padding:0}.page{box-shadow:none;border:0;border-radius:0}.banner{break-inside:avoid}}
 
     /* Admin Central */
@@ -9588,7 +10035,7 @@ function adminClassDetailsDocumentHtml(details){
   <main class="page">
     <section class="banner">
       <div>
-        <div class="kicker">Ficha de Turma · Admin</div>
+        <div class="kicker">Resumo da Turma · Admin</div>
         <h1>${safe(details.className)}</h1>
         <div class="sub">${safe(dayLabel)} · ${safe(details.time)}<br>Professor: ${safe(details.teacher.name)} · Atualizado: ${safe(new Date().toLocaleString('pt-PT'))}</div>
       </div>
@@ -9596,18 +10043,23 @@ function adminClassDetailsDocumentHtml(details){
     </section>
     <section class="body">
       <div class="actions">
-        <button class="secondary" onclick="window.close()">Fechar</button>
-        <button class="secondary" onclick="window.opener && window.opener.openAdminTeacherEvolutionReport('${safe(details.teacher.username || details.teacher.user || details.teacher.name)}','${safe(details.records?.[0]?.id || '')}')">Relatório Evolução</button>
-        <button class="secondary" onclick="window.opener && window.opener.openAdminTeacherInternalDocument('${safe(details.teacher.username || details.teacher.user || details.teacher.name)}','${safe(details.records?.[0]?.id || '')}')">Documento Interno</button>
-        <button class="primary" onclick="window.print()">Imprimir / Guardar PDF</button>
+        <button class="secondary" id="adminClassCloseBtn" type="button">Fechar</button>
+        <button class="secondary" id="adminClassEvolutionBtn" type="button">Relatório Evolução</button>
+        <button class="secondary" id="adminClassInternalBtn" type="button">Documento Interno</button>
+        <button class="primary" id="adminClassPrintBtn" type="button">Imprimir / Guardar PDF</button>
       </div>
 
       <div class="meta">
-        <div class="card"><div class="label">Alunos</div><div class="value ${capacityClass}">${details.totalStudents}/${CLASS_CAPACITY_REFERENCE}</div></div>
-        <div class="card"><div class="label">Avaliação</div><div class="value">${details.evaluationPercent}%</div></div>
+        <div class="card"><div class="label">Alunos</div><div class="value ${capacityClass}">${details.totalStudents}/${CLASS_CAPACITY_REFERENCE}</div><div class="muted">${capacityFree} vaga(s) livres</div></div>
+        <div class="card"><div class="label">Avaliação feita</div><div class="value">${details.evaluationPercent}%</div></div>
         <div class="card"><div class="label">Presenças mês</div><div class="value">${details.attendancePercent}%</div></div>
         <div class="card"><div class="label">Registos</div><div class="value">${details.attendancePresent}/${details.attendancePossible}</div></div>
+        <div class="card"><div class="label">Transitam</div><div class="value">${transitaCount}</div></div>
+        <div class="card"><div class="label">Continuam</div><div class="value">${continuaCount}</div></div>
+        <div class="card"><div class="label">Sem decisão</div><div class="value">${semDecisaoCount}</div></div>
+        <div class="card"><div class="label">Objetivos</div><div class="value">${objectivesPercent}%</div><div class="muted">${stageOkTotal}/${stageObjectiveTotal}</div></div>
       </div>
+      ${attendanceRiskCount ? `<div class="note"><strong>Atenção:</strong> ${attendanceRiskCount} aluno(s) com presença mensal inferior a 75%.</div>` : ''}
 
       <div class="note">
         Esta ficha junta os dados da turma selecionada no Horário do Admin. Se a turma estiver em par semanal, mostra os dados dos dias presentes no bloco selecionado.
@@ -9657,6 +10109,65 @@ function adminClassDetailsDocumentHtml(details){
   return html;
 }
 
+
+function bindAdminClassPopupActions(popup, details){
+  try{
+    if(!popup || !popup.document) return;
+
+    const doc=popup.document;
+    const username=details?.teacher?.username || details?.teacher?.user || '';
+    const classId=details?.records?.[0]?.id || '';
+    const fail=(message)=>{ try{ popup.alert(message); }catch(e){ alert(message); } };
+
+    const closeBtn=doc.getElementById('adminClassCloseBtn');
+    const evolutionBtn=doc.getElementById('adminClassEvolutionBtn');
+    const internalBtn=doc.getElementById('adminClassInternalBtn');
+    const printBtn=doc.getElementById('adminClassPrintBtn');
+
+    if(closeBtn){
+      closeBtn.addEventListener('click',()=>popup.close());
+    }
+
+    if(evolutionBtn){
+      evolutionBtn.addEventListener('click',()=>{
+        try{
+          if(!username || !classId) throw new Error('Dados da turma incompletos.');
+          openAdminTeacherEvolutionReport(username,classId);
+        }catch(err){
+          console.error(err);
+          fail('Não consegui abrir o Relatório Evolução. Fecha esta janela, atualiza a cloud e tenta novamente.');
+        }
+      });
+    }
+
+    if(internalBtn){
+      internalBtn.addEventListener('click',()=>{
+        try{
+          if(!username || !classId) throw new Error('Dados da turma incompletos.');
+          openAdminTeacherInternalDocument(username,classId);
+        }catch(err){
+          console.error(err);
+          fail('Não consegui abrir o Documento Interno. Fecha esta janela, atualiza a cloud e tenta novamente.');
+        }
+      });
+    }
+
+    if(printBtn){
+      printBtn.addEventListener('click',()=>{
+        try{
+          popup.focus();
+          setTimeout(()=>popup.print(), 80);
+        }catch(err){
+          console.error(err);
+          fail('Não consegui abrir a impressão. Usa Cmd+P / Ctrl+P nesta janela.');
+        }
+      });
+    }
+  }catch(err){
+    console.error('Erro ao ligar botões da janela da turma', err);
+  }
+}
+
 function openAdminClassWindow(username,className,daysString,time){
   const details=getAdminClassDetails(username,className,daysString,time);
   if(!details) return;
@@ -9668,6 +10179,8 @@ function openAdminClassWindow(username,className,daysString,time){
     popup.document.open();
     popup.document.write(html);
     popup.document.close();
+    try{ popup.opener = window; }catch(e){}
+    bindAdminClassPopupActions(popup, details);
     popup.focus();
     return;
   }
@@ -9684,7 +10197,7 @@ function openAdminClassWindow(username,className,daysString,time){
   openAdminDrawer('Turma',`${details.className} · ${details.time}`,`
     <div class="admin-detail-card">
       <div class="admin-detail-label">Pop-up bloqueado</div>
-      <div class="admin-detail-note">O navegador bloqueou a nova janela. Permite pop-ups para abrir a ficha completa.</div>
+      <div class="admin-detail-note">O navegador bloqueou a nova janela. Permite pop-ups para abrir o resumo da turma.</div>
     </div>
     <div class="admin-detail-grid">
       <div class="admin-detail-card"><div class="admin-detail-label">Alunos</div><div class="admin-detail-value">${details.totalStudents}/${CLASS_CAPACITY_REFERENCE}</div></div>
@@ -13194,93 +13707,141 @@ function renderDocument(){
     return 0;
   }
 
+  function reportMetaBlock(c, ev, student, studentIndex){
+    const name=studentDisplayName(student,studentIndex);
+    const blocks=getStudentScheduleText(c, student, studentIndex);
+    return `<div class="final-doc-top">
+      <div class="final-doc-meta">
+        <div class="final-meta-card"><div class="final-meta-label">Aluno</div><div class="final-meta-value">${safe(name)}</div></div>
+        <div class="final-meta-card"><div class="final-meta-label">Professor</div><div class="final-meta-value">${safe(professorName)}</div></div>
+        <div class="final-meta-card schedule-semester">
+          <div class="final-meta-label">Horário</div>
+          <div class="final-meta-value">${safe(blocks)}</div>
+          <div class="final-semester-inline">
+            <div class="final-semester-inline-label">Semestre</div>
+            <div class="final-semester-mini">
+              <div class="final-semester-choice"><label>1º</label><div class="final-semester-blank">${ev.semester==='1'?'✓':''}</div></div>
+              <div class="final-semester-choice"><label>2º</label><div class="final-semester-blank">${ev.semester==='2'?'✓':''}</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>`;
+  }
+
+  function reportBanner(c, extraText){
+    return `<div class="final-doc-banner">
+      <div>
+        <div class="final-doc-kicker">Relatório Evolução Época 25/26${extraText ? ' · '+safe(extraText) : ''}</div>
+        <h2>Classe ${safe(c.className)}</h2>
+      </div>
+      <div class="final-doc-logo"><img src="${reportLogoDataUrl}" alt="Complexo de Piscinas" class="final-doc-logo-img"></div>
+    </div>`;
+  }
+
+  function reportStageHtml(group, gi, ev, studentIndex){
+    let stageHtml = `<section class="final-stage-section">
+      <div class="final-stage-pretitle">Objetivos Operacionais:</div>
+      <div class="final-stage-head"><div class="final-stage-title-wrap"><div class="final-stage-title">Etapa ${gi+1}</div></div></div>
+      <table class="final-objectives-table">
+        <thead><tr><th style="width:auto"></th><th style="width:78px">A melhorar</th><th style="width:78px">Realiza</th></tr></thead>
+        <tbody>`;
+    group.items.forEach((item,ii)=>{
+      const done=!!ev.checks[`${studentIndex}-ama1a-${gi}-${ii}`];
+      stageHtml += `<tr>
+        <td><div class="final-objective-main"><div class="final-objective-num">${ii+1}.</div><div>${safe(item)}</div></div></td>
+        <td class="status-cell"><div class="final-status-box">${done?'':'<span class="mark">✓</span>'}</div></td>
+        <td class="status-cell"><div class="final-status-box">${done?'<span class="mark">✓</span>':''}</div></td>
+      </tr>`;
+    });
+    stageHtml += `</tbody></table></section>`;
+    return stageHtml;
+  }
+
+  function finalMessageHtml(fi, ev, studentIndex, className){
+    return `<section class="final-message-card">
+      ${fi===1 ? `
+      <div class="reference-bottom-row">
+        <div class="reference-bottom-cell reference-check">✓</div>
+        <div class="reference-bottom-cell">Estás preparado(a) para novos desafios no próximo nível.</div>
+        <div class="reference-bottom-cell reference-label">NÍVEL SEGUINTE</div>
+        <div class="reference-bottom-cell reference-next-level">${safe(studentTargetLevel(ev, studentIndex, className))}</div>
+      </div>` : ''}
+      ${fi===2 ? `
+      <div class="reference-bottom-row reference-bottom-row-simple">
+        <div class="reference-bottom-cell reference-check">✓</div>
+        <div class="reference-bottom-cell reference-text-full">Precisas de melhorar, mas estás no bom caminho.</div>
+      </div>` : ''}
+      ${fi===0 ? `
+      <div class="reference-bottom-row">
+        <div class="reference-bottom-cell reference-check">&nbsp;</div>
+        <div class="reference-bottom-cell">Mensagem final por selecionar.</div>
+        <div class="reference-bottom-cell reference-empty">&nbsp;</div>
+        <div class="reference-bottom-cell reference-empty">&nbsp;</div>
+      </div>` : ''}
+      <div class="final-congrats">Muitos parabéns pela tua evolução!</div>
+    </section>`;
+  }
+
+  function reportPageHtml(c, ev, student, studentIndex, stages, options={}){
+    const fi=finalChoiceIndex(ev.finalMessages?.[studentIndex]);
+    const pageClass=options.split ? ' final-doc-page-split' : '';
+    const partClass=options.partClass ? ' '+options.partClass : '';
+    const note=options.note ? `<div class="final-page-note">${safe(options.note)}</div>` : '';
+    const hideTopInfo=!!options.hideTopInfo;
+    let page=`<section class="final-doc-page${pageClass}${partClass}">
+      ${hideTopInfo ? '' : reportBanner(c, options.kicker || '')}
+      <div class="final-doc-body${hideTopInfo ? ' final-doc-body-no-top' : ''}">
+        ${hideTopInfo ? '' : reportMetaBlock(c, ev, student, studentIndex)}
+        ${note}`;
+    stages.forEach(({group,gi})=>{ page += reportStageHtml(group, gi, ev, studentIndex); });
+    if(options.includeFinalMessage){ page += finalMessageHtml(fi, ev, studentIndex, c.className); }
+    page += `</div></section>`;
+    return page;
+  }
+
   let hasAmaReport=false;
   const filteredClass = documentClassFilterId ? allDocumentClasses.find(c=>c.id===documentClassFilterId) : null;
-  let html=`<div class="doc-header"><div class="doc-title"><h2>Relatório Evolução Época</h2><p>${filteredClass ? `A mostrar apenas: ${safe(filteredClass.displayName||filteredClass.className)}` : 'A mostrar todas as turmas com relatório disponível.'}</p></div><div class="pill blue">${new Date().toLocaleDateString('pt-PT')}</div></div><div class="final-doc-shell">`;
+  let html=`<div class="doc-header"><div class="doc-title"><h2>Relatório Evolução Época 25/26</h2><p>${filteredClass ? `A mostrar apenas: ${safe(filteredClass.displayName||filteredClass.className)}` : 'A mostrar todas as turmas com relatório disponível.'}</p></div><div class="pill blue">${new Date().toLocaleDateString('pt-PT')}</div></div><div class="final-doc-shell">`;
 
   selected.forEach(c=>{
     const data=state.classes[c.id]||{students:[]};
     const ev=evalData(c.id);
 
     if(usesAma1Evaluation(c.className) && data.students.length){
+      const steps=getAmaStepsForClass(c.className);
+      const isAma3Report=String(c.className||'').trim().toUpperCase()==='AMA 3';
+
       data.students.forEach((s,i)=>{
         if(!studentHasEvaluation(ev, i, c.className)) return;
         hasAmaReport=true;
-        const name=studentDisplayName(s,i);
-        const blocks=getStudentScheduleText(c, s, i);
-        const fi=finalChoiceIndex(ev.finalMessages?.[i]);
-        html += `<section class="final-doc-page">
-          <div class="final-doc-banner">
-            <div>
-              <div class="final-doc-kicker">Relatório Evolução Época</div>
-              <h2>Classe ${safe(c.className)}</h2>
 
-            </div>
-            <div class="final-doc-logo"><img src="${reportLogoDataUrl}" alt="Complexo de Piscinas" class="final-doc-logo-img"></div>
-          </div>
-          <div class="final-doc-body">
-            <div class="final-doc-top">
-              <div class="final-doc-meta">
-                <div class="final-meta-card"><div class="final-meta-label">Aluno</div><div class="final-meta-value">${safe(name)}</div></div>
-                <div class="final-meta-card"><div class="final-meta-label">Professor</div><div class="final-meta-value">${safe(professorName)}</div></div>
-                <div class="final-meta-card schedule-semester">
-                  <div class="final-meta-label">Horário</div>
-                  <div class="final-meta-value">${safe(blocks)}</div>
-                  <div class="final-semester-inline">
-                    <div class="final-semester-inline-label">Semestre</div>
-                    
-                    <div class="final-semester-mini">
-                      <div class="final-semester-choice"><label>1º</label><div class="final-semester-blank">${ev.semester==='1'?'✓':''}</div></div>
-                      <div class="final-semester-choice"><label>2º</label><div class="final-semester-blank">${ev.semester==='2'?'✓':''}</div></div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>`;
-
-        getAmaStepsForClass(c.className).forEach((group,gi)=>{
-          html += `<section class="final-stage-section">
-            <div class="final-stage-pretitle">Objetivos Operacionais:</div>
-            <div class="final-stage-head"><div class="final-stage-title-wrap"><div class="final-stage-title">Etapa ${gi+1}</div></div></div>
-            <table class="final-objectives-table">
-              <thead><tr><th style="width:auto"></th><th style="width:78px">A melhorar</th><th style="width:78px">Realiza</th></tr></thead>
-              <tbody>`;
-          group.items.forEach((item,ii)=>{
-            const done=!!ev.checks[`${i}-ama1a-${gi}-${ii}`];
-            html += `<tr>
-              <td><div class="final-objective-main"><div class="final-objective-num">${ii+1}.</div><div>${safe(item)}</div></div></td>
-              <td class="status-cell"><div class="final-status-box">${done?'':'<span class="mark">✓</span>'}</div></td>
-              <td class="status-cell"><div class="final-status-box">${done?'<span class="mark">✓</span>':''}</div></td>
-            </tr>`;
+        if(isAma3Report){
+          // AMA 3 is intentionally split in the simplest possible way:
+          // page 1 keeps Etapa 1 + Etapa 2, page 2 starts directly with Objetivos Operacionais: Etapa 3.
+          html += reportPageHtml(c, ev, s, i, [
+            {group:steps[0],gi:0},
+            {group:steps[1],gi:1}
+          ], {
+            split:true,
+            partClass:'ama3-report-part-1',
+            includeFinalMessage:false
           });
-          html += `</tbody></table></section>`;
-        });
 
-        html += `<section class="final-message-card">
-          ${fi===1 ? `
-          <div class="reference-bottom-row">
-            <div class="reference-bottom-cell reference-check">✓</div>
-            <div class="reference-bottom-cell">Estás preparado(a) para novos desafios no próximo nível.</div>
-            <div class="reference-bottom-cell reference-label">NÍVEL SEGUINTE</div>
-            <div class="reference-bottom-cell reference-next-level">${safe(studentTargetLevel(ev, i, c.className))}</div>
-          </div>` : ''}
-          ${fi===2 ? `
-          <div class="reference-bottom-row reference-bottom-row-simple">
-            <div class="reference-bottom-cell reference-check">✓</div>
-            <div class="reference-bottom-cell reference-text-full">Precisas de melhorar, mas estás no bom caminho.</div>
-          </div>` : ''}
-          ${fi===0 ? `
-          <div class="reference-bottom-row">
-            <div class="reference-bottom-cell reference-check">&nbsp;</div>
-            <div class="reference-bottom-cell">Mensagem final por selecionar.</div>
-            <div class="reference-bottom-cell reference-empty">&nbsp;</div>
-            <div class="reference-bottom-cell reference-empty">&nbsp;</div>
-          </div>` : ''}
-          <div class="final-congrats">Muitos parabéns pela tua evolução!</div>
-          ${ev.notes?`<div class="final-observations"><strong>Observações:</strong> ${safe(ev.notes)}</div>`:''}
-        </section>
-          </div>
-        </section>`;
+          html += reportPageHtml(c, ev, s, i, [
+            {group:steps[2],gi:2}
+          ], {
+            split:true,
+            partClass:'ama3-report-part-2',
+            hideTopInfo:true,
+            includeFinalMessage:true
+          });
+        }else{
+          html += reportPageHtml(c, ev, s, i, steps.map((group,gi)=>({group,gi})), {
+            split:false,
+            includeFinalMessage:true
+          });
+        }
       });
     }
   });
@@ -14292,7 +14853,14 @@ function renderMainCalendar(){
   for(let i=0;i<42;i++){
     const d=new Date(start); d.setDate(start.getDate()+i);
     const iso=mainCalendarIso(d);
-    const items=all.filter(e=>mainCalendarEventDates(e).includes(iso)).slice(0,4);
+    const items=all.filter(e=>mainCalendarEventDates(e).includes(iso)).sort((a,b)=>{
+      const ar=mainCalendarNormalRange(a);
+      const br=mainCalendarNormalRange(b);
+      const aMulti=ar.start!==ar.end ? 0 : 1;
+      const bMulti=br.start!==br.end ? 0 : 1;
+      if(aMulti!==bMulti) return aMulti-bMulti;
+      return String(a.date||'').localeCompare(String(b.date||'')) || String(a.title||'').localeCompare(String(b.title||''));
+    }).slice(0,4);
     const muted=d.getMonth()!==m;
     const day=document.createElement('div');
     const adminReady=!(typeof isAdminUser==='function') || isAdminUser();
@@ -14654,21 +15222,15 @@ setInterval(()=>{
       return '<article class="teacher-news-card '+(read?'':'unread')+'"><div class="teacher-news-top"><div><div class="teacher-news-title">'+esc(n.title)+'</div><div class="teacher-news-meta">'+esc(n.category||'Geral')+' · Publicado por '+esc(n.author||'Admin')+' · '+esc(created)+esc(updated)+esc(dateText)+'</div></div><span class="teacher-news-chip '+esc(n.priority||'normal')+'">'+esc(priorityLabel)+'</span></div><div class="teacher-news-message">'+esc(n.message)+'</div>'+receipts+'<div class="teacher-news-actions"><span class="teacher-news-chip '+(read?'normal':'important')+'">'+(read?'Lido':'Por ler')+'</span><div style="display:flex;gap:7px;flex-wrap:wrap">'+(!read && !admin()?'<button class="btn small ghost" type="button" data-mark-notice-read="'+esc(n.id)+'">Marcar como lido</button>':'')+(admin()?'<button class="btn small ghost" type="button" data-edit-notice="'+esc(n.id)+'">Editar</button><button class="btn small danger" type="button" data-delete-notice="'+esc(n.id)+'">Apagar</button>':'')+'</div></div></article>';
     }).join('');
     updateBadge();
-    if(admin()) setTimeout(renderUserActivityPanel,0);
   };
 
   function ensureAdminActivityPanel(){
-    if(!admin()) return;
+    // User activity is not shown in the Teacher / Área de Professor page.
+    // This keeps the teacher page focused only on avisos and comments.
     var root=activeRoot();
-    if(!root.querySelector('#teacherNewsList')) return;
-    if(root.querySelector('#adminUserActivityPanel')) return;
-    var panel=document.createElement('section');
-    panel.id='adminUserActivityPanel';
-    panel.className='teacher-news-panel';
-    panel.style.marginTop='14px';
-    var news=root.querySelector('.teacher-news-panel') || root.querySelector('#teacherNewsList')?.parentElement;
-    if(news && news.parentElement) news.parentElement.insertBefore(panel, news.nextSibling);
-    renderUserActivityPanel();
+    var existing=root && root.querySelector ? root.querySelector('#adminUserActivityPanel') : null;
+    if(existing) existing.remove();
+    return;
   }
 
   document.addEventListener('click',function(e){
@@ -16440,5 +17002,1049 @@ body:not(.login-locked) #attendanceView .attendance-pill{
   }
 }
 </style>
+
+<script>
+(function(){
+  function enhanceScheduleView(){
+    const scheduleView=document.getElementById('scheduleView');
+    if(!scheduleView) return;
+
+    const label=scheduleView.querySelector('.panel:first-child .section-label');
+    if(label) label.textContent='Construção do horário';
+
+    const hint=scheduleView.querySelector('.panel:first-child .hint');
+    if(hint) hint.textContent='Ativa apenas os blocos onde tens aula, escolhe a turma principal e, se necessário, adiciona uma segunda turma no mesmo horário.';
+
+    const msg=document.getElementById('scheduleMessage');
+    if(msg && !document.getElementById('scheduleMobileHelp')){
+      msg.insertAdjacentHTML('afterend','<div id="scheduleMobileHelp" class="schedule-mobile-help">No telemóvel, desliza a tabela para o lado para ver todos os dias da semana.</div>');
+    }
+
+    scheduleView.querySelectorAll('.lesson-box').forEach(box=>{
+      const cb=box.querySelector('input[type="checkbox"][data-check]');
+      const span=box.querySelector('.check-row span');
+      const primary=box.querySelector('[data-primary-class]');
+      const second=box.querySelector('[data-second-class]');
+      if(span) span.textContent = cb && cb.checked ? 'Aula ativa' : 'Sem aula';
+
+      box.querySelectorAll('.schedule-slot-summary,.schedule-empty-hint').forEach(el=>el.remove());
+      const names=[primary?.value, second?.value].filter(Boolean);
+      const selector=box.querySelector('.slot-class-selector');
+      if(names.length){
+        const chips=document.createElement('div');
+        chips.className='schedule-slot-summary';
+        chips.innerHTML=names.map(name=>'<span class="schedule-class-chip">'+String(name).replace(/[&<>"']/g,function(m){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m];})+'</span>').join('');
+        if(selector) selector.insertAdjacentElement('afterend',chips);
+      }else if(cb && !cb.checked){
+        const empty=document.createElement('div');
+        empty.className='schedule-empty-hint';
+        empty.textContent='Marca Aula para configurar este bloco.';
+        box.appendChild(empty);
+      }
+    });
+  }
+
+  const previousRenderSchedule=window.renderSchedule;
+  if(typeof previousRenderSchedule==='function' && !previousRenderSchedule.__modernHorarioWrapped){
+    const wrapped=function(){
+      const result=previousRenderSchedule.apply(this, arguments);
+      try{ enhanceScheduleView(); }catch(err){ console.warn('Schedule enhancement failed', err); }
+      return result;
+    };
+    wrapped.__modernHorarioWrapped=true;
+    window.renderSchedule=wrapped;
+  }
+
+  const previousSwitchView=window.switchView;
+  if(typeof previousSwitchView==='function' && !previousSwitchView.__modernHorarioWrapped){
+    const wrappedSwitch=function(id){
+      const result=previousSwitchView.apply(this, arguments);
+      if(id==='scheduleView') setTimeout(enhanceScheduleView, 0);
+      return result;
+    };
+    wrappedSwitch.__modernHorarioWrapped=true;
+    window.switchView=wrappedSwitch;
+  }
+
+  document.addEventListener('change', function(ev){
+    if(ev.target && ev.target.closest && ev.target.closest('#scheduleView')){
+      setTimeout(enhanceScheduleView, 0);
+    }
+  });
+  document.addEventListener('DOMContentLoaded', function(){
+    setTimeout(enhanceScheduleView, 120);
+  });
+})();
+</script>
+
+
+
+<style>
+/* =========================================================
+   2. Horário — Admin-style compact editor
+   Makes teacher schedule visually closer to Admin schedule tables
+   while preserving all editing controls and logic.
+   ========================================================= */
+#scheduleView .calendar-card{
+  border-radius:22px!important;
+  border:1px solid #e3e7ee!important;
+  overflow:auto!important;
+  background:#fff!important;
+  box-shadow:0 16px 36px rgba(15,23,42,.07)!important;
+}
+#scheduleView .calendar-card table{
+  border-collapse:collapse!important;
+  border-spacing:0!important;
+  table-layout:fixed!important;
+  min-width:1040px!important;
+}
+#scheduleView .calendar-card thead th{
+  background:#111827!important;
+  color:#fff!important;
+  height:42px!important;
+  padding:10px 8px!important;
+  font-size:11px!important;
+  font-weight:950!important;
+  letter-spacing:.045em!important;
+  text-transform:uppercase!important;
+  border-right:1px solid rgba(255,255,255,.12)!important;
+  text-align:center!important;
+}
+#scheduleView .calendar-card thead th:first-child{
+  width:104px!important;
+  text-align:left!important;
+  padding-left:12px!important;
+}
+#scheduleView .calendar-card tbody th.time-cell,
+#scheduleView .calendar-card tbody td{
+  border-right:1px solid #e6eaf0!important;
+  border-bottom:1px solid #e6eaf0!important;
+}
+#scheduleView .calendar-card tbody th.time-cell{
+  background:#f9fafb!important;
+  color:#111827!important;
+  font-size:11px!important;
+  font-weight:950!important;
+  text-align:left!important;
+  padding:10px 9px!important;
+  vertical-align:middle!important;
+  position:sticky!important;
+  left:0!important;
+  z-index:3!important;
+}
+#scheduleView .calendar-card tbody td{
+  background:#fff!important;
+  padding:0!important;
+  vertical-align:middle!important;
+}
+#scheduleView .slot{
+  min-height:74px!important;
+  padding:6px!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+#scheduleView .lesson-box{
+  width:100%!important;
+  min-height:56px!important;
+  border:1px solid transparent!important;
+  border-radius:12px!important;
+  background:#fff!important;
+  padding:6px!important;
+  gap:5px!important;
+  box-shadow:none!important;
+  justify-content:center!important;
+}
+#scheduleView .lesson-box:hover{
+  border-color:#edf0f3!important;
+  background:#fbfbfc!important;
+  box-shadow:none!important;
+}
+#scheduleView .lesson-box.active{
+  border-color:rgba(208,0,27,.18)!important;
+  background:#fffafb!important;
+  box-shadow:none!important;
+}
+#scheduleView .check-row{
+  order:2!important;
+  min-height:24px!important;
+  width:100%!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:5px!important;
+  padding:4px 6px!important;
+  background:#f8fafc!important;
+  border:1px solid #edf0f3!important;
+  border-radius:9px!important;
+  color:#6b7280!important;
+  font-size:9.5px!important;
+  font-weight:950!important;
+  text-transform:uppercase!important;
+  letter-spacing:.035em!important;
+  cursor:pointer!important;
+}
+#scheduleView .lesson-box.active .check-row{
+  background:#fff!important;
+  border-color:#f4c7cf!important;
+  color:#9f0015!important;
+}
+#scheduleView .check-row input[type="checkbox"]{
+  width:13px!important;
+  height:13px!important;
+  accent-color:#b40018!important;
+  flex:0 0 auto!important;
+}
+#scheduleView .slot-class-selector{
+  order:3!important;
+  width:100%!important;
+  display:grid!important;
+  gap:4px!important;
+  margin-top:0!important;
+}
+#scheduleView .slot-class-selector.is-hidden{
+  display:none!important;
+}
+#scheduleView .slot-class-selector select,
+#scheduleView .lesson-box .slot-class-selector select{
+  width:100%!important;
+  height:28px!important;
+  min-height:28px!important;
+  border:1px solid #dfe4ea!important;
+  border-radius:8px!important;
+  padding:3px 7px!important;
+  background:#fff!important;
+  color:#111827!important;
+  font-size:10px!important;
+  font-weight:850!important;
+  line-height:1.1!important;
+  box-shadow:none!important;
+}
+#scheduleView .lesson-box .slot-class-selector select:focus{
+  border-color:#b40018!important;
+  box-shadow:0 0 0 2px rgba(180,0,24,.10)!important;
+}
+#scheduleView .second-class-row{
+  min-height:24px!important;
+  width:100%!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  gap:5px!important;
+  padding:3px 6px!important;
+  margin:0!important;
+  border:1px dashed #dfe4ea!important;
+  border-radius:8px!important;
+  background:#fff!important;
+  color:#4b5563!important;
+}
+#scheduleView .second-class-row input{
+  width:13px!important;
+  height:13px!important;
+  accent-color:#b40018!important;
+}
+#scheduleView .second-class-row span{
+  font-size:9.5px!important;
+  font-weight:900!important;
+  line-height:1.05!important;
+  white-space:nowrap!important;
+}
+#scheduleView .schedule-slot-summary{
+  order:1!important;
+  width:100%!important;
+  display:flex!important;
+  flex-wrap:wrap!important;
+  gap:4px!important;
+  margin:0!important;
+}
+#scheduleView .schedule-class-chip{
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  min-height:22px!important;
+  max-width:100%!important;
+  border-radius:999px!important;
+  padding:4px 8px!important;
+  background:#fff5f6!important;
+  border:1px solid rgba(208,0,27,.24)!important;
+  color:#9f0015!important;
+  font-size:10px!important;
+  font-weight:950!important;
+  line-height:1!important;
+  white-space:nowrap!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+}
+#scheduleView .schedule-empty-hint{
+  order:1!important;
+  margin:0!important;
+  width:100%!important;
+  min-height:22px!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  border:1px dashed #e5e7eb!important;
+  border-radius:999px!important;
+  background:#fafafa!important;
+  color:#a1a1aa!important;
+  font-size:9.5px!important;
+  font-weight:900!important;
+  line-height:1!important;
+  text-align:center!important;
+}
+#scheduleView .empty-day{
+  min-height:74px!important;
+  border-radius:0!important;
+  background:#fbfbfc!important;
+  color:#cbd5e1!important;
+  font-size:10px!important;
+  font-weight:950!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+#scheduleView .panel:first-child{
+  border-radius:22px!important;
+}
+#scheduleView .copy-grid{
+  border-radius:14px!important;
+}
+@media(max-width:900px){
+  #scheduleView .calendar-card table{min-width:960px!important;}
+  #scheduleView .slot{min-height:72px!important;padding:5px!important;}
+  #scheduleView .lesson-box{min-height:54px!important;padding:5px!important;}
+  #scheduleView .calendar-card tbody th.time-cell{min-width:92px!important;}
+}
+@media(max-width:560px){
+  #scheduleView .calendar-card table{min-width:920px!important;}
+  #scheduleView .calendar-card thead th{font-size:10px!important;height:38px!important;}
+  #scheduleView .calendar-card thead th:first-child{width:92px!important;}
+  #scheduleView .time-cell{font-size:10px!important;}
+  #scheduleView .slot{min-height:68px!important;padding:4px!important;}
+  #scheduleView .lesson-box{min-height:50px!important;}
+  #scheduleView .schedule-class-chip{font-size:9.5px!important;padding:3px 7px!important;}
+}
+</style>
+
+<script>
+(function(){
+  function applyAdminStyleScheduleLabels(){
+    const scheduleView=document.getElementById('scheduleView');
+    if(!scheduleView) return;
+
+    const label=scheduleView.querySelector('.panel:first-child .section-label');
+    if(label) label.textContent='Horário semanal';
+
+    const hint=scheduleView.querySelector('.panel:first-child .hint');
+    if(hint) hint.textContent='Formato compacto inspirado no Horário Admin. Ativa a aula e escolhe a turma principal ou segunda turma quando necessário.';
+
+    scheduleView.querySelectorAll('.lesson-box').forEach(box=>{
+      const cb=box.querySelector('input[type="checkbox"][data-check]');
+      const span=box.querySelector('.check-row span');
+      if(span) span.textContent = cb && cb.checked ? 'Editar aula' : 'Sem aula';
+    });
+  }
+
+  const previousRenderSchedule=window.renderSchedule;
+  if(typeof previousRenderSchedule==='function' && !previousRenderSchedule.__adminStyleHorarioWrapped){
+    const wrapped=function(){
+      const result=previousRenderSchedule.apply(this, arguments);
+      try{ applyAdminStyleScheduleLabels(); }catch(err){ console.warn('Admin-style Horário labels failed', err); }
+      return result;
+    };
+    wrapped.__adminStyleHorarioWrapped=true;
+    window.renderSchedule=wrapped;
+  }
+
+  const previousSwitchView=window.switchView;
+  if(typeof previousSwitchView==='function' && !previousSwitchView.__adminStyleHorarioWrapped){
+    const wrappedSwitch=function(id){
+      const result=previousSwitchView.apply(this, arguments);
+      if(id==='scheduleView') setTimeout(applyAdminStyleScheduleLabels, 0);
+      return result;
+    };
+    wrappedSwitch.__adminStyleHorarioWrapped=true;
+    window.switchView=wrappedSwitch;
+  }
+
+  document.addEventListener('change', function(ev){
+    if(ev.target && ev.target.closest && ev.target.closest('#scheduleView')){
+      setTimeout(applyAdminStyleScheduleLabels, 0);
+    }
+  });
+  document.addEventListener('DOMContentLoaded', function(){
+    setTimeout(applyAdminStyleScheduleLabels, 120);
+  });
+})();
+</script>
+
+
+
+<style>
+/* =========================================================
+   2. Horário — Hide selectors after classes are chosen
+   Shows compact class capsules first; pressing a capsule opens the editor.
+   ========================================================= */
+#scheduleView .lesson-box.has-selected-classes:not(.schedule-selector-open){
+  min-height:34px!important;
+  padding:4px!important;
+  background:#fff!important;
+  border-color:transparent!important;
+}
+#scheduleView .lesson-box.has-selected-classes:not(.schedule-selector-open) .check-row,
+#scheduleView .lesson-box.has-selected-classes:not(.schedule-selector-open) .slot-class-selector{
+  display:none!important;
+}
+#scheduleView .lesson-box.has-selected-classes .schedule-slot-summary{
+  order:1!important;
+  display:flex!important;
+  flex-wrap:wrap!important;
+  gap:5px!important;
+  align-items:center!important;
+  justify-content:flex-start!important;
+  width:100%!important;
+  margin:0!important;
+}
+#scheduleView .lesson-box.has-selected-classes:not(.schedule-selector-open) .schedule-slot-summary{
+  justify-content:flex-start!important;
+}
+#scheduleView .schedule-class-chip,
+#scheduleView .schedule-class-chip-action{
+  appearance:none!important;
+  border-radius:999px!important;
+  border:1px solid rgba(208,0,27,.26)!important;
+  background:#fff5f6!important;
+  color:#9f0015!important;
+  min-height:24px!important;
+  padding:5px 10px!important;
+  font-family:inherit!important;
+  font-size:10.5px!important;
+  font-weight:950!important;
+  line-height:1!important;
+  cursor:pointer!important;
+  display:inline-flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  white-space:nowrap!important;
+  max-width:100%!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+  transition:background .15s ease, border-color .15s ease, transform .15s ease!important;
+}
+#scheduleView .schedule-class-chip:hover,
+#scheduleView .schedule-class-chip-action:hover{
+  background:#ffe8eb!important;
+  border-color:rgba(208,0,27,.48)!important;
+  transform:translateY(-1px)!important;
+}
+#scheduleView .lesson-box.schedule-selector-open{
+  border-color:rgba(208,0,27,.28)!important;
+  background:#fff7f8!important;
+  padding:6px!important;
+  min-height:56px!important;
+}
+#scheduleView .lesson-box.schedule-selector-open .slot-class-selector{
+  display:grid!important;
+}
+#scheduleView .lesson-box.schedule-selector-open .check-row{
+  display:flex!important;
+}
+#scheduleView .lesson-box.schedule-selector-open .schedule-slot-summary{
+  margin-bottom:2px!important;
+}
+#scheduleView .lesson-box.schedule-selector-open .schedule-class-chip-action{
+  background:#111827!important;
+  border-color:#111827!important;
+  color:#fff!important;
+}
+@media(max-width:700px){
+  #scheduleView .lesson-box.has-selected-classes:not(.schedule-selector-open){
+    min-height:32px!important;
+  }
+  #scheduleView .schedule-class-chip,
+  #scheduleView .schedule-class-chip-action{
+    min-height:24px!important;
+    font-size:10px!important;
+    padding:5px 8px!important;
+  }
+}
+</style>
+
+<script>
+(function(){
+  function escapeHtml(value){
+    return String(value || '').replace(/[&<>"']/g, function(ch){
+      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch];
+    });
+  }
+
+  function compactHorarioSelectors(){
+    const scheduleView=document.getElementById('scheduleView');
+    if(!scheduleView) return;
+
+    scheduleView.querySelectorAll('.lesson-box').forEach(function(box){
+      const primary=box.querySelector('[data-primary-class]');
+      const second=box.querySelector('[data-second-class]');
+      const names=[primary && primary.value, second && second.value].filter(Boolean);
+      const selector=box.querySelector('.slot-class-selector');
+      if(!selector) return;
+
+      box.classList.toggle('has-selected-classes', names.length > 0);
+      if(!names.length){
+        box.classList.remove('schedule-selector-open');
+        return;
+      }
+
+      let summary=box.querySelector('.schedule-slot-summary');
+      if(!summary){
+        summary=document.createElement('div');
+        summary.className='schedule-slot-summary';
+        selector.insertAdjacentElement('afterend', summary);
+      }
+
+      summary.innerHTML=names.map(function(name, index){
+        return '<button type="button" class="schedule-class-chip-action" data-edit-schedule-class="'+index+'" title="Editar '+escapeHtml(name)+'">'+escapeHtml(name)+'</button>';
+      }).join('');
+    });
+  }
+
+  document.addEventListener('click', function(ev){
+    const chip=ev.target && ev.target.closest ? ev.target.closest('#scheduleView .schedule-class-chip-action') : null;
+    if(chip){
+      ev.preventDefault();
+      ev.stopPropagation();
+      const box=chip.closest('.lesson-box');
+      if(!box) return;
+      box.classList.add('schedule-selector-open');
+      const index=chip.getAttribute('data-edit-schedule-class') === '1' ? 1 : 0;
+      const target=index === 1 ? box.querySelector('[data-second-class]') : box.querySelector('[data-primary-class]');
+      setTimeout(function(){ if(target && typeof target.focus === 'function') target.focus(); }, 40);
+      return;
+    }
+
+    if(ev.target && !ev.target.closest('#scheduleView .lesson-box')){
+      document.querySelectorAll('#scheduleView .lesson-box.schedule-selector-open').forEach(function(box){
+        box.classList.remove('schedule-selector-open');
+      });
+    }
+  }, true);
+
+  const previousRenderSchedule=window.renderSchedule;
+  if(typeof previousRenderSchedule==='function' && !previousRenderSchedule.__horarioChipEditorWrapped){
+    const wrapped=function(){
+      const result=previousRenderSchedule.apply(this, arguments);
+      try{ compactHorarioSelectors(); }catch(err){ console.warn('Horário chip editor failed', err); }
+      return result;
+    };
+    wrapped.__horarioChipEditorWrapped=true;
+    window.renderSchedule=wrapped;
+  }
+
+  const previousSwitchView=window.switchView;
+  if(typeof previousSwitchView==='function' && !previousSwitchView.__horarioChipEditorWrapped){
+    const wrappedSwitch=function(id){
+      const result=previousSwitchView.apply(this, arguments);
+      if(id==='scheduleView') setTimeout(compactHorarioSelectors, 0);
+      return result;
+    };
+    wrappedSwitch.__horarioChipEditorWrapped=true;
+    window.switchView=wrappedSwitch;
+  }
+
+  document.addEventListener('change', function(ev){
+    if(ev.target && ev.target.closest && ev.target.closest('#scheduleView')){
+      setTimeout(compactHorarioSelectors, 0);
+    }
+  });
+
+  document.addEventListener('DOMContentLoaded', function(){
+    setTimeout(compactHorarioSelectors, 120);
+    setTimeout(compactHorarioSelectors, 500);
+  });
+})();
+</script>
+
+<style>
+/* =========================================================
+   2. Horário — center single class chips, keep two-class layout
+   ========================================================= */
+
+/* Make sure the selected-class-only state uses the whole timetable cell */
+#scheduleView .slot{
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+
+#scheduleView .lesson-box.has-selected-classes:not(.schedule-selector-open){
+  width:100%!important;
+  max-width:100%!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+}
+
+/* Default selected chips remain compact and centered as a group */
+#scheduleView .lesson-box.has-selected-classes:not(.schedule-selector-open) .schedule-slot-summary{
+  width:100%!important;
+  display:flex!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:8px!important;
+  margin:0!important;
+  text-align:center!important;
+}
+
+/* If only one class exists, force it to the true center of the cell */
+#scheduleView .lesson-box.has-selected-classes:not(.schedule-selector-open) .schedule-slot-summary .schedule-class-chip-action:only-child,
+#scheduleView .lesson-box.has-selected-classes:not(.schedule-selector-open) .schedule-slot-summary .schedule-class-chip:only-child{
+  margin-left:auto!important;
+  margin-right:auto!important;
+}
+
+/* Two classes stay side-by-side as they already are */
+#scheduleView .lesson-box.has-selected-classes:not(.schedule-selector-open) .schedule-slot-summary .schedule-class-chip-action:not(:only-child),
+#scheduleView .lesson-box.has-selected-classes:not(.schedule-selector-open) .schedule-slot-summary .schedule-class-chip:not(:only-child){
+  margin-left:0!important;
+  margin-right:0!important;
+}
+</style>
+
+
+<style>
+/* =========================================================
+   1. Painel — Calendar multi-day bar visibility fix
+   Prevents blank dark continuation bars on multi-day events.
+   ========================================================= */
+#mainCalendarGrid .main-calendar-event.range-bar.range-mid,
+#mainCalendarGrid .main-calendar-event.range-bar.range-end:not(.range-start){
+  font-size:10px!important;
+  color:#fff!important;
+  line-height:1.15!important;
+  font-weight:950!important;
+  white-space:nowrap!important;
+  overflow:hidden!important;
+  text-overflow:ellipsis!important;
+}
+
+#mainCalendarGrid .main-calendar-event.range-bar.range-mid::after,
+#mainCalendarGrid .main-calendar-event.range-bar.range-end:not(.range-start)::after{
+  display:none!important;
+  content:none!important;
+}
+
+/* Keep event bars visually stable inside the day cell */
+#mainCalendarGrid .main-calendar-events{
+  position:relative!important;
+  z-index:2!important;
+}
+
+#mainCalendarGrid .main-calendar-day-num{
+  position:relative!important;
+  z-index:3!important;
+}
+</style>
+
+<script>
+/* Calendar safety patch: force visible labels on multi-day continuation segments */
+(function(){
+  function applyCalendarBarFix(){
+    try{
+      if(typeof window.mainCalendarRangeShowsText === 'function'){
+        window.mainCalendarRangeShowsText = function(){ return true; };
+      }
+      if(typeof window.renderMainCalendar === 'function'){
+        window.renderMainCalendar();
+      }
+    }catch(err){}
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){
+      setTimeout(applyCalendarBarFix, 80);
+    });
+  }else{
+    setTimeout(applyCalendarBarFix, 80);
+  }
+})();
+</script>
+
+
+<style>
+/* =========================================================
+   1. Painel — Multi-day event bars restored + priority on top
+   ========================================================= */
+
+/* Restore the clean continuous bar look: only the start / first visible segment shows text */
+#mainCalendarGrid .main-calendar-event.range-bar.range-mid,
+#mainCalendarGrid .main-calendar-event.range-bar.range-end:not(.range-start){
+  font-size:0!important;
+  color:transparent!important;
+  overflow:hidden!important;
+  text-overflow:clip!important;
+}
+
+#mainCalendarGrid .main-calendar-event.range-bar.range-mid::after,
+#mainCalendarGrid .main-calendar-event.range-bar.range-end:not(.range-start)::after{
+  content:''!important;
+  display:none!important;
+}
+
+/* Keep range bars visually above same-day events */
+#mainCalendarGrid .main-calendar-event.range-bar{
+  order:-10!important;
+  position:relative!important;
+  z-index:4!important;
+}
+
+#mainCalendarGrid .main-calendar-event:not(.range-bar){
+  order:10!important;
+  position:relative!important;
+  z-index:2!important;
+}
+
+/* Connected bar should stay visually continuous across day borders */
+#mainCalendarGrid .main-calendar-events{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:4px!important;
+  overflow:visible!important;
+}
+
+#mainCalendarGrid .main-calendar-day{
+  overflow:visible!important;
+}
+</style>
+
+<script>
+/* Calendar safety patch: restore text only on start/first visible segment and keep multi-day events first */
+(function(){
+  function restoreCalendarRangeBehavior(){
+    try{
+      window.mainCalendarRangeShowsText = function(e, iso){
+        if(typeof mainCalendarNormalRange !== 'function' || typeof mainCalendarParseIso !== 'function') return true;
+        var r = mainCalendarNormalRange(e);
+        var d = mainCalendarParseIso(iso);
+        if(!d || r.start === r.end) return true;
+        var day = (d.getDay() + 6) % 7;
+        return iso === r.start || day === 0;
+      };
+
+      if(typeof window.renderMainCalendar === 'function'){
+        window.renderMainCalendar();
+      }
+    }catch(err){}
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){
+      setTimeout(restoreCalendarRangeBehavior, 120);
+    });
+  }else{
+    setTimeout(restoreCalendarRangeBehavior, 120);
+  }
+})();
+</script>
+
+
+<style>
+/* =========================================================
+   Relatório Evolução — AMA 3 simple page split
+   Page 2 starts directly with Objetivos Operacionais: Etapa 3.
+   ========================================================= */
+.final-doc-page.final-doc-page-split .final-doc-body{
+  justify-content:flex-start!important;
+}
+.final-page-note{
+  margin:2px 0 6px;
+  padding:5px 8px;
+  border:1px solid #d7dce4;
+  background:#f8fafc;
+  color:#374151;
+  font-size:10px;
+  font-weight:800;
+  line-height:1.2;
+}
+.final-doc-page.ama3-report-part-2 .final-stage-section{
+  margin-top:6px!important;
+}
+@media print{
+  body.print-final .final-doc-page.final-doc-page-split{
+    page-break-after:always!important;
+    break-after:page!important;
+    overflow:hidden!important;
+  }
+  body.print-final .final-doc-page.final-doc-page-split .final-doc-body{
+    justify-content:flex-start!important;
+    overflow:hidden!important;
+  }
+  body.print-final .final-page-note{
+    margin:1.5mm 0 2mm!important;
+    padding:1.5mm 2mm!important;
+    font-size:8px!important;
+    line-height:1.05!important;
+  }
+  body.print-final .final-doc-page.ama3-report-part-1 .final-objectives-table tbody td,
+  body.print-final .final-doc-page.ama3-report-part-2 .final-objectives-table tbody td{
+    font-size:8px!important;
+    line-height:1.02!important;
+    padding:1.6px 2.5px!important;
+  }
+  body.print-final .final-doc-page.ama3-report-part-1 .final-stage-section,
+  body.print-final .final-doc-page.ama3-report-part-2 .final-stage-section{
+    margin-top:3px!important;
+  }
+  body.print-final .final-doc-page.ama3-report-part-2 .final-message-card{
+    margin-top:5px!important;
+  }
+}
+</style>
+
+
+<style>
+/* AMA 3 simple split: remove page labels/notes and keep page 2 focused on Etapa 3. */
+.final-doc-page.ama3-report-part-1 .final-page-note,
+.final-doc-page.ama3-report-part-2 .final-page-note{
+  display:none!important;
+}
+.final-doc-page.ama3-report-part-2 .final-stage-section:first-of-type{
+  margin-top:6px!important;
+}
+</style>
+
+
+<style>
+/* =========================================================
+   Relatório de Evolução — AMA 3 simplified second page
+   Hide repeated student/header block on Etapa 3 continuation page
+   ========================================================= */
+@media print{
+  .ama3-pagebreak + .report-page .report-header,
+  .ama3-pagebreak + .report-page .report-cover,
+  .ama3-pagebreak + .report-page .report-top,
+  .ama3-pagebreak + .report-page .doc-header,
+  .ama3-pagebreak + .report-page .student-info,
+  .ama3-pagebreak + .report-page .student-meta,
+  .ama3-pagebreak + .report-page .report-meta,
+  .ama3-pagebreak + .report-page .info-grid,
+  .ama3-pagebreak + .report-page .semester-row,
+  .ama3-pagebreak + .report-page .semestre-row{
+    display:none!important;
+  }
+
+  .ama3-pagebreak + .report-page{
+    padding-top:10mm!important;
+  }
+}
+
+.ama3-pagebreak + .report-page .report-header,
+.ama3-pagebreak + .report-page .report-cover,
+.ama3-pagebreak + .report-page .report-top,
+.ama3-pagebreak + .report-page .doc-header,
+.ama3-pagebreak + .report-page .student-info,
+.ama3-pagebreak + .report-page .student-meta,
+.ama3-pagebreak + .report-page .report-meta,
+.ama3-pagebreak + .report-page .info-grid,
+.ama3-pagebreak + .report-page .semester-row,
+.ama3-pagebreak + .report-page .semestre-row{
+  display:none!important;
+}
+
+.ama3-pagebreak + .report-page{
+  padding-top:10mm!important;
+}
+</style>
+
+<script>
+/* AMA 3 report cleanup:
+   When an AMA 3 evolution report has a forced Etapa 3 page,
+   remove repeated header/student info from the second page.
+*/
+(function(){
+  function cleanAma3SecondPages(root){
+    root = root || document;
+    try{
+      root.querySelectorAll('.ama3-pagebreak').forEach(function(marker){
+        var page = marker.nextElementSibling;
+        if(!page) return;
+
+        [
+          '.report-header',
+          '.report-cover',
+          '.report-top',
+          '.doc-header',
+          '.student-info',
+          '.student-meta',
+          '.report-meta',
+          '.info-grid',
+          '.semester-row',
+          '.semestre-row'
+        ].forEach(function(sel){
+          page.querySelectorAll(sel).forEach(function(el){
+            el.style.display = 'none';
+          });
+        });
+
+        page.style.paddingTop = '10mm';
+      });
+    }catch(err){}
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){
+      setTimeout(function(){ cleanAma3SecondPages(document); }, 100);
+    });
+  }else{
+    setTimeout(function(){ cleanAma3SecondPages(document); }, 100);
+  }
+
+  window.cleanAma3SecondPages = cleanAma3SecondPages;
+})();
+</script>
+
+
+<style>
+/* =========================================================
+   Relatório de Evolução — AMA 3 Etapa 3 page cleanup
+   Page 2 now starts directly on Objetivos Operacionais: Etapa 3
+   and avoids the extra blank page caused by oversized fixed A4 height.
+   ========================================================= */
+.final-doc-page.ama3-report-part-2 .final-doc-banner,
+.final-doc-page.ama3-report-part-2 .final-doc-top{
+  display:none!important;
+}
+.final-doc-page.ama3-report-part-2 .final-doc-body-no-top{
+  padding-top:10mm!important;
+}
+.final-doc-page.ama3-report-part-2 .final-stage-section:first-child,
+.final-doc-page.ama3-report-part-2 .final-stage-section:first-of-type{
+  margin-top:0!important;
+}
+@media print{
+  body.print-final .final-doc-page.ama3-report-part-1,
+  body.print-final .final-doc-page.ama3-report-part-2{
+    height:auto!important;
+    min-height:0!important;
+    max-height:none!important;
+    overflow:visible!important;
+    display:block!important;
+    justify-content:flex-start!important;
+    page-break-inside:avoid!important;
+    break-inside:avoid!important;
+  }
+  body.print-final .final-doc-page.ama3-report-part-1{
+    page-break-after:always!important;
+    break-after:page!important;
+  }
+  body.print-final .final-doc-page.ama3-report-part-2{
+    page-break-before:auto!important;
+    break-before:auto!important;
+    page-break-after:always!important;
+    break-after:page!important;
+  }
+  body.print-final .final-doc-page.ama3-report-part-2:last-child{
+    page-break-after:auto!important;
+    break-after:auto!important;
+  }
+  body.print-final .final-doc-page.ama3-report-part-2 .final-doc-banner,
+  body.print-final .final-doc-page.ama3-report-part-2 .final-doc-top{
+    display:none!important;
+  }
+  body.print-final .final-doc-page.ama3-report-part-2 .final-doc-body,
+  body.print-final .final-doc-page.ama3-report-part-2 .final-doc-body-no-top{
+    padding-top:8mm!important;
+  }
+}
+</style>
+
+
+<style>
+/* Relatório Evolução Época — hide only the Observações line, not the final message */
+.final-doc-page .final-observations{
+  display:none!important;
+}
+@media print{
+  .final-doc-page .final-observations{
+    display:none!important;
+  }
+}
+</style>
+
+
+<script>
+/* Relatório Evolução Época — season label 25/26 */
+(function(){
+  function applySeasonToEvolutionReport(root){
+    root = root || document;
+    try{
+      root.querySelectorAll('.final-doc-kicker, .doc-title h2').forEach(function(el){
+        var txt = (el.textContent || '').trim();
+        if(txt === 'Relatório Evolução Época'){
+          el.textContent = 'Relatório Evolução Época 25/26';
+        }
+        if(txt.indexOf('Relatório Evolução Época ·') === 0){
+          el.textContent = txt.replace('Relatório Evolução Época', 'Relatório Evolução Época 25/26');
+        }
+      });
+    }catch(err){}
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){
+      setTimeout(function(){ applySeasonToEvolutionReport(document); }, 100);
+    });
+  }else{
+    setTimeout(function(){ applySeasonToEvolutionReport(document); }, 100);
+  }
+
+  window.applySeasonToEvolutionReport = applySeasonToEvolutionReport;
+})();
+</script>
+
+
+<script>
+/* Admin Central safety exports */
+try{
+  window.openAdminClassWindow = window.openAdminClassWindow || openAdminClassWindow;
+  window.openAdminTeacherEvolutionReport = window.openAdminTeacherEvolutionReport || openAdminTeacherEvolutionReport;
+  window.openAdminTeacherInternalDocument = window.openAdminTeacherInternalDocument || openAdminTeacherInternalDocument;
+}catch(e){}
+</script>
+
+
+<style>
+/* Área de Professor — user activity panel removed */
+#teacherDashboardView #adminUserActivityPanel,
+#teacherDashboardView .teacher-news-panel:has(#adminUserActivityPanel){
+  display:none!important;
+}
+</style>
+
+<script>
+/* Safety cleanup: remove Atividade dos utilizadores from Área de Professor */
+(function(){
+  function removeTeacherPageActivityPanel(){
+    try{
+      var teacherView=document.getElementById('teacherDashboardView');
+      if(!teacherView) return;
+      teacherView.querySelectorAll('#adminUserActivityPanel').forEach(function(el){
+        el.remove();
+      });
+    }catch(err){}
+  }
+
+  if(document.readyState === 'loading'){
+    document.addEventListener('DOMContentLoaded', function(){
+      setTimeout(removeTeacherPageActivityPanel, 100);
+    });
+  }else{
+    setTimeout(removeTeacherPageActivityPanel, 100);
+  }
+
+  document.addEventListener('click', function(){
+    setTimeout(removeTeacherPageActivityPanel, 60);
+  });
+})();
+</script>
+
 </body>
 </html>
