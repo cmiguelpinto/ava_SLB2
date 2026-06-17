@@ -1351,7 +1351,7 @@
 
     /* Remove student only from this class/block */
     .eval-student-row{
-      grid-template-columns:minmax(0,1fr) auto!important;
+      grid-template-columns:minmax(0,1fr) auto auto!important;
     }
     .eval-student-remove{
       appearance:none;
@@ -1387,7 +1387,7 @@
       white-space:nowrap;
     }
     .eval-student-row{
-      grid-template-columns:minmax(0,1fr) auto!important;
+      grid-template-columns:minmax(0,1fr) auto auto!important;
       gap:6px!important;
     }
     .eval-student-remove{
@@ -1411,7 +1411,7 @@
 
     /* Remove student only from this class/block - fixed */
     .eval-student-row{
-      grid-template-columns:minmax(0,1fr) auto!important;
+      grid-template-columns:minmax(0,1fr) auto auto!important;
       gap:6px!important;
     }
     .eval-student-remove{
@@ -1435,7 +1435,7 @@
 
     /* Remove student button fixed */
     .eval-student-row{
-      grid-template-columns:minmax(0,1fr) auto!important;
+      grid-template-columns:minmax(0,1fr) auto auto!important;
       gap:6px!important;
     }
     .eval-student-remove{
@@ -2354,9 +2354,6 @@
     }
     .eval-class-collapse.collapsed .eval-class-title-lines{
       opacity:.9;
-    }
-    .eval-class-collapse.collapsed .eval-student-jump-list{
-      display:none;
     }
     .eval-class-collapse.open .eval-student-jump-list{
       margin-top:10px;
@@ -4261,101 +4258,6 @@
 
 
     /* Avaliação sidebar class cards restored */
-    .evaluation-toolbar-actions{
-      align-items:center;
-    }
-    .evaluation-more-menu{
-      position:relative;
-    }
-    .evaluation-more-menu summary{
-      list-style:none;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      gap:8px;
-      cursor:pointer;
-      user-select:none;
-    }
-    .evaluation-more-menu summary::-webkit-details-marker{
-      display:none;
-    }
-    .evaluation-more-menu summary::after{
-      content:'v';
-      font-size:13px;
-      font-weight:950;
-      line-height:1;
-    }
-    .evaluation-more-menu[open] summary{
-      background:#fff1f2;
-      border-color:#fecaca;
-      color:#9f0015;
-    }
-    .evaluation-more-menu-content{
-      position:absolute;
-      right:0;
-      top:calc(100% + 8px);
-      z-index:30;
-      width:230px;
-      padding:8px;
-      border:1px solid #e5e7eb;
-      border-radius:16px;
-      background:#fff;
-      box-shadow:0 18px 36px rgba(15,23,42,.14);
-      display:grid;
-      gap:6px;
-    }
-    .evaluation-more-item{
-      width:100%;
-      border:0;
-      background:#fff;
-      color:#111827;
-      border-radius:12px;
-      padding:11px 12px;
-      font:inherit;
-      font-size:13px;
-      font-weight:900;
-      text-align:left;
-      cursor:pointer;
-    }
-    .evaluation-more-item:hover{
-      background:#f8fafc;
-      color:#9f0015;
-    }
-    .eval-menu-tools{
-      position:sticky;
-      top:10px;
-      z-index:5;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:8px;
-      padding:8px;
-      border:1px solid #e5e7eb;
-      border-radius:18px;
-      background:rgba(255,255,255,.92);
-      box-shadow:0 12px 26px rgba(15,23,42,.08);
-      backdrop-filter:blur(12px);
-    }
-    .eval-menu-tool{
-      border:1px solid #e5e7eb;
-      background:#fff;
-      color:#374151;
-      border-radius:12px;
-      padding:10px 12px;
-      font-size:12px;
-      font-weight:950;
-      font-family:inherit;
-      cursor:pointer;
-      line-height:1.1;
-    }
-    .eval-menu-tool.primary{
-      border-color:#fecaca;
-      background:#fff1f2;
-      color:#9f0015;
-    }
-    .eval-menu-tool:hover{
-      border-color:#fb7185;
-      color:#9f0015;
-    }
     .eval-class-btn.eval-class-collapse{
       width:100%;
       text-align:left;
@@ -4369,18 +4271,9 @@
       cursor:pointer;
       display:block;
     }
-    .eval-class-btn.eval-class-collapse:focus-visible{
-      outline:3px solid rgba(208,0,27,.22);
-      outline-offset:3px;
-    }
     .eval-class-btn.eval-class-collapse.active.open{
       background:#fff1f2;
       border-color:#fb7185;
-    }
-    .eval-class-btn.eval-class-collapse.active.minimized{
-      background:#fff;
-      border-color:#fb7185;
-      border-style:dashed;
     }
     .eval-class-headline{
       display:flex;
@@ -4407,16 +4300,6 @@
       font-size:24px;
       font-weight:950;
       flex:0 0 auto;
-      border:0;
-      cursor:pointer;
-      font-family:inherit;
-      padding:0;
-    }
-    .eval-collapse-indicator:hover,
-    .eval-collapse-indicator:focus-visible{
-      background:#fecdd3;
-      color:#9f0015;
-      outline:none;
     }
     .eval-student-jump-list{
       display:grid;
@@ -4429,10 +4312,9 @@
     }
     .eval-student-row{
       display:grid;
-      grid-template-columns:minmax(0,1fr) auto;
+      grid-template-columns:1fr auto auto;
       gap:9px;
       align-items:center;
-      position:relative;
     }
     .eval-student-jump{
       border:1px solid #e5e7eb;
@@ -4449,65 +4331,6 @@
       overflow:hidden;
       text-overflow:ellipsis;
       white-space:nowrap;
-    }
-    .eval-student-actions{
-      position:relative;
-      justify-self:end;
-    }
-    .eval-student-actions summary{
-      width:38px;
-      height:38px;
-      border:1px solid #e5e7eb;
-      background:#fff;
-      color:#6b7280;
-      border-radius:12px;
-      display:grid;
-      place-items:center;
-      font-size:18px;
-      font-weight:950;
-      line-height:1;
-      list-style:none;
-      cursor:pointer;
-      user-select:none;
-    }
-    .eval-student-actions summary::-webkit-details-marker{
-      display:none;
-    }
-    .eval-student-actions[open] summary,
-    .eval-student-actions summary:hover{
-      border-color:#fecaca;
-      background:#fff1f2;
-      color:#9f0015;
-    }
-    .eval-student-action-menu{
-      position:absolute;
-      right:0;
-      top:calc(100% + 7px);
-      z-index:25;
-      width:132px;
-      padding:6px;
-      border:1px solid #e5e7eb;
-      border-radius:14px;
-      background:#fff;
-      box-shadow:0 14px 28px rgba(15,23,42,.14);
-      display:grid;
-      gap:4px;
-    }
-    .eval-student-action-menu button{
-      border:0;
-      background:#fff;
-      color:#111827;
-      border-radius:10px;
-      padding:9px 10px;
-      font-size:13px;
-      font-weight:900;
-      font-family:inherit;
-      text-align:left;
-      cursor:pointer;
-    }
-    .eval-student-action-menu button:hover{
-      background:#f8fafc;
-      color:#9f0015;
     }
     .eval-student-copy,
     .eval-student-remove{
@@ -4530,165 +4353,10 @@
       font-weight:900;
       line-height:1.35;
     }
-    .eval-workbar{
-      position:sticky;
-      top:12px;
-      z-index:12;
-      display:grid;
-      grid-template-columns:minmax(190px, .8fr) minmax(0, 1.8fr);
-      gap:12px;
-      align-items:center;
-      margin:0 0 14px;
-      padding:12px;
-      border:1px solid #e5e7eb;
-      border-radius:18px;
-      background:rgba(255,255,255,.94);
-      box-shadow:0 14px 32px rgba(15,23,42,.10);
-      backdrop-filter:blur(14px);
-    }
-    .eval-workbar-context{
-      min-width:0;
-      display:grid;
-      gap:3px;
-    }
-    .eval-workbar-context strong{
-      color:#111827;
-      font-size:15px;
-      line-height:1.15;
-      white-space:nowrap;
-      overflow:hidden;
-      text-overflow:ellipsis;
-    }
-    .eval-workbar-context span:last-child{
-      color:#6b7280;
-      font-size:12px;
-      font-weight:850;
-    }
-    .eval-workbar-controls{
-      display:flex;
-      align-items:center;
-      justify-content:flex-end;
-      gap:8px;
-      flex-wrap:wrap;
-      min-width:0;
-    }
-    .eval-workbar-controls select{
-      height:36px;
-      min-width:170px;
-      max-width:240px;
-      border:1px solid #e5e7eb;
-      border-radius:12px;
-      background:#fff;
-      color:#111827;
-      padding:0 10px;
-      font-weight:850;
-      font-family:inherit;
-    }
-    .eval-workbar-more{
-      position:relative;
-    }
-    .eval-workbar-more summary{
-      list-style:none;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      cursor:pointer;
-      user-select:none;
-    }
-    .eval-workbar-more summary::-webkit-details-marker{
-      display:none;
-    }
-    .eval-workbar-more[open] summary{
-      background:#fff1f2;
-      border-color:#fecaca;
-      color:#9f0015;
-    }
-    .eval-workbar-menu{
-      position:absolute;
-      right:0;
-      top:calc(100% + 8px);
-      z-index:18;
-      width:190px;
-      padding:8px;
-      border:1px solid #e5e7eb;
-      border-radius:14px;
-      background:#fff;
-      box-shadow:0 14px 28px rgba(15,23,42,.14);
-      display:grid;
-      gap:6px;
-    }
-    .evaluation-cloud-status{
-      min-height:32px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      padding:7px 10px;
-      border-radius:999px;
-      border:1px solid #e5e7eb;
-      background:#f8fafc;
-      color:#475569;
-      font-size:12px;
-      font-weight:900;
-      white-space:nowrap;
-    }
-    .evaluation-cloud-status.local{
-      background:#eff6ff;
-      border-color:#bfdbfe;
-      color:#1d4ed8;
-    }
-    .evaluation-cloud-status.saving{
-      background:#fffbeb;
-      border-color:#fde68a;
-      color:#92400e;
-    }
-    .evaluation-cloud-status.saved{
-      background:#ecfdf5;
-      border-color:#bbf7d0;
-      color:#047857;
-    }
-    .evaluation-cloud-status.error{
-      background:#fff1f2;
-      border-color:#fecdd3;
-      color:#b91c1c;
-    }
     @media(max-width:700px){
-      .evaluation-more-menu{
-        width:100%;
-      }
-      .evaluation-more-menu summary{
-        width:100%;
-      }
-      .evaluation-more-menu-content{
-        position:static;
-        width:100%;
-        margin-top:8px;
-      }
-      .eval-menu-tools{
-        grid-template-columns:1fr;
-      }
       .eval-student-row{
-        grid-template-columns:minmax(0,1fr) auto;
+        grid-template-columns:1fr auto auto;
         gap:7px;
-      }
-      .eval-workbar{
-        position:static;
-        grid-template-columns:1fr;
-      }
-      .eval-workbar-controls{
-        justify-content:flex-start;
-      }
-      .eval-workbar-controls select{
-        width:100%;
-        max-width:none;
-      }
-      .eval-workbar-more,
-      .eval-workbar-more summary,
-      .eval-workbar-menu{
-        width:100%;
-      }
-      .eval-workbar-menu{
-        position:static;
-        margin-top:8px;
       }
       .eval-class-title-lines{
         font-size:18px;
@@ -6892,17 +6560,7 @@ document.documentElement.classList.add('teacher-user');
     <section id="evaluationView" class="view">
       <div class="panel toolbar">
         <div><div class="section-label">Página de avaliação</div><div class="hint">Esta página está sempre disponível. Escolhe uma turma à esquerda e preenche a grelha de avaliação.</div></div>
-        <div class="toolbar-actions evaluation-toolbar-actions">
-          <button class="btn primary" id="saveEvaluationPageBtn">Guardar avaliação</button>
-          <details class="evaluation-more-menu" id="evaluationMoreMenu">
-            <summary class="btn ghost">Mais opções</summary>
-            <div class="evaluation-more-menu-content">
-              <button class="evaluation-more-item" id="showReportFromEvalBtn" type="button">Relatório Evolução Época</button>
-              <button class="evaluation-more-item" id="showInternalDocFromEvalBtn" type="button">Documento Interno</button>
-              <button class="evaluation-more-item" type="button" data-view-btn="documentView">Ver documento</button>
-            </div>
-          </details>
-        </div>
+        <div class="toolbar-actions"><button class="btn primary" id="saveEvaluationPageBtn">Guardar avaliação</button><button class="btn ghost" id="showReportFromEvalBtn" type="button" onclick="showSelectedEvaluationReport()">Ver Relatório Evolução Época</button><button class="btn secondary" id="showInternalDocFromEvalBtn" type="button" onclick="showSelectedEvaluationInternalDocument()">Ver Documento Interno</button><button class="btn ghost" data-view-btn="documentView">Ver documento</button></div>
       </div>
       <section class="eval-card evaluation-shell">
         <aside class="eval-sidebar">
@@ -7183,9 +6841,6 @@ let internalDocumentClassId = null;
 let studentDayFilters = new Set(['Segunda','Terça','Quarta','Quinta','Sexta','Sábado']);
 let evaluationDayFilters = new Set(['Segunda','Terça','Quarta','Quinta','Sexta','Sábado']);
 let evaluationCloudAutoLoadTried=false;
-let minimizedEvaluationStudentMenus = new Set();
-let expandedEvaluationStudentMenus = new Set();
-let activeEvaluationStudentIndex = 0;
 let pendingStudentCopy = null;
 let adminCloudAutoSyncTimer = null;
 let adminCloudAutoSyncInProgress = false;
@@ -7551,46 +7206,11 @@ function setupLogin(){
 
 const CLOUD_WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbw3G8Z5JitYbmzbzaEdzVa_0qLZ0JFHNPqsvaNpyOgobULKPyOipDRq4CNsGi-1oLcg/exec';
 
-function updateWorkflowSaveStatus(message,type='local'){
-  const classes={
-    saving:'slb-ux-save-status saving',
-    saved:'slb-ux-save-status saved',
-    local:'slb-ux-save-status local',
-    error:'slb-ux-save-status error'
-  };
-  const evalClasses={
-    saving:'evaluation-cloud-status saving',
-    saved:'evaluation-cloud-status saved',
-    local:'evaluation-cloud-status local',
-    error:'evaluation-cloud-status error'
-  };
-  const quick=document.getElementById('slbUxSaveStatus');
-  if(quick){
-    quick.className=classes[type] || classes.local;
-    quick.textContent=message;
-  }
-  const evalBadge=document.getElementById('evaluationCloudStatusBadge');
-  if(evalBadge){
-    evalBadge.className=evalClasses[type] || evalClasses.local;
-    evalBadge.textContent=message;
-  }
-}
-
-function workflowStatusTypeFromMessage(message,type){
-  if(type==='err') return 'error';
-  const text=String(message||'').toLowerCase();
-  if(text.includes('a guardar') || text.includes('a carregar') || text.includes('a publicar') || text.includes('a enviar')) return 'saving';
-  if(text.includes('cloud') && (text.includes('guardado') || text.includes('guardada') || text.includes('confirmado') || text.includes('sincronizado'))) return 'saved';
-  if(text.includes('local') || text.includes('dispositivo')) return 'local';
-  return 'saved';
-}
-
 function showCloudStatus(message, type='ok'){
   const box=document.getElementById('cloudStatus');
   if(!box) return;
   box.textContent=message;
   box.className=`cloud-status show ${type}`;
-  updateWorkflowSaveStatus(message, workflowStatusTypeFromMessage(message,type));
   clearTimeout(showCloudStatus._timer);
   showCloudStatus._timer=setTimeout(()=>{box.className='cloud-status';},4200);
 }
@@ -7804,10 +7424,6 @@ async function loadFromCloud(silent=false){
 
   if(user.role==='admin'){
     await loadAllTeachersFromCloud(silent);
-    if(typeof loadMainCalendarEventsFromCloud==='function'){
-      await loadMainCalendarEventsFromCloud(true,true);
-      if(document.getElementById('mainCalendarView')?.classList.contains('active')) renderMainCalendar();
-    }
     return;
   }
 
@@ -7817,10 +7433,6 @@ async function loadFromCloud(silent=false){
 
     if(!result.ok) throw new Error(result.error || 'Erro ao carregar.');
     if(!result.exists){
-      if(typeof loadMainCalendarEventsFromCloud==='function'){
-        await loadMainCalendarEventsFromCloud(true,true);
-        if(document.getElementById('mainCalendarView')?.classList.contains('active')) renderMainCalendar();
-      }
       if(!silent) showCloudStatus(`Ainda não existe ficheiro cloud para ${user.username}.`, 'err');
       return;
     }
@@ -7834,10 +7446,6 @@ async function loadFromCloud(silent=false){
       renderStudents();
       renderEvaluationPage();
       renderDocument();
-      if(typeof loadMainCalendarEventsFromCloud==='function'){
-        await loadMainCalendarEventsFromCloud(true,true);
-        if(document.getElementById('mainCalendarView')?.classList.contains('active')) renderMainCalendar();
-      }
       if(!silent) showCloudStatus(`Dados carregados: ${user.username}.json`, 'ok');
     }else{
       throw new Error('Ficheiro cloud sem dados válidos.');
@@ -7908,13 +7516,7 @@ async function refreshAdminCloudAutomatic(reason='auto'){
     if(!silent) showCloudStatus('Admin: a pedir dados à cloud...', 'ok');
 
     await loadAllTeachersFromCloud(silent);
-    if(typeof loadMainCalendarEventsFromCloud==='function'){
-      await loadMainCalendarEventsFromCloud(true,true);
-    }
     renderAdminViewsAfterCloudSync();
-    if(document.getElementById('mainCalendarView')?.classList.contains('active')){
-      renderMainCalendar();
-    }
 
     if(!silent){
       showCloudStatus(`Admin: cloud carregada. Atualização automática a cada ${Math.round(ADMIN_CLOUD_AUTO_SYNC_MS/60000)} minutos.`, 'ok');
@@ -10278,11 +9880,10 @@ function adminClassDetailsDocumentHtml(details){
   button{border:0;border-radius:999px;padding:10px 14px;font-weight:900;cursor:pointer}
   .primary{background:var(--red);color:#fff}
   .secondary{background:#111827;color:#fff}
-  .meta{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:8px;margin-bottom:14px}
-  .card{border:1px solid var(--line);border-radius:12px;background:#fff;padding:9px 10px;min-width:0}
-  .label{font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-  .value{margin-top:3px;font-size:19px;font-weight:950;color:var(--dark);line-height:1.05}
-  .card .muted{font-size:9px;line-height:1.15;margin-top:4px}
+  .meta{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-bottom:18px}
+  .card{border:1px solid var(--line);border-radius:16px;background:#fff;padding:13px 14px}
+  .label{font-size:10px;font-weight:900;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+  .value{margin-top:5px;font-size:22px;font-weight:950;color:var(--dark)}
   .value.danger{color:#991b1b}
   .note{margin:12px 0;color:var(--muted);font-size:12px;font-weight:750;line-height:1.45}
   table{width:100%;border-collapse:collapse;border:1px solid var(--line)}
@@ -10298,7 +9899,7 @@ function adminClassDetailsDocumentHtml(details){
   .bar span{display:block;height:100%;background:linear-gradient(90deg,#d0001b,#f43f5e);border-radius:999px}
   .stage-pill{display:inline-flex;margin:2px;border-radius:999px;padding:5px 7px;background:#f9fafb;border:1px solid #edf0f3;font-size:10px;font-weight:900;color:#374151}
   #teacherNoticeToast{display:none!important}
-  @media(max-width:1200px){.meta{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(max-width:900px){body{padding:12px}.banner{display:block}.logo{justify-content:flex-start;margin-top:15px}.meta{grid-template-columns:1fr 1fr}.page{border-radius:16px;overflow:auto}table{min-width:900px}}
+  @media(max-width:900px){body{padding:12px}.banner{display:block}.logo{justify-content:flex-start;margin-top:15px}.meta{grid-template-columns:1fr 1fr}.page{border-radius:16px;overflow:auto}table{min-width:900px}}
   @media print{@page{size:A4 landscape;margin:10mm}*{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}.actions{display:none!important}body{background:#fff;padding:0}.page{box-shadow:none;border:0;border-radius:0}.banner{break-inside:avoid}}
 
     /* Admin Central */
@@ -10454,8 +10055,8 @@ function adminClassDetailsDocumentHtml(details){
         <div class="card"><div class="label">Registos</div><div class="value">${details.attendancePresent}/${details.attendancePossible}</div></div>
         <div class="card"><div class="label">Transitam</div><div class="value">${transitaCount}</div></div>
         <div class="card"><div class="label">Continuam</div><div class="value">${continuaCount}</div></div>
-        <div class="card"><div class="label">Sem decisão</div><div class="value">${semDecisaoCount}</div></div>
-        <div class="card"><div class="label">Objetivos</div><div class="value">${objectivesPercent}%</div><div class="muted">${stageOkTotal}/${stageObjectiveTotal}</div></div>
+        <div class="card"><div class="label">Sem decisão final</div><div class="value">${semDecisaoCount}</div></div>
+        <div class="card"><div class="label">Objetivos realizados</div><div class="value">${objectivesPercent}%</div><div class="muted">${stageOkTotal}/${stageObjectiveTotal}</div></div>
       </div>
       ${attendanceRiskCount ? `<div class="note"><strong>Atenção:</strong> ${attendanceRiskCount} aluno(s) com presença mensal inferior a 75%.</div>` : ''}
 
@@ -12208,138 +11809,6 @@ function autoRecoverEvaluationClassesFromCloud(){
   return true;
 }
 
-function preserveEvaluationViewport(callback){
-  const x=window.scrollX || document.documentElement.scrollLeft || 0;
-  const y=window.scrollY || document.documentElement.scrollTop || document.body.scrollTop || 0;
-  callback();
-  requestAnimationFrame(()=>{
-    try{ window.scrollTo(x,y); }catch(e){}
-  });
-}
-
-function cleanEvaluationStudentMenuState(selected){
-  const visibleIds=new Set(selected.map(c=>c.id));
-  minimizedEvaluationStudentMenus = new Set([...minimizedEvaluationStudentMenus].filter(id=>visibleIds.has(id)));
-  expandedEvaluationStudentMenus = new Set([...expandedEvaluationStudentMenus].filter(id=>visibleIds.has(id)));
-}
-
-function evaluationStudentMenuMetaText(card,isOpen){
-  const students=card.dataset.studentCount || '0';
-  const blocks=card.dataset.blockCount || '0';
-  const saved=card.dataset.saveStatus || 'por guardar';
-  const isActive=card.dataset.evalOpenClass===activeEvalId;
-  const status=isActive
-    ? (isOpen ? 'aberto · nomes visíveis' : 'aberto · nomes minimizados')
-    : (isOpen ? 'nomes visíveis' : 'clicar para trabalhar');
-
-  return `${students} aluno(s) · ${blocks} bloco(s) · ${saved} · ${status}`;
-}
-
-function findEvaluationClassMenuCard(classId){
-  return Array.from(document.querySelectorAll('[data-eval-open-class]'))
-    .find(card=>card.dataset.evalOpenClass===classId) || null;
-}
-
-function updateEvaluationStudentMenuCard(card){
-  if(!card) return;
-  const classId=card.dataset.evalOpenClass;
-  const isActive=classId===activeEvalId;
-  const isOpen=!minimizedEvaluationStudentMenus.has(classId) && (isActive || expandedEvaluationStudentMenus.has(classId));
-  const toggle=card.querySelector('[data-toggle-student-menu]');
-  const meta=card.querySelector('[data-eval-menu-meta]');
-
-  card.classList.toggle('active', isActive);
-  card.classList.toggle('open', isOpen);
-  card.classList.toggle('collapsed', !isOpen);
-  card.classList.toggle('minimized', minimizedEvaluationStudentMenus.has(classId));
-  card.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-
-  if(toggle){
-    toggle.textContent=isOpen ? '−' : '+';
-    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-    toggle.setAttribute('aria-label', isOpen ? 'Minimizar nomes dos alunos' : 'Mostrar nomes dos alunos');
-    toggle.title=isOpen ? 'Minimizar nomes dos alunos' : 'Mostrar nomes dos alunos';
-  }
-  if(meta){
-    meta.textContent=evaluationStudentMenuMetaText(card,isOpen);
-  }
-}
-
-function setEvaluationStudentMenuVisibility(classId,shouldShow){
-  if(shouldShow){
-    minimizedEvaluationStudentMenus.delete(classId);
-    expandedEvaluationStudentMenus.add(classId);
-  }else{
-    minimizedEvaluationStudentMenus.add(classId);
-    expandedEvaluationStudentMenus.delete(classId);
-  }
-
-  updateEvaluationStudentMenuCard(findEvaluationClassMenuCard(classId));
-}
-
-function setEvaluationStudentMenusVisibility(classIds,shouldShow){
-  classIds.forEach(classId=>{
-    if(shouldShow){
-      minimizedEvaluationStudentMenus.delete(classId);
-      expandedEvaluationStudentMenus.add(classId);
-    }else{
-      minimizedEvaluationStudentMenus.add(classId);
-      expandedEvaluationStudentMenus.delete(classId);
-    }
-  });
-  document.querySelectorAll('[data-eval-open-class]').forEach(updateEvaluationStudentMenuCard);
-}
-
-function clampEvaluationStudentIndex(students){
-  const total=(students||[]).length;
-  if(!total){
-    activeEvaluationStudentIndex=0;
-    return 0;
-  }
-  activeEvaluationStudentIndex=Math.max(0,Math.min(total-1,Number(activeEvaluationStudentIndex)||0));
-  return activeEvaluationStudentIndex;
-}
-
-function focusEvaluationStudent(classId,studentIndex,options={}){
-  const index=Math.max(0,Number(studentIndex)||0);
-  activeEvaluationStudentIndex=index;
-  const run=()=>{
-    const target=document.getElementById(`eval-student-${classId}-${index}`);
-    if(target){
-      target.scrollIntoView({behavior:options.behavior || 'smooth', block:'start'});
-      target.classList.add('student-highlight');
-      setTimeout(()=>target.classList.remove('student-highlight'),1600);
-    }
-    const select=document.getElementById('evalStudentNavigator');
-    if(select) select.value=String(index);
-  };
-
-  if(activeEvalId!==classId){
-    activeEvalId=classId;
-    renderEvaluationPage();
-    setTimeout(run,80);
-  }else{
-    run();
-  }
-}
-
-function rememberEvaluationStudentFromElement(element){
-  const card=element?.closest?.('[id^="eval-student-"]');
-  if(!card) return;
-  const match=String(card.id||'').match(/-(\d+)$/);
-  if(!match) return;
-  activeEvaluationStudentIndex=Number(match[1]) || 0;
-  const select=document.getElementById('evalStudentNavigator');
-  if(select) select.value=String(activeEvaluationStudentIndex);
-}
-
-function bindEvaluationStudentPositionMemory(scope){
-  (scope || document).querySelectorAll('[id^="eval-student-"]').forEach(card=>{
-    card.addEventListener('click',()=>rememberEvaluationStudentFromElement(card));
-    card.addEventListener('focusin',()=>rememberEvaluationStudentFromElement(card));
-  });
-}
-
 function renderEvaluationPage(){
   if(isAdminUser()){
     renderAdminEvaluationPage();
@@ -12372,7 +11841,6 @@ function renderEvaluationPage(){
   const list=document.getElementById('evalClassList');
   if(!list) return;
   list.innerHTML='';
-  cleanEvaluationStudentMenuState(selected);
 
   if(pendingEvaluationOpenClassId && selected.find(c=>c.id===pendingEvaluationOpenClassId)){
     activeEvalId=pendingEvaluationOpenClassId;
@@ -12391,30 +11859,13 @@ function renderEvaluationPage(){
       : '<div class="eval-hero"><h2>Avaliação</h2><p>Não encontrei turmas guardadas neste ficheiro/local.</p><button type="button" class="btn primary" onclick="manualLoadEvaluationClassesFromCloud()">Carregar turmas da cloud</button></div>';
     return;
   }
-
-  const menuTools=document.createElement('div');
-  menuTools.className='eval-menu-tools';
-  menuTools.innerHTML=`
-    <button type="button" class="eval-menu-tool" data-eval-menu-action="minimize">Minimizar nomes</button>
-    <button type="button" class="eval-menu-tool primary" data-eval-menu-action="maximize">Mostrar nomes</button>
-  `;
-  list.appendChild(menuTools);
-
   selected.forEach(c=>{
     const data=state.classes[c.id]||{students:[]};
     const ev=evalData(c.id);
     const isOpen=c.id===activeEvalId;
-    const showStudentList=!minimizedEvaluationStudentMenus.has(c.id) && (isOpen || expandedEvaluationStudentMenus.has(c.id));
-    const btn=document.createElement('article');
-    btn.className='eval-class-btn eval-class-collapse '+(isOpen?'active ':'')+(showStudentList?'open':'collapsed')+(minimizedEvaluationStudentMenus.has(c.id)?' minimized':'');
-    btn.tabIndex=0;
-    btn.setAttribute('role','button');
-    btn.setAttribute('aria-expanded', showStudentList ? 'true' : 'false');
-    btn.setAttribute('aria-label', `Abrir avaliação de ${c.displayName||c.className}`);
+    const btn=document.createElement('button');
+    btn.className='eval-class-btn eval-class-collapse '+(isOpen?'active open':'collapsed');
     btn.dataset.evalOpenClass=c.id;
-    btn.dataset.studentCount=String((data.students||[]).length);
-    btn.dataset.blockCount=String((c.blocks||[]).length);
-    btn.dataset.saveStatus=ev.updatedAt?'guardado':'por guardar';
 
     const blockLines = c.blocks
       .map(b=>`${safe(c.className)} - ${safe(formatDayForClassBlock(b.day))} - ${safe(b.time)}`)
@@ -12423,75 +11874,46 @@ function renderEvaluationPage(){
     const studentLinks = (data.students||[])
       .map((s,i)=>`<div class="eval-student-row" id="eval-sidebar-student-${safe(c.id)}-${i}">
         <button type="button" class="eval-student-jump" data-jump-class="${safe(c.id)}" data-jump-index="${i}">${safe(studentDisplayName(s,i))}</button>
-        <details class="eval-student-actions">
-          <summary aria-label="Ações de ${safe(studentDisplayName(s,i))}">...</summary>
-          <div class="eval-student-action-menu">
-            <button type="button" data-copy-class="${safe(c.id)}" data-copy-index="${i}">Copiar</button>
-            <button type="button" data-remove-class="${safe(c.id)}" data-remove-index="${i}">Remover</button>
-          </div>
-        </details>
+        <button type="button" class="eval-student-copy" data-copy-class="${safe(c.id)}" data-copy-index="${i}">COPY</button>
+        <button type="button" class="eval-student-remove" data-remove-class="${safe(c.id)}" data-remove-index="${i}">REMOVE</button>
       </div>`)
       .join('');
 
     btn.innerHTML=`
       <div class="eval-class-headline">
         <strong class="eval-class-title-lines">${blockLines}</strong>
-        <button type="button" class="eval-collapse-indicator" data-toggle-student-menu="${safe(c.id)}" aria-expanded="${showStudentList?'true':'false'}" aria-label="${showStudentList?'Minimizar nomes dos alunos':'Mostrar nomes dos alunos'}" title="${showStudentList?'Minimizar nomes dos alunos':'Mostrar nomes dos alunos'}">${showStudentList?'−':'+'}</button>
+        <span class="eval-collapse-indicator">${isOpen?'−':'+'}</span>
       </div>
-      <div class="eval-student-jump-list" data-student-menu="${safe(c.id)}">${studentLinks || '<span class="eval-no-students">Sem alunos definidos</span>'}</div>
-      <span class="eval-class-meta" data-eval-menu-meta>${evaluationStudentMenuMetaText(btn,showStudentList)}</span>`;
+      ${isOpen ? `<div class="eval-student-jump-list">${studentLinks || '<span class="eval-no-students">Sem alunos definidos</span>'}</div>` : ''}
+      <span class="eval-class-meta">${data.students.length} aluno(s) · ${c.blocks.length} bloco(s) · ${ev.updatedAt?'guardado':'por guardar'} · ${isOpen?'aberto':'clicar para abrir'}</span>`;
 
     btn.onclick=(event)=>{
-      if(event.target.closest('[data-toggle-student-menu]') || event.target.closest('[data-jump-class]') || event.target.closest('.eval-student-actions') || event.target.closest('[data-copy-class]') || event.target.closest('[data-remove-class]')) return;
-      if(activeEvalId===c.id) return;
+      if(event.target.closest('[data-jump-class]') || event.target.closest('[data-copy-class]') || event.target.closest('[data-remove-class]')) return;
       activeEvalId=c.id;
-      preserveEvaluationViewport(renderEvaluationPage);
+      renderEvaluationPage();
     };
-    btn.addEventListener('keydown',(event)=>{
-      if(event.target!==btn) return;
-      if(event.key!=='Enter' && event.key!==' ') return;
-      event.preventDefault();
-      if(activeEvalId===c.id) return;
-      activeEvalId=c.id;
-      preserveEvaluationViewport(renderEvaluationPage);
-    });
     list.appendChild(btn);
   });
-
-  list.querySelectorAll('[data-toggle-student-menu]').forEach(toggleBtn=>{
-    toggleBtn.addEventListener('click',(event)=>{
-      event.preventDefault();
-      event.stopPropagation();
-      const classId=toggleBtn.dataset.toggleStudentMenu;
-      const card=findEvaluationClassMenuCard(classId);
-      setEvaluationStudentMenuVisibility(classId, !(card && card.classList.contains('open')));
-    });
-  });
-
-  list.querySelectorAll('[data-eval-menu-action]').forEach(toolBtn=>{
-    toolBtn.addEventListener('click',(event)=>{
-      event.preventDefault();
-      event.stopPropagation();
-      const classIds=selected.map(c=>c.id);
-      setEvaluationStudentMenusVisibility(classIds, toolBtn.dataset.evalMenuAction==='maximize');
-    });
-  });
-
   document.querySelectorAll('[data-jump-class]').forEach(jumpBtn=>{
     jumpBtn.addEventListener('click',(event)=>{
       event.stopPropagation();
       const classId=jumpBtn.dataset.jumpClass;
       const studentIndex=jumpBtn.dataset.jumpIndex;
-      focusEvaluationStudent(classId,studentIndex);
+      activeEvalId=classId;
+      renderEvaluationPage();
+      setTimeout(()=>{
+        const target=document.getElementById(`eval-student-${classId}-${studentIndex}`);
+        if(target){
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+          target.classList.add('student-highlight');
+          setTimeout(()=>target.classList.remove('student-highlight'),1600);
+        }
+      },80);
     });
-  });
-  document.querySelectorAll('.eval-student-actions').forEach(menu=>{
-    menu.addEventListener('click',event=>event.stopPropagation());
   });
   document.querySelectorAll('[data-copy-class]').forEach(copyBtn=>{
     copyBtn.addEventListener('click',(event)=>{
       event.stopPropagation();
-      copyBtn.closest('details')?.removeAttribute('open');
       const classId=copyBtn.dataset.copyClass;
       const studentIndex=Number(copyBtn.dataset.copyIndex);
       openCopyStudentModal(classId, studentIndex);
@@ -12502,7 +11924,6 @@ function renderEvaluationPage(){
     removeBtn.addEventListener('click',(event)=>{
       event.preventDefault();
       event.stopPropagation();
-      removeBtn.closest('details')?.removeAttribute('open');
       const classId=removeBtn.dataset.removeClass;
       const studentIndex=Number(removeBtn.dataset.removeIndex);
       removeStudentFromOnlyThisClass(classId, studentIndex);
@@ -12517,21 +11938,10 @@ function renderActiveEvaluation(){
   const data=state.classes[c.id]||{students:[]}; const ev=evalData(c.id); const objectives=flattenObjectives(c.className);
   const totalPossible=data.students.length*objectives.length; const ok=data.students.reduce((sum,s,i)=>sum+okCount(c.id,i,c.className),0); const pct=totalPossible?Math.round(ok/totalPossible*100):0;
   const isAma=usesAma1Evaluation(c.className);
-  const currentStudentIndex=clampEvaluationStudentIndex(data.students);
-  const studentOptions=data.students.map((student,index)=>`<option value="${index}" ${index===currentStudentIndex?'selected':''}>${safe(studentDisplayName(student,index))}</option>`).join('');
-  const saveConfidence=ev.updatedAt?'Guardado neste dispositivo':'Ainda sem save';
-  main.innerHTML=`<div class="eval-hero"><h2>${safe(c.displayName||c.className)}</h2><p>${isAma?'Objetivos específicos AMA 1A / AMA 1B / AMA 2A / AMA 2B / AMA 3 / Nível 1 / Nível 2 / Nível 3, divididos em 3 etapas.':'Checklist por aluno. Marca o que cada aluno já realiza.'}</p><div class="block-chips">${c.blocks.map(b=>`<span class="block-chip">${safe(b.day)} · ${safe(b.time)}</span>`).join('')}</div></div><div class="stats-grid"><div class="stat-card"><div class="stat-label">Alunos</div><div class="stat-value">${data.students.length}</div></div><div class="stat-card"><div class="stat-label">Objetivos</div><div class="stat-value">${objectives.length}</div></div><div class="stat-card"><div class="stat-label">OK total</div><div class="stat-value">${pct}%</div></div><div class="stat-card"><div class="stat-label">Último save</div><div class="stat-value" style="font-size:16px">${safe(ev.updatedAt||'—')}</div></div></div><div class="eval-workbar" id="evalWorkbar">
-    <div class="eval-workbar-context">
-      <span class="section-label">A trabalhar em</span>
-      <strong>${safe(c.displayName||c.className)}</strong>
-      <span>${ok}/${totalPossible || 0} objetivos OK · ${pct}%</span>
-    </div>
-    <div class="eval-workbar-controls">
-      <button class="btn small ghost" type="button" id="evalPrevStudentBtn" ${data.students.length?'':'disabled'}>Anterior</button>
-      <select id="evalStudentNavigator" aria-label="Ir para aluno" ${data.students.length?'':'disabled'}>
-        ${studentOptions || '<option value="">Sem alunos</option>'}
-      </select>
-      <button class="btn small ghost" type="button" id="evalNextStudentBtn" ${data.students.length?'':'disabled'}>Seguinte</button>
+  main.innerHTML=`<div class="eval-hero"><h2>${safe(c.displayName||c.className)}</h2><p>${isAma?'Objetivos específicos AMA 1A / AMA 1B / AMA 2A / AMA 2B / AMA 3 / Nível 1 / Nível 2 / Nível 3, divididos em 3 etapas.':'Checklist por aluno. Marca o que cada aluno já realiza.'}</p><div class="block-chips">${c.blocks.map(b=>`<span class="block-chip">${safe(b.day)} · ${safe(b.time)}</span>`).join('')}</div></div><div class="stats-grid"><div class="stat-card"><div class="stat-label">Alunos</div><div class="stat-value">${data.students.length}</div></div><div class="stat-card"><div class="stat-label">Objetivos</div><div class="stat-value">${objectives.length}</div></div><div class="stat-card"><div class="stat-label">OK total</div><div class="stat-value">${pct}%</div></div><div class="stat-card"><div class="stat-label">Último save</div><div class="stat-value" style="font-size:16px">${safe(ev.updatedAt||'—')}</div></div></div><div class="toolbar" style="margin-bottom:12px">
+    <div class="toolbar-actions">
+      <button class="btn small secondary" id="allOkBtn">Todos OK da turma</button>
+      <button class="btn small ghost" id="clearChecksBtn">Limpar checks</button>
       <div class="semester-toolbar">
         <label for="semesterSelect">Semestre</label>
         <select id="semesterSelect">
@@ -12540,16 +11950,8 @@ function renderActiveEvaluation(){
           <option value="2" ${ev.semester==='2'?'selected':''}>2º</option>
         </select>
       </div>
-      <details class="eval-workbar-more">
-        <summary class="btn small secondary">Turma</summary>
-        <div class="eval-workbar-menu">
-          <button class="btn small secondary" type="button" id="allOkBtn">Todos OK da turma</button>
-          <button class="btn small ghost" type="button" id="clearChecksBtn">Limpar checks</button>
-        </div>
-      </details>
-      <button class="btn small primary" type="button" id="saveEvalBtnInner">Guardar</button>
-      <span id="evaluationCloudStatusBadge" class="evaluation-cloud-status local">${safe(saveConfidence)}</span>
     </div>
+    <button class="btn small primary" id="saveEvalBtnInner">Guardar avaliação</button>
   </div><div id="evaluationContent"></div><div class="eval-bottom">
     <div>
       <div class="section-label">Observações gerais da turma</div>
@@ -12564,18 +11966,10 @@ function renderActiveEvaluation(){
   document.getElementById('classNotes').addEventListener('input',e=>{ev.notes=e.target.value; saveState();});
   const semesterSelect=document.getElementById('semesterSelect');
   if(semesterSelect){semesterSelect.addEventListener('change',e=>{ev.semester=e.target.value; saveState();});}
-  const allOkBtn=document.getElementById('allOkBtn');
-  if(allOkBtn) allOkBtn.onclick=()=>{data.students.forEach((s,i)=>objectives.forEach(obj=>ev.checks[`${i}-${obj.key}`]=true)); saveState(); preserveEvaluationViewport(renderActiveEvaluation);};
+  document.getElementById('allOkBtn').onclick=()=>{data.students.forEach((s,i)=>objectives.forEach(obj=>ev.checks[`${i}-${obj.key}`]=true)); saveState(); renderActiveEvaluation();};
   const clearChecksBtn=document.getElementById('clearChecksBtn');
-  if(clearChecksBtn) clearChecksBtn.onclick=(event)=>{event.preventDefault(); event.stopPropagation(); clearCurrentEvaluationChecks();};
-  const studentNavigator=document.getElementById('evalStudentNavigator');
-  if(studentNavigator) studentNavigator.addEventListener('change',()=>focusEvaluationStudent(c.id,studentNavigator.value));
-  const prevStudentBtn=document.getElementById('evalPrevStudentBtn');
-  if(prevStudentBtn) prevStudentBtn.onclick=()=>focusEvaluationStudent(c.id,Math.max(0,activeEvaluationStudentIndex-1));
-  const nextStudentBtn=document.getElementById('evalNextStudentBtn');
-  if(nextStudentBtn) nextStudentBtn.onclick=()=>focusEvaluationStudent(c.id,Math.min(data.students.length-1,activeEvaluationStudentIndex+1));
-  const saveEvalBtnInner=document.getElementById('saveEvalBtnInner');
-  if(saveEvalBtnInner) saveEvalBtnInner.onclick=saveCurrentEvaluation;
+  if(clearChecksBtn) clearChecksBtn.onclick=clearCurrentEvaluationChecks;
+  document.getElementById('saveEvalBtnInner').onclick=saveCurrentEvaluation;
 }
 
 function clearCurrentEvaluationChecks(){
@@ -12647,12 +12041,11 @@ function renderEvaluationContent(c,students,ev){
   const objectives=flattenObjectives(c.className);
   const matrix=document.getElementById('matrix'); matrix.innerHTML=`<div class="matrix-head"><div>Aluno</div>${objectives.map(obj=>`<div title="${safe(obj.label)}">${safe(obj.short)}</div>`).join('')}<div>Total</div></div>`;
   students.forEach((s,i)=>{
-    let html=`<div class="matrix-row" id="eval-student-${safe(c.id)}-${i}"><div class="matrix-student"><strong>${safe(studentDisplayName(s,i))}</strong><span>Aluno ${i+1}</span></div>`;
+    let html=`<div class="matrix-row"><div class="matrix-student"><strong>${safe(studentDisplayName(s,i))}</strong><span>Aluno ${i+1}</span></div>`;
     objectives.forEach(obj=>{const key=`${i}-${obj.key}`;html+=`<div><input type="checkbox" data-check-eval="${safe(key)}" ${ev.checks[key]?'checked':''} title="${safe(obj.label)}"></div>`});
     html+=`<div class="score-box">${okCount(c.id,i,c.className)}/${objectives.length}</div></div>`; matrix.insertAdjacentHTML('beforeend',html);
   });
-  bindEvaluationStudentPositionMemory(holder);
-  document.querySelectorAll('[data-check-eval]').forEach(cb=>cb.addEventListener('change',()=>{ev.checks[cb.dataset.checkEval]=cb.checked; saveState(); preserveEvaluationViewport(renderActiveEvaluation);}));
+  document.querySelectorAll('[data-check-eval]').forEach(cb=>cb.addEventListener('change',()=>{ev.checks[cb.dataset.checkEval]=cb.checked; saveState(); renderActiveEvaluation();}));
 }
 function renderAma1AEvaluation(id,students,ev,holder,className='AMA 1A'){
   holder.innerHTML='<div class="ama-eval-list" id="amaEvalList"></div>';
@@ -12686,8 +12079,7 @@ function renderAma1AEvaluation(id,students,ev,holder,className='AMA 1A'){
     </div><div class="student-save-row"><button class="btn small primary" data-save-student-eval="${i}">Guardar avaliação deste aluno</button><span class="student-save-hint">Guarda esta avaliação sem teres de procurar o botão principal.</span></div></div>`;
     list.insertAdjacentHTML('beforeend',html);
   });
-  bindEvaluationStudentPositionMemory(holder);
-  document.querySelectorAll('[data-check-eval]').forEach(cb=>cb.addEventListener('change',()=>{ev.checks[cb.dataset.checkEval]=cb.checked; saveState(); preserveEvaluationViewport(renderActiveEvaluation);}));
+  document.querySelectorAll('[data-check-eval]').forEach(cb=>cb.addEventListener('change',()=>{ev.checks[cb.dataset.checkEval]=cb.checked; saveState(); renderActiveEvaluation();}));
   document.querySelectorAll('[data-final-message]').forEach(sel=>sel.addEventListener('change',()=>{if(!ev.finalMessages) ev.finalMessages={}; ev.finalMessages[sel.dataset.finalMessage]=sel.value; saveState();}));
   document.querySelectorAll('[data-level-enabled]').forEach(cb=>cb.addEventListener('change',()=>{
     if(!ev.levelOverrides) ev.levelOverrides={};
@@ -12695,7 +12087,7 @@ function renderAma1AEvaluation(id,students,ev,holder,className='AMA 1A'){
     const select=document.querySelector(`[data-level-select="${idx}"]`);
     ev.levelOverrides[idx]={enabled:cb.checked, level:select?.value || ''};
     saveState();
-    preserveEvaluationViewport(renderActiveEvaluation);
+    renderActiveEvaluation();
   }));
   document.querySelectorAll('[data-level-select]').forEach(sel=>sel.addEventListener('change',()=>{
     if(!ev.levelOverrides) ev.levelOverrides={};
@@ -12711,7 +12103,7 @@ function renderAma1AEvaluation(id,students,ev,holder,className='AMA 1A'){
       ev.checks[`${studentIndex}-ama1a-${stepIndex}-${itemIndex}`]=true;
     });
     saveState();
-    preserveEvaluationViewport(renderActiveEvaluation);
+    renderActiveEvaluation();
   }));
   document.querySelectorAll('[data-student-all-ok]').forEach(btn=>btn.addEventListener('click',()=>{
     const studentIndex=Number(btn.dataset.studentAllOk);
@@ -12721,7 +12113,7 @@ function renderAma1AEvaluation(id,students,ev,holder,className='AMA 1A'){
       });
     });
     saveState();
-    preserveEvaluationViewport(renderActiveEvaluation);
+    renderActiveEvaluation();
   }));
   document.querySelectorAll('[data-save-student-eval]').forEach(btn=>btn.addEventListener('click',()=>{
     if(!ev.finalMessages) ev.finalMessages={};
@@ -12781,10 +12173,9 @@ async function saveCurrentEvaluation(){
   ev.updatedAt=new Date().toLocaleString('pt-PT');
   repairBrokenStudentLinks();
   saveState();
-  showCloudStatus('Avaliação guardada neste dispositivo. A enviar para a cloud...', 'ok');
-  preserveEvaluationViewport(renderEvaluationPage);
+  renderEvaluationPage();
   await saveToCloud();
-  showCloudStatus('Avaliação sincronizada na cloud.', 'ok');
+  showCloudStatus('Avaliação guardada apenas nesta turma/bloco.', 'ok');
 }
 document.getElementById('saveEvaluationPageBtn').addEventListener('click',saveCurrentEvaluation);
 
@@ -14756,15 +14147,6 @@ if(showReportFromEvalBtn){
   });
 }
 
-const evaluationMoreMenu=document.getElementById('evaluationMoreMenu');
-if(evaluationMoreMenu){
-  evaluationMoreMenu.addEventListener('click',(event)=>{
-    if(event.target.closest('button')){
-      setTimeout(()=>{evaluationMoreMenu.open=false;},0);
-    }
-  });
-}
-
 
 
 
@@ -15231,13 +14613,9 @@ renderSchedule();
 let mainCalendarCursor = new Date();
 mainCalendarCursor.setDate(1);
 const MAIN_CALENDAR_EVENTS_KEY='avaliacoes_slb_main_calendar_events_v2';
-const MAIN_CALENDAR_CLOUD_USERNAME='SLB_MAIN_CALENDAR';
-const MAIN_CALENDAR_CLOUD_REFRESH_MS=60 * 1000;
 let mainCalendarDragActive=false;
 let mainCalendarDragStart='';
 let mainCalendarEditingId='';
-let mainCalendarCloudLoading=false;
-let mainCalendarCloudLastLoadAt=0;
 function mainCalendarIso(d){
   const y=d.getFullYear(); const m=String(d.getMonth()+1).padStart(2,'0'); const day=String(d.getDate()).padStart(2,'0');
   return `${y}-${m}-${day}`;
@@ -15298,100 +14676,6 @@ function loadMainCalendarEvents(){
 function storeMainCalendarEvents(events){
   try{localStorage.setItem(MAIN_CALENDAR_EVENTS_KEY,JSON.stringify(events||[]));}catch(e){}
 }
-function mainCalendarCloudPayload(events){
-  const user=typeof currentLoggedUser==='function' ? currentLoggedUser() : null;
-  return {
-    version:1,
-    kind:'slb-main-calendar',
-    username:MAIN_CALENDAR_CLOUD_USERNAME,
-    updatedAt:new Date().toISOString(),
-    updatedBy:user?.username || 'Admin',
-    professorName:user?.name || 'Admin',
-    events:Array.isArray(events) ? events : []
-  };
-}
-function mainCalendarEventsFromPayload(payload){
-  if(Array.isArray(payload?.events)) return payload.events;
-  if(Array.isArray(payload?.appData?.events)) return payload.appData.events;
-  if(Array.isArray(payload?.appData)) return payload.appData;
-  if(Array.isArray(payload)) return payload;
-  return null;
-}
-async function saveMainCalendarEventsToCloud(events,silent=false){
-  if(typeof isAdminUser==='function' && !isAdminUser()) return false;
-  const msg=document.getElementById('mainCalendarMessage');
-  if(typeof postFormToCloud!=='function'){
-    if(!silent && msg) msg.textContent='Evento guardado neste dispositivo. Cloud indisponível nesta sessão.';
-    return false;
-  }
-  try{
-    if(!silent){
-      if(msg) msg.textContent='A publicar calendário para todos os professores...';
-      if(typeof showCloudStatus==='function') showCloudStatus('A publicar calendário partilhado...', 'ok');
-    }
-    await postFormToCloud(MAIN_CALENDAR_CLOUD_USERNAME, mainCalendarCloudPayload(events));
-    mainCalendarCloudLastLoadAt=Date.now();
-    if(!silent){
-      if(msg) msg.textContent='Calendário publicado. Os professores vão ver estes eventos quando atualizarem/entrarem.';
-      if(typeof showCloudStatus==='function') showCloudStatus('Calendário partilhado guardado na cloud.', 'ok');
-    }
-    return true;
-  }catch(err){
-    if(!silent){
-      if(msg) msg.textContent='Evento guardado neste dispositivo, mas não consegui publicar na cloud.';
-      if(typeof showCloudStatus==='function') showCloudStatus(`Erro ao publicar calendário: ${err.message || err}`, 'err');
-    }
-    return false;
-  }
-}
-async function loadMainCalendarEventsFromCloud(silent=true,force=false){
-  const user=typeof currentLoggedUser==='function' ? currentLoggedUser() : null;
-  if(!user?.username) return loadMainCalendarEvents();
-  if(typeof jsonpCloud!=='function') return loadMainCalendarEvents();
-  const now=Date.now();
-  if(mainCalendarCloudLoading) return loadMainCalendarEvents();
-  if(!force && mainCalendarCloudLastLoadAt && now-mainCalendarCloudLastLoadAt<MAIN_CALENDAR_CLOUD_REFRESH_MS){
-    return loadMainCalendarEvents();
-  }
-  mainCalendarCloudLoading=true;
-  try{
-    if(!silent && typeof showCloudStatus==='function') showCloudStatus('A carregar calendário partilhado...', 'ok');
-    const result=await jsonpCloud('load', MAIN_CALENDAR_CLOUD_USERNAME);
-    mainCalendarCloudLastLoadAt=Date.now();
-    if(!result?.ok) throw new Error(result?.error || 'Erro ao carregar calendário.');
-    if(!result.exists){
-      const localEvents=loadMainCalendarEvents();
-      if(typeof isAdminUser==='function' && isAdminUser() && localEvents.length){
-        await saveMainCalendarEventsToCloud(localEvents,true);
-        if(!silent && typeof showCloudStatus==='function') showCloudStatus('Calendário local publicado na cloud.', 'ok');
-        return localEvents;
-      }
-      if(!silent && typeof showCloudStatus==='function') showCloudStatus('Ainda não existe calendário partilhado na cloud.', 'err');
-      return loadMainCalendarEvents();
-    }
-    const cloudEvents=mainCalendarEventsFromPayload(result.data);
-    if(!Array.isArray(cloudEvents)) throw new Error('Calendário partilhado sem lista de eventos válida.');
-    storeMainCalendarEvents(cloudEvents);
-    if(!silent && typeof showCloudStatus==='function') showCloudStatus('Calendário partilhado carregado.', 'ok');
-    return cloudEvents;
-  }catch(err){
-    if(!silent && typeof showCloudStatus==='function') showCloudStatus(`Erro calendário cloud: ${err.message || err}`, 'err');
-    return loadMainCalendarEvents();
-  }finally{
-    mainCalendarCloudLoading=false;
-  }
-}
-function maybeRefreshMainCalendarFromCloud(silent=true,force=false){
-  const user=typeof currentLoggedUser==='function' ? currentLoggedUser() : null;
-  if(!user?.username || mainCalendarCloudLoading) return;
-  const now=Date.now();
-  if(!force && mainCalendarCloudLastLoadAt && now-mainCalendarCloudLastLoadAt<MAIN_CALENDAR_CLOUD_REFRESH_MS) return;
-  loadMainCalendarEventsFromCloud(silent,force).then(()=>{
-    if(document.getElementById('mainCalendarView')?.classList.contains('active')){
-      renderMainCalendar();
-    }
-  }).catch(()=>{});
-}
 function mainCalendarTypeClass(type){
   const t=String(type||'').toLowerCase();
   if(t.includes('avalia')) return 'eval';
@@ -15408,7 +14692,7 @@ function mainCalendarToday(){
   mainCalendarCursor.setDate(1);
   renderMainCalendar();
 }
-async function saveMainCalendarEvent(){
+function saveMainCalendarEvent(){
   if(typeof isAdminUser==='function' && !isAdminUser()){
     const msg=document.getElementById('mainCalendarMessage');
     if(msg) msg.textContent='Apenas o Admin pode criar ou editar eventos no calendário partilhado.';
@@ -15438,10 +14722,8 @@ async function saveMainCalendarEvent(){
     if(msg) msg.textContent='Evento guardado no calendário.';
   }
   storeMainCalendarEvents(events);
-  mainCalendarCloudLastLoadAt=Date.now();
   resetMainCalendarForm();
   renderMainCalendar();
-  await saveMainCalendarEventsToCloud(events,false);
 }
 function resetMainCalendarForm(){
   mainCalendarEditingId='';
@@ -15483,13 +14765,11 @@ function editMainCalendarEvent(id){
   if(msg) msg.textContent='A editar evento existente.';
   document.querySelector('.main-calendar-admin-only')?.scrollIntoView({behavior:'smooth',block:'start'});
 }
-async function deleteMainCalendarEvent(id){
+function deleteMainCalendarEvent(id){
   if(typeof isAdminUser==='function' && !isAdminUser()) return;
   const events=loadMainCalendarEvents().filter(e=>e.id!==id);
   storeMainCalendarEvents(events);
-  mainCalendarCloudLastLoadAt=Date.now();
   renderMainCalendar();
-  await saveMainCalendarEventsToCloud(events,false);
 }
 function mainCalendarSetDraftRange(startIso,endIso){
   const a=mainCalendarParseIso(startIso);
@@ -15535,9 +14815,9 @@ function mainCalendarScheduleEvents(start,end){
   try{
     const schedule=state?.schedule||{};
     for(const [key,data] of Object.entries(schedule)){
-      const parts=String(key).includes('|') ? String(key).split('|') : String(key).split('__');
+      const parts=String(key).split('__');
       if(parts.length<2) continue;
-      const day=parts[0]; const time=String(key).includes('|') ? parts.slice(1).join('|') : parts.slice(1).join('__').replace(/_/g,' ');
+      const day=parts[0]; const time=parts.slice(1).join('__').replace(/_/g,' ');
       const idx=days.indexOf(day);
       if(idx<0 || idx===6) continue;
       const classes=slotClasses(data);
@@ -15553,7 +14833,6 @@ function mainCalendarScheduleEvents(start,end){
   return out;
 }
 function renderMainCalendar(){
-  maybeRefreshMainCalendarFromCloud(true,false);
   const grid=document.getElementById('mainCalendarGrid');
   if(!grid) return;
   const title=document.getElementById('mainCalendarMonthTitle');
@@ -15565,7 +14844,7 @@ function renderMainCalendar(){
   const start=new Date(y,m,1-firstWeek);
   const end=new Date(start); end.setDate(start.getDate()+41);
   const manual=loadMainCalendarEvents();
-  const scheduleEvents=(typeof isAdminUser==='function' && !isAdminUser()) ? [] : mainCalendarScheduleEvents(start,end);
+  const scheduleEvents=mainCalendarScheduleEvents(start,end);
   const all=[...manual,...scheduleEvents];
   const todayIso=mainCalendarIso(new Date());
   const week=['Seg','Ter','Qua','Qui','Sex','Sáb','Dom'];
@@ -15942,15 +15221,21 @@ setInterval(()=>{
       return '<article class="teacher-news-card '+(read?'':'unread')+'"><div class="teacher-news-top"><div><div class="teacher-news-title">'+esc(n.title)+'</div><div class="teacher-news-meta">'+esc(n.category||'Geral')+' · Publicado por '+esc(n.author||'Admin')+' · '+esc(created)+esc(updated)+esc(dateText)+'</div></div><span class="teacher-news-chip '+esc(n.priority||'normal')+'">'+esc(priorityLabel)+'</span></div><div class="teacher-news-message">'+esc(n.message)+'</div>'+receipts+'<div class="teacher-news-actions"><span class="teacher-news-chip '+(read?'normal':'important')+'">'+(read?'Lido':'Por ler')+'</span><div style="display:flex;gap:7px;flex-wrap:wrap">'+(!read && !admin()?'<button class="btn small ghost" type="button" data-mark-notice-read="'+esc(n.id)+'">Marcar como lido</button>':'')+(admin()?'<button class="btn small ghost" type="button" data-edit-notice="'+esc(n.id)+'">Editar</button><button class="btn small danger" type="button" data-delete-notice="'+esc(n.id)+'">Apagar</button>':'')+'</div></div></article>';
     }).join('');
     updateBadge();
+    if(admin()) setTimeout(renderUserActivityPanel,0);
   };
 
   function ensureAdminActivityPanel(){
-    // User activity is not shown in the Teacher / Área de Professor page.
-    // This keeps the teacher page focused only on avisos and comments.
+    if(!admin()) return;
     var root=activeRoot();
-    var existing=root && root.querySelector ? root.querySelector('#adminUserActivityPanel') : null;
-    if(existing) existing.remove();
-    return;
+    if(!root.querySelector('#teacherNewsList')) return;
+    if(root.querySelector('#adminUserActivityPanel')) return;
+    var panel=document.createElement('section');
+    panel.id='adminUserActivityPanel';
+    panel.className='teacher-news-panel';
+    panel.style.marginTop='14px';
+    var news=root.querySelector('.teacher-news-panel') || root.querySelector('#teacherNewsList')?.parentElement;
+    if(news && news.parentElement) news.parentElement.insertBefore(panel, news.nextSibling);
+    renderUserActivityPanel();
   }
 
   document.addEventListener('click',function(e){
@@ -16975,7 +16260,7 @@ body.sidebar-collapsed .tabs .tab[data-view="adminCentralView"]::before{-webkit-
 
   /* Evaluation sidebar and student controls */
   .eval-sidebar{position:static!important;padding:12px!important;}
-  .eval-student-row{grid-template-columns:minmax(0,1fr) auto!important;gap:6px!important;}
+  .eval-student-row{grid-template-columns:minmax(0,1fr) auto auto!important;gap:6px!important;}
   .eval-student-jump{min-width:0!important;white-space:nowrap!important;overflow:hidden!important;text-overflow:ellipsis!important;}
 
   /* Login on phone */
@@ -18728,878 +18013,6 @@ try{
   window.openAdminTeacherEvolutionReport = window.openAdminTeacherEvolutionReport || openAdminTeacherEvolutionReport;
   window.openAdminTeacherInternalDocument = window.openAdminTeacherInternalDocument || openAdminTeacherInternalDocument;
 }catch(e){}
-</script>
-
-
-<style>
-/* Área de Professor — user activity panel removed */
-#teacherDashboardView #adminUserActivityPanel,
-#teacherDashboardView .teacher-news-panel:has(#adminUserActivityPanel){
-  display:none!important;
-}
-</style>
-
-<script>
-/* Safety cleanup: remove Atividade dos utilizadores from Área de Professor */
-(function(){
-  function removeTeacherPageActivityPanel(){
-    try{
-      var teacherView=document.getElementById('teacherDashboardView');
-      if(!teacherView) return;
-      teacherView.querySelectorAll('#adminUserActivityPanel').forEach(function(el){
-        el.remove();
-      });
-    }catch(err){}
-  }
-
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded', function(){
-      setTimeout(removeTeacherPageActivityPanel, 100);
-    });
-  }else{
-    setTimeout(removeTeacherPageActivityPanel, 100);
-  }
-
-  document.addEventListener('click', function(){
-    setTimeout(removeTeacherPageActivityPanel, 60);
-  });
-})();
-</script>
-
-<style id="slb-ux-upgrade-v1">
-/* SLB UX upgrade: dashboard, quick search, focus mode and clearer states */
-:root{
-  --slb-ux-ink:#111827;
-  --slb-ux-muted:#64748b;
-  --slb-ux-line:#dbe2ea;
-  --slb-ux-panel:rgba(255,255,255,.94);
-  --slb-ux-red:#d0001b;
-  --slb-ux-red-dark:#950014;
-  --slb-ux-green:#047857;
-  --slb-ux-amber:#b45309;
-}
-html{
-  scroll-behavior:smooth;
-}
-body:not(.login-locked){
-  background:
-    radial-gradient(circle at 0 0, rgba(208,0,27,.14), transparent 30rem),
-    radial-gradient(circle at 100% 8rem, rgba(17,24,39,.08), transparent 26rem),
-    linear-gradient(180deg,#fbfcfe 0%,#f2f5f9 100%)!important;
-}
-body:not(.login-locked) .page{
-  max-width:1500px;
-}
-body:not(.login-locked) .header{
-  position:sticky;
-  top:12px;
-  z-index:80;
-  border-radius:16px!important;
-  padding:18px 22px!important;
-  background:
-    linear-gradient(135deg,rgba(208,0,27,.98),rgba(149,0,20,.98)),
-    #d0001b!important;
-  box-shadow:0 18px 44px rgba(149,0,20,.22)!important;
-}
-body:not(.login-locked) .header h1{
-  letter-spacing:0!important;
-  font-size:24px!important;
-}
-body:not(.login-locked) .tabs{
-  position:sticky;
-  top:88px;
-  z-index:70;
-  padding:10px;
-  margin:0 0 18px;
-  border:1px solid rgba(219,226,234,.84);
-  border-radius:16px;
-  background:rgba(255,255,255,.82);
-  backdrop-filter:blur(16px);
-  box-shadow:0 14px 34px rgba(15,23,42,.07);
-}
-body:not(.login-locked) .tab,
-body:not(.login-locked) .btn,
-body:not(.login-locked) input,
-body:not(.login-locked) select,
-body:not(.login-locked) textarea{
-  border-radius:10px!important;
-}
-body:not(.login-locked) .tab{
-  box-shadow:none!important;
-  border-color:transparent!important;
-  background:transparent!important;
-  color:#334155!important;
-}
-body:not(.login-locked) .tab.active{
-  background:#111827!important;
-  color:#fff!important;
-  box-shadow:0 8px 18px rgba(17,24,39,.16)!important;
-}
-body:not(.login-locked) .panel,
-body:not(.login-locked) .calendar-card,
-body:not(.login-locked) .class-card,
-body:not(.login-locked) .doc-card,
-body:not(.login-locked) .eval-card,
-body:not(.login-locked) .main-calendar-card,
-body:not(.login-locked) .attendance-sidebar,
-body:not(.login-locked) .attendance-main,
-body:not(.login-locked) .teacher-news-panel,
-body:not(.login-locked) .teacher-alerts-panel{
-  border-radius:16px!important;
-  border-color:rgba(219,226,234,.9)!important;
-  box-shadow:0 14px 36px rgba(15,23,42,.07)!important;
-}
-body:not(.login-locked) .toolbar-actions{
-  align-items:center;
-}
-body:not(.login-locked) .btn.primary{
-  background:linear-gradient(135deg,var(--slb-ux-red),var(--slb-ux-red-dark))!important;
-}
-body:not(.login-locked) .btn.ghost{
-  background:#fff!important;
-}
-body:not(.login-locked) .view{
-  animation:slbUxFade .18s ease both;
-}
-@keyframes slbUxFade{
-  from{opacity:.55;transform:translateY(4px)}
-  to{opacity:1;transform:none}
-}
-.slb-ux-quickbar{
-  display:grid;
-  grid-template-columns:minmax(240px,1fr) repeat(5,auto) auto;
-  gap:10px;
-  align-items:center;
-  margin:0 0 18px;
-  padding:12px;
-  border:1px solid rgba(219,226,234,.9);
-  border-radius:16px;
-  background:rgba(255,255,255,.9);
-  box-shadow:0 14px 34px rgba(15,23,42,.06);
-  backdrop-filter:blur(14px);
-}
-.slb-ux-search-wrap{
-  position:relative;
-}
-.slb-ux-search{
-  width:100%;
-  height:42px;
-  padding-left:14px;
-  padding-right:42px;
-  font-weight:750;
-}
-.slb-ux-search-clear{
-  position:absolute;
-  right:7px;
-  top:50%;
-  transform:translateY(-50%);
-  width:28px;
-  height:28px;
-  border:0;
-  border-radius:8px;
-  background:#f1f5f9;
-  color:#334155;
-  font-weight:900;
-  cursor:pointer;
-}
-.slb-ux-search-results{
-  position:absolute;
-  top:48px;
-  left:0;
-  right:0;
-  z-index:130;
-  display:none;
-  max-height:360px;
-  overflow:auto;
-  border:1px solid var(--slb-ux-line);
-  border-radius:14px;
-  background:#fff;
-  box-shadow:0 24px 60px rgba(15,23,42,.18);
-  padding:8px;
-}
-.slb-ux-search-results.show{
-  display:grid;
-  gap:6px;
-}
-.slb-ux-result{
-  width:100%;
-  border:1px solid transparent;
-  background:#fff;
-  color:var(--slb-ux-ink);
-  border-radius:10px;
-  padding:10px 12px;
-  text-align:left;
-  cursor:pointer;
-  display:grid;
-  gap:3px;
-}
-.slb-ux-result:hover,
-.slb-ux-result:focus{
-  border-color:rgba(208,0,27,.28);
-  background:#fff6f7;
-  outline:none;
-}
-.slb-ux-result strong{
-  font-size:13px;
-}
-.slb-ux-result span{
-  color:var(--slb-ux-muted);
-  font-size:12px;
-  font-weight:750;
-}
-.slb-ux-btn{
-  border:1px solid var(--slb-ux-line);
-  background:#fff;
-  color:var(--slb-ux-ink);
-  border-radius:10px;
-  height:42px;
-  padding:0 13px;
-  font-size:12px;
-  font-weight:900;
-  cursor:pointer;
-  white-space:nowrap;
-  transition:.16s ease;
-}
-.slb-ux-btn:hover{
-  transform:translateY(-1px);
-  border-color:rgba(208,0,27,.35);
-  color:var(--slb-ux-red-dark);
-}
-.slb-ux-btn.primary{
-  background:#111827;
-  color:#fff;
-  border-color:#111827;
-}
-.slb-ux-save-status{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  min-width:112px;
-  height:42px;
-  padding:0 12px;
-  border-radius:10px;
-  background:#f8fafc;
-  border:1px solid var(--slb-ux-line);
-  color:#475569;
-  font-size:12px;
-  font-weight:900;
-  white-space:nowrap;
-}
-.slb-ux-save-status.saving{
-  color:#92400e;
-  background:#fffbeb;
-  border-color:#fde68a;
-}
-.slb-ux-save-status.local{
-  color:#1d4ed8;
-  background:#eff6ff;
-  border-color:#bfdbfe;
-}
-.slb-ux-save-status.saved{
-  color:#047857;
-  background:#ecfdf5;
-  border-color:#bbf7d0;
-}
-.slb-ux-save-status.error{
-  color:#b91c1c;
-  background:#fff1f2;
-  border-color:#fecdd3;
-}
-.slb-ux-overview{
-  display:grid;
-  grid-template-columns:repeat(4,minmax(0,1fr));
-  gap:12px;
-  margin-bottom:18px;
-}
-.slb-ux-overview-card{
-  border:1px solid rgba(219,226,234,.92);
-  background:rgba(255,255,255,.94);
-  border-radius:16px;
-  padding:16px;
-  box-shadow:0 14px 34px rgba(15,23,42,.06);
-  display:grid;
-  gap:10px;
-  min-height:132px;
-}
-.slb-ux-overview-label{
-  font-size:11px;
-  color:var(--slb-ux-muted);
-  font-weight:950;
-  text-transform:uppercase;
-  letter-spacing:.06em;
-}
-.slb-ux-overview-value{
-  font-size:30px;
-  line-height:1;
-  font-weight:950;
-  color:var(--slb-ux-ink);
-}
-.slb-ux-overview-meta{
-  color:#475569;
-  font-size:12px;
-  font-weight:750;
-  line-height:1.35;
-}
-.slb-ux-progress{
-  height:9px;
-  border-radius:999px;
-  background:#e2e8f0;
-  overflow:hidden;
-}
-.slb-ux-progress span{
-  display:block;
-  height:100%;
-  width:0;
-  border-radius:999px;
-  background:linear-gradient(90deg,var(--slb-ux-red),#f43f5e);
-}
-.slb-ux-next-card{
-  background:linear-gradient(135deg,#111827,#2a303b)!important;
-  color:#fff;
-}
-.slb-ux-next-card .slb-ux-overview-label,
-.slb-ux-next-card .slb-ux-overview-meta{
-  color:rgba(255,255,255,.76);
-}
-.slb-ux-next-card .slb-ux-overview-value{
-  color:#fff;
-  font-size:19px;
-  line-height:1.12;
-}
-.slb-ux-highlight-card{
-  outline:3px solid rgba(208,0,27,.2);
-  box-shadow:0 0 0 8px rgba(208,0,27,.08),0 14px 34px rgba(15,23,42,.08)!important;
-}
-.slb-ux-focus-toggle{
-  margin-left:auto;
-}
-body.slb-ux-focus #evaluationView .evaluation-shell{
-  grid-template-columns:1fr!important;
-}
-body.slb-ux-focus #evaluationView .eval-sidebar{
-  display:none!important;
-}
-body.slb-ux-focus #evaluationView .eval-main{
-  padding:22px!important;
-}
-body.slb-ux-focus #evaluationView .ama-eval-list{
-  grid-template-columns:repeat(auto-fit,minmax(390px,1fr));
-}
-.eval-class-btn{
-  transition:.16s ease;
-}
-.eval-class-btn:hover{
-  transform:translateX(2px);
-}
-.ama-student-card,
-.class-card,
-.stat-card{
-  transition:.16s ease;
-}
-.ama-student-card:hover,
-.class-card:hover{
-  border-color:rgba(208,0,27,.22)!important;
-  box-shadow:0 18px 40px rgba(15,23,42,.09)!important;
-}
-.slb-ux-toast{
-  position:fixed;
-  right:18px;
-  bottom:18px;
-  z-index:10000;
-  max-width:min(360px,calc(100vw - 36px));
-  border:1px solid var(--slb-ux-line);
-  background:#111827;
-  color:#fff;
-  border-radius:14px;
-  padding:12px 14px;
-  font-size:13px;
-  font-weight:850;
-  box-shadow:0 22px 60px rgba(15,23,42,.26);
-  opacity:0;
-  transform:translateY(10px);
-  pointer-events:none;
-  transition:.2s ease;
-}
-.slb-ux-toast.show{
-  opacity:1;
-  transform:none;
-}
-@media(max-width:1100px){
-  body:not(.login-locked) .header{
-    top:8px;
-  }
-  body:not(.login-locked) .tabs{
-    top:82px;
-    overflow:auto;
-    flex-wrap:nowrap;
-  }
-  .slb-ux-overview{
-    grid-template-columns:repeat(2,minmax(0,1fr));
-  }
-  .slb-ux-quickbar{
-    grid-template-columns:1fr 1fr;
-  }
-  .slb-ux-search-wrap{
-    grid-column:1 / -1;
-  }
-}
-@media(max-width:680px){
-  body:not(.login-locked){
-    padding:12px!important;
-  }
-  body:not(.login-locked) .header,
-  body:not(.login-locked) .tabs{
-    position:relative;
-    top:auto;
-  }
-  .slb-ux-overview{
-    grid-template-columns:1fr;
-  }
-  .slb-ux-quickbar{
-    grid-template-columns:1fr;
-  }
-  .slb-ux-save-status,
-  .slb-ux-btn{
-    width:100%;
-  }
-}
-@media print{
-  .slb-ux-quickbar,
-  .slb-ux-overview,
-  .slb-ux-toast{
-    display:none!important;
-  }
-}
-</style>
-
-<script id="slb-ux-upgrade-v1-js">
-/* SLB UX upgrade: additive layer, no existing feature removed */
-(function(){
-  var ready=false;
-  var toastTimer=null;
-
-  function esc(value){
-    if(typeof safe === 'function') return safe(value);
-    return String(value == null ? '' : value).replace(/[&<>"']/g,function(c){
-      return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];
-    });
-  }
-
-  function getUser(){
-    try{ return typeof currentLoggedUser === 'function' ? currentLoggedUser() : null; }catch(err){ return null; }
-  }
-
-  function classes(){
-    try{ return typeof selectedClasses === 'function' ? selectedClasses() : []; }catch(err){ return []; }
-  }
-
-  function classData(classId){
-    try{ return (state && state.classes && state.classes[classId]) || {students:[]}; }catch(err){ return {students:[]}; }
-  }
-
-  function evaluationData(classId){
-    try{ return typeof evalData === 'function' ? evalData(classId) : ((state && state.evaluations && state.evaluations[classId]) || {}); }catch(err){ return {}; }
-  }
-
-  function objectivesFor(className){
-    try{ return typeof flattenObjectives === 'function' ? flattenObjectives(className) : []; }catch(err){ return []; }
-  }
-
-  function studentName(student,index){
-    try{ return typeof studentDisplayName === 'function' ? studentDisplayName(student,index) : (student && (student.fullName || [student.firstName, student.lastName].filter(Boolean).join(' '))) || ('Aluno '+(index+1)); }catch(err){ return 'Aluno '+(index+1); }
-  }
-
-  function getMetrics(){
-    var cls=classes();
-    var studentTotal=0;
-    var possible=0;
-    var done=0;
-    var evaluatedStudents=0;
-    var withoutStudents=0;
-    cls.forEach(function(c){
-      var data=classData(c.id);
-      var students=data.students || [];
-      var objectives=objectivesFor(c.className);
-      studentTotal += students.length;
-      if(!students.length) withoutStudents++;
-      possible += students.length * objectives.length;
-      students.forEach(function(_student,index){
-        var studentDone=0;
-        try{
-          studentDone = typeof okCount === 'function' ? okCount(c.id,index,c.className) : 0;
-        }catch(err){
-          studentDone = 0;
-        }
-        done += studentDone;
-        if(studentDone > 0) evaluatedStudents++;
-      });
-    });
-    var pct=possible ? Math.round((done / possible) * 100) : 0;
-    var studentPct=studentTotal ? Math.round((evaluatedStudents / studentTotal) * 100) : 0;
-    return {classes:cls, classCount:cls.length, studentTotal:studentTotal, possible:possible, done:done, pct:pct, studentPct:studentPct, evaluatedStudents:evaluatedStudents, withoutStudents:withoutStudents};
-  }
-
-  function nextStep(metrics){
-    if(!metrics.classCount) return {title:'Criar o horário', meta:'Ativa as aulas e escolhe as turmas.'};
-    if(metrics.withoutStudents) return {title:'Completar alunos', meta:metrics.withoutStudents+' turma(s) ainda sem alunos.'};
-    if(metrics.studentPct < 100) return {title:'Completar avaliação', meta:metrics.evaluatedStudents+'/'+metrics.studentTotal+' aluno(s) já tem avaliação iniciada.'};
-    return {title:'Preparar documentos', meta:'As avaliações já estão prontas para rever e imprimir.'};
-  }
-
-  function ensureToast(){
-    var toast=document.getElementById('slbUxToast');
-    if(!toast){
-      toast=document.createElement('div');
-      toast.id='slbUxToast';
-      toast.className='slb-ux-toast';
-      toast.setAttribute('role','status');
-      toast.setAttribute('aria-live','polite');
-      document.body.appendChild(toast);
-    }
-    return toast;
-  }
-
-  function showToast(message){
-    var toast=ensureToast();
-    toast.textContent=message;
-    toast.classList.add('show');
-    clearTimeout(toastTimer);
-    toastTimer=setTimeout(function(){ toast.classList.remove('show'); }, 2200);
-  }
-
-  function setStatus(text,type){
-    try{
-      if(typeof updateWorkflowSaveStatus === 'function'){
-        updateWorkflowSaveStatus(text,type || 'local');
-        return;
-      }
-    }catch(err){}
-    var el=document.getElementById('slbUxSaveStatus');
-    if(!el) return;
-    el.className='slb-ux-save-status '+(type || '');
-    el.textContent=text;
-  }
-
-  function ensureQuickbar(){
-    if(document.getElementById('slbUxQuickbar')) return;
-    var tabs=document.querySelector('.tabs');
-    if(!tabs || !tabs.parentNode) return;
-    var bar=document.createElement('section');
-    bar.id='slbUxQuickbar';
-    bar.className='slb-ux-quickbar';
-    bar.innerHTML=
-      '<div class="slb-ux-search-wrap">'+
-        '<input id="slbUxSearch" class="slb-ux-search" type="search" placeholder="Pesquisar aluno, turma ou área..." autocomplete="off">'+
-        '<button id="slbUxSearchClear" class="slb-ux-search-clear" type="button" aria-label="Limpar pesquisa">x</button>'+
-        '<div id="slbUxSearchResults" class="slb-ux-search-results"></div>'+
-      '</div>'+
-      '<button class="slb-ux-btn primary" type="button" data-slb-ux-go="evaluationView">Avaliar</button>'+
-      '<button class="slb-ux-btn" type="button" data-slb-ux-go="attendanceView">Presenças</button>'+
-      '<button class="slb-ux-btn" type="button" data-slb-ux-go="documentView">Documento</button>'+
-      '<button class="slb-ux-btn" type="button" data-slb-ux-save="cloud">Guardar</button>'+
-      '<button class="slb-ux-btn" type="button" data-slb-ux-backup="json">Backup</button>'+
-      '<span id="slbUxSaveStatus" class="slb-ux-save-status">Pronto</span>';
-    tabs.insertAdjacentElement('afterend',bar);
-  }
-
-  function ensureOverview(){
-    var view=document.getElementById('mainCalendarView');
-    if(!view) return;
-    var existing=document.getElementById('slbUxOverview');
-    if(!existing){
-      existing=document.createElement('section');
-      existing.id='slbUxOverview';
-      existing.className='slb-ux-overview';
-      view.insertAdjacentElement('afterbegin',existing);
-    }
-    var metrics=getMetrics();
-    var next=nextStep(metrics);
-    existing.innerHTML=
-      '<article class="slb-ux-overview-card">'+
-        '<div class="slb-ux-overview-label">Turmas</div>'+
-        '<div class="slb-ux-overview-value">'+metrics.classCount+'</div>'+
-        '<div class="slb-ux-overview-meta">'+(metrics.withoutStudents ? metrics.withoutStudents+' sem alunos definidos' : 'Horário estruturado')+'</div>'+
-      '</article>'+
-      '<article class="slb-ux-overview-card">'+
-        '<div class="slb-ux-overview-label">Alunos</div>'+
-        '<div class="slb-ux-overview-value">'+metrics.studentTotal+'</div>'+
-        '<div class="slb-ux-overview-meta">'+metrics.evaluatedStudents+' com avaliação iniciada</div>'+
-      '</article>'+
-      '<article class="slb-ux-overview-card">'+
-        '<div class="slb-ux-overview-label">Progresso</div>'+
-        '<div class="slb-ux-overview-value">'+metrics.pct+'%</div>'+
-        '<div class="slb-ux-progress"><span style="width:'+Math.min(100,metrics.pct)+'%"></span></div>'+
-        '<div class="slb-ux-overview-meta">'+metrics.done+'/'+metrics.possible+' objetivos OK</div>'+
-      '</article>'+
-      '<article class="slb-ux-overview-card slb-ux-next-card">'+
-        '<div class="slb-ux-overview-label">Próximo passo</div>'+
-        '<div class="slb-ux-overview-value">'+esc(next.title)+'</div>'+
-        '<div class="slb-ux-overview-meta">'+esc(next.meta)+'</div>'+
-      '</article>';
-  }
-
-  function pageResults(){
-    return [
-      {kind:'area', title:'Painel', meta:'Calendário e próximos eventos', view:'mainCalendarView'},
-      {kind:'area', title:'Horário', meta:'Aulas e turmas por dia', view:'scheduleView'},
-      {kind:'area', title:'Turmas / Alunos', meta:'Fichas de alunos', view:'studentsView'},
-      {kind:'area', title:'Presenças', meta:'Registo mensal', view:'attendanceView'},
-      {kind:'area', title:'Avaliação', meta:'Checklist por aluno', view:'evaluationView'},
-      {kind:'area', title:'Documento', meta:'Relatório de evolução', view:'documentView'},
-      {kind:'area', title:'Documento Interno', meta:'Documento de trabalho', view:'internalDocumentView'},
-      {kind:'area', title:'Área do Professor', meta:'Pesquisa, avisos e alertas', view:'teacherDashboardView'}
-    ];
-  }
-
-  function buildSearchIndex(){
-    var out=pageResults();
-    classes().forEach(function(c){
-      var block=(c.blocks || []).map(function(b){ return [b.day,b.time].filter(Boolean).join(' '); }).join(' ');
-      out.push({kind:'class', title:c.className || c.displayName || 'Turma', meta:(c.displayName || block || 'Turma guardada'), view:'evaluationView', classId:c.id});
-      (classData(c.id).students || []).forEach(function(student,index){
-        var name=studentName(student,index);
-        out.push({kind:'student', title:name, meta:(c.displayName || c.className || 'Turma'), view:'evaluationView', classId:c.id, studentIndex:index});
-      });
-    });
-    return out;
-  }
-
-  function normalize(text){
-    return String(text || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
-  }
-
-  function renderSearchResults(){
-    var input=document.getElementById('slbUxSearch');
-    var box=document.getElementById('slbUxSearchResults');
-    if(!input || !box) return;
-    var q=normalize(input.value);
-    if(!q){
-      box.classList.remove('show');
-      box.innerHTML='';
-      return;
-    }
-    var results=buildSearchIndex().filter(function(item){
-      return normalize(item.title+' '+item.meta).indexOf(q) !== -1;
-    }).slice(0,9);
-    if(!results.length){
-      box.innerHTML='<div class="slb-ux-result"><strong>Sem resultados</strong><span>Tenta outro nome ou turma.</span></div>';
-      box.classList.add('show');
-      return;
-    }
-    box.innerHTML=results.map(function(item,index){
-      return '<button class="slb-ux-result" type="button" data-slb-ux-result="'+index+'"><strong>'+esc(item.title)+'</strong><span>'+esc(item.meta)+'</span></button>';
-    }).join('');
-    box.classList.add('show');
-    box.querySelectorAll('[data-slb-ux-result]').forEach(function(btn){
-      btn.addEventListener('click',function(){
-        openResult(results[Number(btn.dataset.slbUxResult)]);
-      });
-    });
-  }
-
-  function openResult(item){
-    if(!item) return;
-    var input=document.getElementById('slbUxSearch');
-    var box=document.getElementById('slbUxSearchResults');
-    if(input) input.value='';
-    if(box){ box.classList.remove('show'); box.innerHTML=''; }
-    if(item.classId){
-      try{ activeEvalId=item.classId; }catch(err){ window.activeEvalId=item.classId; }
-    }
-    if(typeof switchView === 'function') switchView(item.view || 'mainCalendarView');
-    if(item.kind === 'student'){
-      setTimeout(function(){
-        var target=document.getElementById('eval-student-'+item.classId+'-'+item.studentIndex);
-        if(target){
-          target.scrollIntoView({behavior:'smooth',block:'start'});
-          target.classList.add('slb-ux-highlight-card');
-          setTimeout(function(){ target.classList.remove('slb-ux-highlight-card'); }, 1800);
-        }
-      },140);
-    }
-  }
-
-  function ensureFocusButton(){
-    var menu=document.querySelector('#evaluationMoreMenu .evaluation-more-menu-content');
-    var toolbar=document.querySelector('#evaluationView > .panel.toolbar .toolbar-actions');
-    var target=menu || toolbar;
-    if(!target || document.getElementById('slbUxFocusBtn')) return;
-    var btn=document.createElement('button');
-    btn.id='slbUxFocusBtn';
-    btn.className=menu ? 'evaluation-more-item slb-ux-focus-toggle' : 'btn ghost slb-ux-focus-toggle';
-    btn.type='button';
-    btn.textContent='Modo foco';
-    btn.addEventListener('click',function(){
-      document.body.classList.toggle('slb-ux-focus');
-      btn.textContent=document.body.classList.contains('slb-ux-focus') ? 'Sair do foco' : 'Modo foco';
-      var details=document.getElementById('evaluationMoreMenu');
-      if(details) details.open=false;
-    });
-    target.appendChild(btn);
-  }
-
-  function bindQuickbar(){
-    document.querySelectorAll('[data-slb-ux-go]').forEach(function(btn){
-      if(btn.dataset.slbUxBound) return;
-      btn.dataset.slbUxBound='true';
-      btn.addEventListener('click',function(){
-        if(typeof switchView === 'function') switchView(btn.dataset.slbUxGo);
-      });
-    });
-    document.querySelectorAll('[data-slb-ux-save]').forEach(function(btn){
-      if(btn.dataset.slbUxBound) return;
-      btn.dataset.slbUxBound='true';
-      btn.addEventListener('click',async function(){
-        try{
-          if(typeof saveStudentsFromDom === 'function') saveStudentsFromDom();
-          if(typeof saveState === 'function') saveState();
-          if(typeof saveToCloud === 'function') await saveToCloud();
-          else{
-            setStatus('Guardado neste dispositivo','local');
-            showToast('Dados guardados neste dispositivo.');
-          }
-        }catch(err){
-          setStatus('Erro ao guardar','error');
-        }
-      });
-    });
-    document.querySelectorAll('[data-slb-ux-backup]').forEach(function(btn){
-      if(btn.dataset.slbUxBound) return;
-      btn.dataset.slbUxBound='true';
-      btn.addEventListener('click',function(){
-        try{
-          if(typeof exportJsonFile === 'function') exportJsonFile();
-          else showToast('Backup não disponível nesta sessão.');
-        }catch(err){
-          showToast('Não foi possível criar o backup.');
-        }
-      });
-    });
-    var input=document.getElementById('slbUxSearch');
-    var clear=document.getElementById('slbUxSearchClear');
-    if(input && !input.dataset.slbUxBound){
-      input.dataset.slbUxBound='true';
-      input.addEventListener('input',renderSearchResults);
-      input.addEventListener('keydown',function(event){
-        if(event.key === 'Escape'){
-          input.value='';
-          renderSearchResults();
-          input.blur();
-        }
-      });
-    }
-    if(clear && !clear.dataset.slbUxBound){
-      clear.dataset.slbUxBound='true';
-      clear.addEventListener('click',function(){
-        var search=document.getElementById('slbUxSearch');
-        if(search){ search.value=''; search.focus(); }
-        renderSearchResults();
-      });
-    }
-  }
-
-  function refresh(){
-    if(!getUser()) return;
-    ensureQuickbar();
-    ensureOverview();
-    ensureFocusButton();
-    bindQuickbar();
-    updateAriaCurrent();
-  }
-
-  function updateAriaCurrent(){
-    document.querySelectorAll('.tab').forEach(function(tab){
-      if(tab.classList.contains('active')) tab.setAttribute('aria-current','page');
-      else tab.removeAttribute('aria-current');
-    });
-  }
-
-  function wrapCoreFunctions(){
-    if(window.__slbUxCoreWrapped) return;
-    window.__slbUxCoreWrapped=true;
-
-    try{
-      if(typeof saveState === 'function'){
-        var originalSaveState=saveState;
-        saveState=function(){
-          var result=originalSaveState.apply(this,arguments);
-          setStatus('Guardado neste dispositivo','local');
-          setTimeout(refresh,30);
-          return result;
-        };
-      }
-    }catch(err){}
-
-    try{
-      if(typeof saveToCloud === 'function'){
-        var originalSaveToCloud=saveToCloud;
-        saveToCloud=async function(){
-          setStatus('A enviar para cloud...','saving');
-          try{
-            var result=await originalSaveToCloud.apply(this,arguments);
-            setStatus('Sincronizado na cloud','saved');
-            showToast('Dados guardados na cloud.');
-            setTimeout(refresh,80);
-            return result;
-          }catch(err){
-            setStatus('Erro cloud','error');
-            showToast('Não foi possível guardar na cloud.');
-            throw err;
-          }
-        };
-      }
-    }catch(err){}
-
-    try{
-      if(typeof switchView === 'function'){
-        var originalSwitchView=switchView;
-        switchView=function(id){
-          var result=originalSwitchView.apply(this,arguments);
-          setTimeout(refresh,60);
-          return result;
-        };
-      }
-    }catch(err){}
-  }
-
-  function bindGlobalShortcuts(){
-    if(window.__slbUxShortcutsBound) return;
-    window.__slbUxShortcutsBound=true;
-    document.addEventListener('keydown',function(event){
-      if((event.ctrlKey || event.metaKey) && String(event.key || '').toLowerCase() === 'k'){
-        var input=document.getElementById('slbUxSearch');
-        if(input && !document.body.classList.contains('login-locked')){
-          event.preventDefault();
-          input.focus();
-          input.select();
-        }
-      }
-    });
-    document.addEventListener('click',function(event){
-      var wrap=event.target.closest && event.target.closest('.slb-ux-search-wrap');
-      if(!wrap){
-        var box=document.getElementById('slbUxSearchResults');
-        if(box) box.classList.remove('show');
-      }
-    });
-  }
-
-  function init(){
-    if(ready) return;
-    ready=true;
-    wrapCoreFunctions();
-    bindGlobalShortcuts();
-    refresh();
-    setTimeout(refresh,400);
-    setTimeout(refresh,1200);
-  }
-
-  if(document.readyState === 'loading'){
-    document.addEventListener('DOMContentLoaded',init);
-  }else{
-    init();
-  }
-})();
 </script>
 
 </body>
